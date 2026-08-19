@@ -14,8 +14,12 @@
 }
 
 .launch-banner img {
-  width: 90px;
-  height: 90px;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
@@ -38,9 +42,9 @@
   }
 
   .launch-banner img {
-    width: 64px;
-    height: 64px;
-  }
+  width: 140px;
+  height: 140px;
+}
 
   .launch-banner strong {
     font-size: 0.95rem;
