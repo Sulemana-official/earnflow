@@ -4,12 +4,14 @@
 .launch-banner {
   width: min(92%, 900px);
   margin: 24px auto;
-  padding: 14px 18px;
+  padding: 16px;
   display: flex;
   align-items: center;
   gap: 16px;
   box-sizing: border-box;
-  border-radius: 18px;
+  background: #fff;
+  border: 1px solid #e2e7ee;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -17,14 +19,6 @@
   width: 100px;
   height: 100px;
   object-fit: contain;
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-  object-fit: contain;
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-  object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
 }
@@ -36,19 +30,20 @@
 
 .launch-banner p {
   margin: 5px 0 0;
+  color: #667184;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 520px) {
   .launch-banner {
-    width: 94%;
-    padding: 10px 12px;
+    width: 100%;
+    padding: 12px;
     gap: 12px;
   }
 
   .launch-banner img {
-  width: 100px;
-  height: 100px;
-}
+    width: 80px;
+    height: 80px;
+  }
 
   .launch-banner strong {
     font-size: 0.95rem;
