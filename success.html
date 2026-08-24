@@ -51,24 +51,36 @@
   id="downloadButton"
   class="access-button"
   href="#"
+  target="_blank"
 >
   📥 Download Your EarnFlow Toolkit
 </a>
 
 <script>
-  const reference = new URLSearchParams(window.location.search).get("reference");
+  const params = new URLSearchParams(window.location.search);
 
-  const downloadButton = document.getElementById("downloadButton");
+  const reference =
+    params.get("reference") ||
+    params.get("trxref");
 
-  if (reference) {
+  const downloadButton =
+    document.getElementById("downloadButton");
+
+  if (reference && downloadButton) {
     downloadButton.href =
       "https://earnflow-delivery.uteristicsuleiman.workers.dev/download?reference=" +
       encodeURIComponent(reference);
-  } else {
+
+    downloadButton.target = "_blank";
+  } else if (downloadButton) {
     downloadButton.href = "#";
+
     downloadButton.addEventListener("click", function (event) {
       event.preventDefault();
-      alert("Payment reference not found. Please contact EarnFlow support.");
+
+      alert(
+        "Payment reference not found. Please contact EarnFlow support."
+      );
     });
   }
 </script>
