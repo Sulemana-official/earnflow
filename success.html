@@ -34,7 +34,7 @@
       border-radius: 18px;
       padding: 35px 25px;
       text-align: center;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 35px rgba(0,0,0,.08);
     }
 
     .logo {
@@ -64,8 +64,8 @@
 
     .welcome {
       font-size: 18px;
-      margin-bottom: 25px;
       line-height: 1.5;
+      margin-bottom: 25px;
     }
 
     .inside {
@@ -78,43 +78,59 @@
 
     .inside h2 {
       margin-top: 0;
-      font-size: 20px;
     }
 
-    .inside ul {
-      padding-left: 22px;
-      line-height: 1.8;
-      margin-bottom: 0;
+    .inside li {
+      margin-bottom: 8px;
+    }
+
+    .email-box {
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .email-box label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .email-box input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .email-box input:focus {
+      border-color: #111827;
     }
 
     .download-button {
-      display: inline-block;
       width: 100%;
       max-width: 430px;
+      margin-top: 15px;
       padding: 16px 20px;
+      border: none;
       border-radius: 10px;
       background: #111827;
       color: white;
-      text-decoration: none;
       font-size: 17px;
       font-weight: bold;
       cursor: pointer;
-      border: none;
     }
 
-    .download-button:hover {
-      opacity: 0.9;
-    }
-
-    .download-button.disabled {
-      opacity: 0.6;
-      pointer-events: none;
+    .download-button:disabled {
+      opacity: .6;
+      cursor: not-allowed;
     }
 
     #status {
       margin-top: 15px;
       font-size: 14px;
-      color: #6b7280;
+      line-height: 1.5;
     }
 
     .private-note {
@@ -128,6 +144,7 @@
       margin-top: 25px;
       font-size: 13px;
       color: #9ca3af;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -149,7 +166,8 @@
     </h1>
 
     <div class="welcome">
-      Welcome to <strong>EarnFlow Smartphone Income Pro</strong> 🎉
+      Welcome to
+      <strong>EarnFlow Smartphone Income Pro</strong> 🎉
       <br>
       Thank you for your purchase.
     </div>
@@ -157,9 +175,7 @@
 
     <div class="inside">
 
-      <h2>
-        What's inside
-      </h2>
+      <h2>What's inside</h2>
 
       <ul>
         <li>Complete 30-day EarnFlow action plan</li>
@@ -176,29 +192,44 @@
     </div>
 
 
-    <a
+    <div class="email-box">
+
+      <label for="email">
+        Enter the email address you used for payment
+      </label>
+
+      <input
+        id="email"
+        type="email"
+        placeholder="you@example.com"
+        autocomplete="email"
+      >
+
+    </div>
+
+
+    <button
       id="downloadButton"
-      class="download-button disabled"
-      href="#"
+      class="download-button"
+      type="button"
     >
-      📥 Download Your EarnFlow Toolkit
-    </a>
+      📥 Get My EarnFlow Toolkit
+    </button>
 
 
     <div id="status">
-      Preparing your secure download...
+      Enter your payment email to continue.
     </div>
 
 
     <div class="private-note">
-      Keep this page and your product file private.
-      Do not share your personal payment information with anyone.
+      Keep your product file private.
+      Do not share your payment information with anyone.
     </div>
 
 
     <footer>
-      EarnFlow
-      <br>
+      EarnFlow<br>
       Educational resources for building practical online skills.
       <br><br>
       © 2026 EarnFlow • No guaranteed income.
@@ -209,12 +240,11 @@
 
   <script>
 
-    // =========================================================
-    // EARNFLOW SECURE DOWNLOAD
-    // =========================================================
-
     const WORKER_URL =
       "https://earnflow-delivery.uteristicsuleiman.workers.dev/download";
+
+    const emailInput =
+      document.getElementById("email");
 
     const downloadButton =
       document.getElementById("downloadButton");
@@ -223,57 +253,52 @@
       document.getElementById("status");
 
 
-    // ---------------------------------------------------------
-    // READ PAYSTACK REFERENCE FROM URL
-    // ---------------------------------------------------------
+    downloadButton.addEventListener(
+      "click",
+      function () {
 
-    const params =
-      new URLSearchParams(window.location.search);
-
-
-    const reference =
-      params.get("reference") ||
-      params.get("trxref") ||
-      params.get("transaction_reference");
+        const email =
+          emailInput.value.trim();
 
 
-    // ---------------------------------------------------------
-    // CHECK WHETHER REFERENCE EXISTS
-    // ---------------------------------------------------------
+        if (!email) {
 
-    if (!reference) {
+          status.textContent =
+            "Please enter the email address you used for payment.";
 
-      status.textContent =
-        "Payment reference not found. Please contact EarnFlow support.";
+          return;
 
-      downloadButton.classList.add("disabled");
-
-    } else {
-
-      // -------------------------------------------------------
-      // BUILD SECURE WORKER DOWNLOAD URL
-      // -------------------------------------------------------
-
-      const downloadURL =
-        WORKER_URL +
-        "?reference=" +
-        encodeURIComponent(reference);
+        }
 
 
-      // -------------------------------------------------------
-      // ENABLE DOWNLOAD BUTTON
-      // -------------------------------------------------------
+        if (!email.includes("@")) {
 
-      downloadButton.href =
-        downloadURL;
+          status.textContent =
+            "Please enter a valid email address.";
 
-      downloadButton.classList.remove("disabled");
+          return;
 
-      status.textContent =
-        "Your secure download is ready.";
+        }
 
-    }
 
+        status.textContent =
+          "Finding your successful payment...";
+
+        downloadButton.disabled =
+          true;
+
+
+        const url =
+          WORKER_URL +
+          "?email=" +
+          encodeURIComponent(email);
+
+
+        window.location.href =
+          url;
+
+      }
+    );
 
   </script>
 
