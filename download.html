@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EarnFlow — Payment Successful</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  background: white;
+  border-radius: 18px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 10px 35px rgba(0,0,0,.08);
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.success-icon {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #16a34a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.welcome {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.inside {
+  text-align: left;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 25px 0;
+}
+
+.inside h2 {
+  margin-top: 0;
+}
+
+.inside li {
+  margin-bottom: 8px;
+}
+
+.email-box {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.email-box label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.email-box input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+.email-box input:focus {
+  border-color: #111827;
+}
+
+.download-button {
+  width: 100%;
+  max-width: 430px;
+  margin-top: 15px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #111827;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.download-button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+#status {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.private-note {
+  margin-top: 25px;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 13px;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="logo">EarnFlow</div>
+
+  <div class="success-icon">✓</div>
+
+  <h1>PAYMENT SUCCESSFUL</h1>
+
+  <div class="welcome">
+    Welcome to
+    <strong>EarnFlow Smartphone Income Pro</strong> 🎉
+    <br>
+    Thank you for your purchase.
+  </div>
+
+  <div class="inside">
+
+    <h2>What's inside</h2>
+
+    <ul>
+      <li>Complete 30-day EarnFlow action plan</li>
+      <li>AI Prompt Vault</li>
+      <li>Freelance offer and outreach templates</li>
+      <li>Digital product builder</li>
+      <li>Content-to-income system</li>
+      <li>Income calculators and trackers</li>
+      <li>Scam-defense checklist</li>
+      <li>First-customer system</li>
+      <li>Growth and scaling framework</li>
+    </ul>
+
+  </div>
+
+  <div class="email-box">
+
+    <label for="email">
+      Enter the email address you used for payment
+    </label>
+
+    <input
+      id="email"
+      type="email"
+      placeholder="you@example.com"
+      autocomplete="email"
+    >
+
+  </div>
+
+  <button
+    id="downloadButton"
+    class="download-button"
+    type="button"
+  >
+    📥 Get My EarnFlow Toolkit
+  </button>
+
+  <div id="status">
+    Enter your payment email to continue.
+  </div>
+
+  <div class="private-note">
+    Keep your product file private.
+    Do not share your payment information with anyone.
+  </div>
+
+  <footer>
+    EarnFlow<br>
+    Educational resources for building practical online skills.
+    <br><br>
+    © 2026 EarnFlow • No guaranteed income.
+  </footer>
+
+</div>
+
+<script>
+
+const WORKER_URL =
+  "https://earnflow-delivery.uteristicsuleiman.workers.dev/download";
+
+const emailInput =
+  document.getElementById("email");
+
+const downloadButton =
+  document.getElementById("downloadButton");
+
+const status =
+  document.getElementById("status");
+
+downloadButton.addEventListener(
+  "click",
+  function () {
+
+    const email =
+      emailInput.value.trim();
+
+    if (!email) {
+
+      status.textContent =
+        "Please enter the email address you used for payment.";
+
+      return;
+
+    }
+
+    if (!email.includes("@")) {
+
+      status.textContent =
+        "Please enter a valid email address.";
+
+      return;
+
+    }
+
+    status.textContent =
+      "Finding your successful payment...";
+
+    downloadButton.disabled = true;
+
+    const url =
+      WORKER_URL +
+      "?email=" +
+      encodeURIComponent(email);
+
+    window.location.href = url;
+
+  }
+);
+
+</script>
+
+</body>
+</html>
