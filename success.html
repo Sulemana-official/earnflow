@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>EarnFlow — Payment Successful</title>
 
 <style>
@@ -97,10 +99,6 @@ h1 {
   border-radius: 10px;
   font-size: 16px;
   outline: none;
-}
-
-.email-box input:focus {
-  border-color: #111827;
 }
 
 .download-button {
@@ -234,6 +232,36 @@ const downloadButton =
 const status =
   document.getElementById("status");
 
+
+/*
+  Paystack can return information in the callback URL.
+  We check common email parameter names and automatically
+  fill the email box when one is available.
+*/
+
+const params =
+  new URLSearchParams(
+    window.location.search
+  );
+
+const callbackEmail =
+  params.get("email") ||
+  params.get("customer_email") ||
+  params.get("customerEmail") ||
+  "";
+
+
+if (callbackEmail) {
+
+  emailInput.value =
+    callbackEmail;
+
+  status.textContent =
+    "Payment email detected. Tap the button below to receive your toolkit.";
+
+}
+
+
 downloadButton.addEventListener(
   "click",
   function () {
@@ -262,14 +290,16 @@ downloadButton.addEventListener(
     status.textContent =
       "Finding your successful payment...";
 
-    downloadButton.disabled = true;
+    downloadButton.disabled =
+      true;
 
     const url =
       WORKER_URL +
       "?email=" +
       encodeURIComponent(email);
 
-    window.location.href = url;
+    window.location.href =
+      url;
 
   }
 );
