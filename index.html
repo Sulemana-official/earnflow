@@ -23,6 +23,325 @@
 
 <link rel="stylesheet" href="style.css">
 </head><body>
+  <nav class="ef-nav">
+  <div class="ef-logo">EarnFlow</div>
+  <button onclick="efOpen('opportunities')">💰 Opportunities</button>
+  <button onclick="efOpen('ai')">🤖 AI Vault</button>
+  <button onclick="efOpen('plan')">📅 30-Day Plan</button>
+  <button onclick="efOpen('calculator')">🧮 Calculator</button>
+  <button onclick="efOpen('scam')">🛡️ Scam Defense</button>
+</nav>
+
+<section class="ef-tools">
+  <h1>Build Your Online Income Skills</h1>
+  <p>Explore practical tools and learn how to use your smartphone to build useful digital skills.</p>
+
+  <div class="ef-grid">
+    <button class="ef-card" onclick="efOpen('opportunities')">
+      <span>💰</span>
+      <strong>Income Opportunities</strong>
+      <small>Explore legitimate online skills and opportunities.</small>
+    </button>
+
+    <button class="ef-card" onclick="efOpen('ai')">
+      <span>🤖</span>
+      <strong>AI Prompt Vault</strong>
+      <small>Try useful AI prompts for work and content.</small>
+    </button>
+
+    <button class="ef-card" onclick="efOpen('plan')">
+      <span>📅</span>
+      <strong>30-Day Action Plan</strong>
+      <small>Follow a simple daily path toward building your skills.</small>
+    </button>
+
+    <button class="ef-card" onclick="efOpen('calculator')">
+      <span>🧮</span>
+      <strong>Income Calculator</strong>
+      <small>Calculate possible income from your prices and customers.</small>
+    </button>
+
+    <button class="ef-card" onclick="efOpen('scam')">
+      <span>🛡️</span>
+      <strong>Scam Defense</strong>
+      <small>Learn how to recognize suspicious online opportunities.</small>
+    </button>
+
+    <button class="ef-card" onclick="efOpen('pro')">
+      <span>🔐</span>
+      <strong>EarnFlow Pro</strong>
+      <small>Unlock the complete EarnFlow Smartphone Income Pro toolkit.</small>
+    </button>
+  </div>
+</section>
+
+<div id="ef-modal" class="ef-modal">
+  <div class="ef-box">
+    <button class="ef-close" onclick="efClose()">×</button>
+    <div id="ef-content"></div>
+  </div>
+</div>
+
+<style>
+.ef-nav{
+  position:sticky;
+  top:0;
+  z-index:999;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  overflow-x:auto;
+  padding:12px;
+  background:#111827;
+}
+.ef-logo{
+  color:white;
+  font-size:20px;
+  font-weight:800;
+  margin-right:8px;
+}
+.ef-nav button{
+  border:0;
+  border-radius:20px;
+  padding:9px 13px;
+  background:#374151;
+  color:white;
+  white-space:nowrap;
+  cursor:pointer;
+}
+.ef-tools{
+  padding:35px 18px;
+  text-align:center;
+  background:#f8fafc;
+}
+.ef-tools h1{
+  margin:0 0 10px;
+  font-size:30px;
+  color:#111827;
+}
+.ef-tools>p{
+  max-width:650px;
+  margin:0 auto 25px;
+  color:#4b5563;
+  line-height:1.6;
+}
+.ef-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  max-width:900px;
+  margin:auto;
+}
+.ef-card{
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:22px;
+  background:white;
+  text-align:left;
+  cursor:pointer;
+  box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+.ef-card:hover{
+  transform:translateY(-2px);
+}
+.ef-card span{
+  display:block;
+  font-size:32px;
+  margin-bottom:10px;
+}
+.ef-card strong{
+  display:block;
+  font-size:18px;
+  color:#111827;
+  margin-bottom:7px;
+}
+.ef-card small{
+  color:#6b7280;
+  line-height:1.5;
+}
+.ef-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  padding:20px;
+  background:rgba(0,0,0,.65);
+  overflow:auto;
+}
+.ef-box{
+  position:relative;
+  max-width:650px;
+  margin:50px auto;
+  padding:30px 22px;
+  border-radius:18px;
+  background:white;
+}
+.ef-close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  border:0;
+  background:none;
+  font-size:32px;
+  cursor:pointer;
+}
+.ef-box h2{
+  color:#111827;
+}
+.ef-box li{
+  margin:10px 0;
+  line-height:1.5;
+}
+.ef-input{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border:1px solid #d1d5db;
+  border-radius:9px;
+  font-size:16px;
+}
+.ef-action{
+  width:100%;
+  padding:14px;
+  margin-top:10px;
+  border:0;
+  border-radius:9px;
+  background:#111827;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+.ef-result{
+  margin-top:15px;
+  padding:15px;
+  border-radius:10px;
+  background:#f3f4f6;
+}
+</style>
+
+<script>
+function efOpen(type){
+  const modal=document.getElementById("ef-modal");
+  const content=document.getElementById("ef-content");
+  let html="";
+
+  if(type==="opportunities"){
+    html=`
+      <h2>💰 Income Opportunities</h2>
+      <p>Explore practical skills you can develop with a smartphone.</p>
+      <ul>
+        <li>💼 Freelancing</li>
+        <li>🎬 Content creation</li>
+        <li>🤖 AI-assisted services</li>
+        <li>📦 Digital products</li>
+        <li>📚 Online tutoring</li>
+        <li>📢 Affiliate marketing</li>
+      </ul>
+      <p><strong>Tip:</strong> Start with one skill and become useful at it before trying everything.</p>
+    `;
+  }
+
+  if(type==="ai"){
+    html=`
+      <h2>🤖 AI Prompt Vault</h2>
+      <p><strong>Free prompt:</strong></p>
+      <div class="ef-result">
+        Give me 10 short-form video ideas for beginners who want to learn a useful online skill using a smartphone. Make each idea practical and easy to understand.
+      </div>
+      <p>EarnFlow Pro contains the complete prompt collection and additional practical templates.</p>
+      <button class="ef-action" onclick="efOpen('pro')">🔐 Unlock EarnFlow Pro</button>
+    `;
+  }
+
+  if(type==="plan"){
+    html=`
+      <h2>📅 30-Day Action Plan</h2>
+      <p>Start with these first five days:</p>
+      <ol>
+        <li><strong>Day 1:</strong> Choose one income skill.</li>
+        <li><strong>Day 2:</strong> Learn the basics of that skill.</li>
+        <li><strong>Day 3:</strong> Create your first sample.</li>
+        <li><strong>Day 4:</strong> Create a simple service offer.</li>
+        <li><strong>Day 5:</strong> Find potential customers.</li>
+      </ol>
+      <p>EarnFlow Pro contains the complete 30-day action system.</p>
+    `;
+  }
+
+  if(type==="calculator"){
+    html=`
+      <h2>🧮 Income Calculator</h2>
+      <label>Price per customer (GH₵)</label>
+      <input id="ef-price" class="ef-input" type="number" placeholder="100">
+      <label>Customers per week</label>
+      <input id="ef-customers" class="ef-input" type="number" placeholder="5">
+      <button class="ef-action" onclick="efCalculate()">Calculate</button>
+      <div id="ef-calculation" class="ef-result">Enter your numbers above.</div>
+      <p><small>These are calculations, not guaranteed earnings.</small></p>
+    `;
+  }
+
+  if(type==="scam"){
+    html=`
+      <h2>🛡️ Scam Defense</h2>
+      <p>Be careful if an online opportunity:</p>
+      <ul>
+        <li>Promises guaranteed profits.</li>
+        <li>Demands unusual upfront payments.</li>
+        <li>Requests your password or security codes.</li>
+        <li>Uses pressure to make you act immediately.</li>
+        <li>Cannot be independently verified.</li>
+      </ul>
+      <p><strong>Rule:</strong> Never give anyone your password, PIN, OTP or private payment credentials.</p>
+    `;
+  }
+
+  if(type==="pro"){
+    html=`
+      <h2>🔐 EarnFlow Smartphone Income Pro</h2>
+      <p>Get the complete practical digital toolkit.</p>
+      <ul>
+        <li>Complete 30-day action plan</li>
+        <li>AI Prompt Vault</li>
+        <li>Freelance templates</li>
+        <li>Digital product builder</li>
+        <li>Content-to-income system</li>
+        <li>Income trackers</li>
+        <li>Scam-defense checklist</li>
+        <li>First-customer system</li>
+        <li>Growth framework</li>
+      </ul>
+      <button class="ef-action" onclick="window.location.href='https://paystack.shop/pay/earnflow-pro-250'">
+        Get EarnFlow Pro — GH₵250
+      </button>
+    `;
+  }
+
+  content.innerHTML=html;
+  modal.style.display="block";
+}
+
+function efClose(){
+  document.getElementById("ef-modal").style.display="none";
+}
+
+function efCalculate(){
+  const price=Number(document.getElementById("ef-price").value);
+  const customers=Number(document.getElementById("ef-customers").value);
+  const result=document.getElementById("ef-calculation");
+
+  if(price<=0||customers<=0){
+    result.textContent="Please enter valid numbers.";
+    return;
+  }
+
+  const weekly=price*customers;
+  const monthly=weekly*4;
+  result.innerHTML=
+    "<strong>Weekly:</strong> GH₵"+weekly.toFixed(2)+
+    "<br><strong>4-week estimate:</strong> GH₵"+monthly.toFixed(2);
+}
+</script>
 <nav>
 <a class="logo" href="#home">Earn<span>Flow</span></a>
 <div class="navlinks">
