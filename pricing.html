@@ -1,10 +1,10 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EarnFlow — Pricing Calculator</title>
-<meta name="description" content="Estimate a practical starting price for freelance work with the EarnFlow Pricing Calculator.">
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
@@ -16,15 +16,11 @@ body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
 .hero h1{font-size:30px;margin:10px 0}
 .hero p{max-width:680px;margin:auto;color:#667085;line-height:1.6}
 .container{max-width:850px;margin:auto;padding:25px 18px}
-.box,.result{background:white;padding:22px;border-radius:17px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+.box{background:white;padding:22px;border-radius:17px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
 label{display:block;font-weight:bold;margin:16px 0 7px}
 input{width:100%;padding:13px;border:1px solid #d1d5db;border-radius:9px;font:inherit}
 .primary{width:100%;margin-top:22px;padding:15px;border:0;border-radius:10px;background:#111827;color:white;font-size:16px;font-weight:bold}
-.result{display:none;margin-top:22px}
-.price{font-size:36px;font-weight:800;text-align:center;margin:20px 0}
-.breakdown{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:18px;line-height:1.8}
 .tip{margin-top:18px;padding:15px;background:#eef5ff;border-radius:10px;line-height:1.5}
-.note{color:#667085;font-size:14px;line-height:1.5}
 footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;margin-top:25px}
 </style>
 </head>
@@ -37,7 +33,7 @@ footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;marg
 <header class="hero">
 <div class="icon">💰</div>
 <h1>Freelance Pricing Calculator</h1>
-<p>Estimate a starting price based on your time, costs and target hourly value.</p>
+<p>Estimate a practical starting price based on your time, costs and target hourly value.</p>
 </header>
 
 <main class="container">
@@ -59,32 +55,8 @@ footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;marg
 <button class="primary" onclick="calculatePrice()">💰 Calculate Starting Price</button>
 
 <div class="tip">
-💡 Your calculated price is only a starting point. Consider your experience, quality, customer requirements, competition and the actual scope of the work before agreeing on a final price.
+💡 This is a starting estimate, not a guaranteed market price. Consider your experience, quality, customer requirements and the actual scope of the work.
 </div>
-</div>
-
-<div class="result" id="result">
-<h2>📊 Your Estimate</h2>
-
-<div class="price" id="price"></div>
-
-<div class="breakdown">
-<strong>Time value:</strong>
-GH₵<span id="timeValue"></span>
-<br>
-<strong>Project costs:</strong>
-GH₵<span id="costValue"></span>
-<br>
-<strong>Margin:</strong>
-<span id="marginValue"></span>%
-<br>
-<strong>Suggested starting price:</strong>
-GH₵<span id="finalValue"></span>
-</div>
-
-<p class="note">
-This is an estimate, not a guaranteed market price. Make sure the customer understands exactly what is included in the service.
-</p>
 </div>
 </main>
 
@@ -97,7 +69,6 @@ Build skills. Find opportunities. Grow.
 
 <script>
 function calculatePrice(){
-
 const hours=parseFloat(document.getElementById("hours").value);
 const rate=parseFloat(document.getElementById("rate").value);
 const costs=parseFloat(document.getElementById("costs").value)||0;
@@ -113,26 +84,15 @@ const base=timeValue+costs;
 const marginAmount=base*(margin/100);
 const finalPrice=base+marginAmount;
 
-document.getElementById("price").textContent=
-"GH₵"+finalPrice.toFixed(2);
+const data=new URLSearchParams();
+data.set("hours",hours);
+data.set("rate",rate);
+data.set("costs",costs);
+data.set("margin",margin);
+data.set("timeValue",timeValue.toFixed(2));
+data.set("finalPrice",finalPrice.toFixed(2));
 
-document.getElementById("timeValue").textContent=
-timeValue.toFixed(2);
-
-document.getElementById("costValue").textContent=
-costs.toFixed(2);
-
-document.getElementById("marginValue").textContent=
-margin.toFixed(0);
-
-document.getElementById("finalValue").textContent=
-finalPrice.toFixed(2);
-
-document.getElementById("result").style.display="block";
-
-document.getElementById("result").scrollIntoView({
-behavior:"smooth"
-});
+window.location.href="pricing-result.html?"+data.toString();
 }
 </script>
 </body>
