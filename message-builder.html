@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnFlow — Message Builder</title>
+<meta name="description" content="Create a personalized first customer message with EarnFlow.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+.top{background:#111827;color:white;padding:14px 18px;display:flex;align-items:center}
+.logo{font-size:21px;font-weight:800;margin-right:auto}
+.back{border:0;background:#374151;color:white;padding:10px 15px;border-radius:9px;font-weight:bold}
+.hero{background:white;text-align:center;padding:35px 18px}
+.icon{font-size:46px}
+.hero h1{font-size:30px;margin:10px 0}
+.hero p{max-width:680px;margin:auto;color:#667085;line-height:1.6}
+.container{max-width:850px;margin:auto;padding:25px 18px}
+.box{background:white;padding:22px;border-radius:17px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+label{display:block;font-weight:bold;margin:16px 0 7px}
+input,textarea{width:100%;padding:13px;border:1px solid #d1d5db;border-radius:9px;font:inherit}
+textarea{min-height:90px;resize:vertical}
+.primary{width:100%;margin-top:22px;padding:15px;border:0;border-radius:10px;background:#111827;color:white;font-size:16px;font-weight:bold}
+.tip{margin-top:18px;padding:15px;background:#eef5ff;border-radius:10px;line-height:1.5}
+footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;margin-top:25px}
+</style>
+</head>
+<body>
+
+<nav class="top">
+<div class="logo">EarnFlow</div>
+<button class="back" onclick="history.back()">← Back</button>
+</nav>
+
+<header class="hero">
+<div class="icon">💬</div>
+<h1>Write Your First Customer Message</h1>
+<p>Create a short, personalized message you can adapt when approaching a potential customer.</p>
+</header>
+
+<main class="container">
+
+<div class="box">
+<h2>Build Your Message</h2>
+
+<label for="name">Your name</label>
+<input id="name" placeholder="Example: Abdulai">
+
+<label for="customer">Customer's name or business name</label>
+<input id="customer" placeholder="Example: ABC Restaurant">
+
+<label for="service">Your service</label>
+<input id="service" placeholder="Example: Social Media Design">
+
+<label for="observation">What did you notice about them?</label>
+<textarea id="observation" placeholder="Example: I noticed your business posts regularly but some promotions could use clearer graphics."></textarea>
+
+<label for="help">How can your service help?</label>
+<textarea id="help" placeholder="Example: I can create simple promotional graphics that clearly show your offers."></textarea>
+
+<label for="proof">What proof or sample can you show?</label>
+<textarea id="proof" placeholder="Example: I have created three sample promotional designs."></textarea>
+
+<button class="primary" onclick="generateMessage()">
+💬 Generate My Message
+</button>
+
+<div class="tip">
+💡 Keep your first message short. Don't make unrealistic promises, don't pressure the person, and personalize the message using something you genuinely noticed about their work.
+</div>
+
+</div>
+</main>
+
+<footer>
+<strong>EarnFlow</strong><br>
+Build skills. Find opportunities. Grow.
+<br><br>
+<small>© 2026 EarnFlow • No guaranteed income.</small>
+</footer>
+
+<script>
+function generateMessage(){
+
+const name=document.getElementById("name").value.trim();
+const customer=document.getElementById("customer").value.trim();
+const service=document.getElementById("service").value.trim();
+const observation=document.getElementById("observation").value.trim();
+const help=document.getElementById("help").value.trim();
+const proof=document.getElementById("proof").value.trim();
+
+if(!name||!customer||!service||!observation||!help||!proof){
+alert("Please complete all the fields first.");
+return;
+}
+
+const data=new URLSearchParams();
+
+data.set("name",name);
+data.set("customer",customer);
+data.set("service",service);
+data.set("observation",observation);
+data.set("help",help);
+data.set("proof",proof);
+
+window.location.href=
+"message-result.html?"+data.toString();
+
+}
+</script>
+
+</body>
+</html>
