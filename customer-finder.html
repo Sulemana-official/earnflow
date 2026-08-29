@@ -15,15 +15,11 @@ body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
 .icon{font-size:46px}
 .hero h1{font-size:30px;margin:10px 0}
 .hero p{max-width:680px;margin:auto;color:#667085;line-height:1.6}
-.container{max-width:900px;margin:auto;padding:25px 18px}
-.box,.result{background:white;padding:22px;border-radius:17px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+.container{max-width:850px;margin:auto;padding:25px 18px}
+.box{background:white;padding:22px;border-radius:17px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
 label{display:block;font-weight:bold;margin:16px 0 7px}
 input,select{width:100%;padding:13px;border:1px solid #d1d5db;border-radius:9px;font:inherit}
 .primary{width:100%;margin-top:22px;padding:15px;border:0;border-radius:10px;background:#111827;color:white;font-size:16px;font-weight:bold}
-.result{display:none;margin-top:22px}
-.item{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:18px;margin:12px 0;line-height:1.6}
-.item h3{margin-top:0}
-.check{display:flex;gap:10px;align-items:flex-start;margin:12px 0;line-height:1.5}
 .tip{margin-top:18px;padding:15px;background:#eef5ff;border-radius:10px;line-height:1.5}
 footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;margin-top:25px}
 </style>
@@ -38,12 +34,12 @@ footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;marg
 <header class="hero">
 <div class="icon">🎯</div>
 <h1>Find Potential Customers</h1>
-<p>Choose your service and customer type to discover practical places where you can look for potential customers.</p>
+<p>Build a practical search plan for finding people or businesses that may genuinely need your service.</p>
 </header>
 
 <main class="container">
-
 <div class="box">
+
 <h2>Build Your Customer Search Plan</h2>
 
 <label for="skill">What service do you offer?</label>
@@ -73,61 +69,15 @@ footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;marg
 <option>Anywhere online</option>
 </select>
 
-<button class="primary" onclick="findCustomers()">🎯 Show My Customer Plan</button>
+<button class="primary" onclick="openPlan()">
+🎯 Show My Customer Plan
+</button>
 
 <div class="tip">
-💡 Focus on people or businesses that could genuinely benefit from your service. Finding potential customers is not the same as guaranteeing that they will buy.
-</div>
-</div>
-
-<div class="result" id="result">
-
-<h2>🔎 Your Customer Search Plan</h2>
-
-<div class="item">
-<h3>🎯 Your target</h3>
-<p id="target"></p>
-</div>
-
-<div class="item">
-<h3>📍 Where to look</h3>
-<div id="places"></div>
-</div>
-
-<div class="item">
-<h3>🔍 What to look for</h3>
-<div class="check">
-<input type="checkbox">
-<span>Does this person or business appear to need my service?</span>
-</div>
-<div class="check">
-<input type="checkbox">
-<span>Can I clearly explain how my service could help?</span>
-</div>
-<div class="check">
-<input type="checkbox">
-<span>Can I find a legitimate way to contact them?</span>
-</div>
-<div class="check">
-<input type="checkbox">
-<span>Have I researched them before contacting them?</span>
-</div>
-</div>
-
-<div class="item">
-<h3>📝 Before contacting someone</h3>
-<p id="research"></p>
-</div>
-
-<div class="item">
-<h3>🚫 Avoid spam</h3>
-<p>
-Don't send the same message to hundreds of people. Personalize your approach, respect people's decisions and stop contacting someone if they are not interested.
-</p>
+💡 Focus on people or businesses that could genuinely benefit from your service. Finding potential customers does not guarantee that they will buy.
 </div>
 
 </div>
-
 </main>
 
 <footer>
@@ -138,7 +88,7 @@ Build skills. Find opportunities. Grow.
 </footer>
 
 <script>
-function findCustomers(){
+function openPlan(){
 
 const skill=document.getElementById("skill").value.trim();
 const customer=document.getElementById("customer").value;
@@ -149,57 +99,15 @@ alert("Please complete all three fields first.");
 return;
 }
 
-let places="";
+const data=new URLSearchParams();
 
-if(location==="My local area"){
-places=
-"<p>Look for relevant businesses, shops, offices, schools, community organizations and other legitimate local prospects.</p>"+
-"<p>Start by identifying people who already have a visible need for your service.</p>";
-}
+data.set("skill",skill);
+data.set("customer",customer);
+data.set("location",location);
 
-if(location==="Social media"){
-places=
-"<p>Search relevant businesses, creators and professionals on platforms where they publicly promote their work.</p>"+
-"<p>Look at their recent posts and identify genuine opportunities where your service could help.</p>";
-}
+window.location.href=
+"customer-plan.html?"+data.toString();
 
-if(location==="Online communities"){
-places=
-"<p>Look for relevant groups, forums and communities where your target customers participate.</p>"+
-"<p>Follow each community's rules and do not post unwanted advertisements.</p>";
-}
-
-if(location==="Freelance platforms"){
-places=
-"<p>Look for legitimate freelance platforms where customers publish projects.</p>"+
-"<p>Read each project carefully and only apply when your skills genuinely match the requirements.</p>";
-}
-
-if(location==="Businesses I already know"){
-places=
-"<p>Start with businesses, organizations or individuals you already know.</p>"+
-"<p>Ask whether they need your service or whether they know someone who might benefit from it.</p>";
-}
-
-if(location==="Anywhere online"){
-places=
-"<p>Combine social media, relevant online communities, freelance platforms and business websites.</p>"+
-"<p>Keep your search focused on your chosen customer type instead of contacting random people.</p>";
-}
-
-document.getElementById("target").textContent=
-"You offer "+skill+" to "+customer+" and you want to search through "+location+".";
-
-document.getElementById("places").innerHTML=places;
-
-document.getElementById("research").textContent=
-"Before contacting a potential customer, understand what they do, look at their current work, identify one specific problem your "+skill+" service could help with, and prepare a short personalized message.";
-
-document.getElementById("result").style.display="block";
-
-document.getElementById("result").scrollIntoView({
-behavior:"smooth"
-});
 }
 </script>
 
