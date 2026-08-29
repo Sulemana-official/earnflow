@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnFlow — Portfolio Builder</title>
+<meta name="description" content="Create a simple freelance portfolio project with EarnFlow.">
+<link rel="stylesheet" href="style.css">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:35px 18px
+}
+
+.icon{
+font-size:46px
+}
+
+.hero h1{
+font-size:32px;
+margin:10px 0
+}
+
+.hero p{
+max-width:680px;
+margin:auto;
+color:#667085;
+line-height:1.6
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px
+}
+
+.box{
+background:white;
+padding:22px;
+border-radius:17px;
+box-shadow:0 5px 18px rgba(0,0,0,.05)
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px
+}
+
+input,textarea{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit
+}
+
+textarea{
+min-height:100px;
+resize:vertical
+}
+
+button.primary{
+width:100%;
+margin-top:22px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold
+}
+
+.result{
+display:none;
+margin-top:22px;
+background:white;
+padding:22px;
+border-radius:17px;
+box-shadow:0 5px 18px rgba(0,0,0,.05)
+}
+
+.portfolio{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+border-radius:12px;
+padding:20px;
+line-height:1.6
+}
+
+.portfolio h3{
+margin-top:0
+}
+
+.copy{
+margin-top:12px;
+padding:12px 18px;
+border:0;
+border-radius:9px;
+background:#2563eb;
+color:white;
+font-weight:bold
+}
+
+.tip{
+margin-top:18px;
+padding:15px;
+background:#eef5ff;
+border-radius:10px;
+line-height:1.5
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:20px
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+<div class="logo">EarnFlow</div>
+
+<button class="back" onclick="history.back()">
+← Back
+</button>
+</nav>
+
+<header class="hero">
+
+<div class="icon">🖼️</div>
+
+<h1>Freelance Portfolio Builder</h1>
+
+<p>
+Don't have previous clients yet? Create a professional sample project that demonstrates what you can do.
+</p>
+
+</header>
+
+<main class="container">
+
+<div class="box">
+
+<h2>Create Your Portfolio Project</h2>
+
+<label for="name">
+Your name
+</label>
+
+<input
+id="name"
+placeholder="Example: Abdulai"
+/>
+
+<label for="skill">
+Your freelance skill
+</label>
+
+<input
+id="skill"
+placeholder="Example: Graphic Design"
+/>
+
+<label for="project">
+Sample project title
+</label>
+
+<input
+id="project"
+placeholder="Example: Restaurant Social Media Campaign"
+/>
+
+<label for="client">
+Who is this sample project for?
+</label>
+
+<input
+id="client"
+placeholder="Example: A local restaurant"
+/>
+
+<label for="problem">
+What problem does the project solve?
+</label>
+
+<textarea
+id="problem"
+placeholder="Example: The restaurant needs attractive graphics for social media."
+></textarea>
+
+<label for="work">
+What did you create?
+</label>
+
+<textarea
+id="work"
+placeholder="Example: I created five promotional social media graphics."
+></textarea>
+
+<label for="result">
+What should the customer understand from this project?
+</label>
+
+<textarea
+id="resultInput"
+placeholder="Example: The graphics make the restaurant's promotions easier to notice."
+></textarea>
+
+<button
+class="primary"
+onclick="buildPortfolio()"
+>
+🚀 Create My Portfolio Project
+</button>
+
+<div class="tip">
+💡 <strong>Important:</strong>
+If this is a sample project and not paid client work, clearly describe it as a sample. Never pretend that a sample was completed for a real customer.
+</div>
+
+</div>
+
+<div class="result" id="result">
+
+<h2>🎉 Your Portfolio Project</h2>
+
+<div class="portfolio" id="portfolioText"></div>
+
+<button class="copy" onclick="copyPortfolio()">
+📋 Copy Portfolio
+</button>
+
+<p id="status"></p>
+
+</div>
+
+</main>
+
+<footer>
+<strong>EarnFlow</strong>
+<br>
+Build skills. Find opportunities. Grow.
+<br><br>
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+</footer>
+
+<script>
+
+function buildPortfolio(){
+
+const name=document.getElementById("name").value.trim();
+
+const skill=document.getElementById("skill").value.trim();
+
+const project=document.getElementById("project").value.trim();
+
+const client=document.getElementById("client").value.trim();
+
+const problem=document.getElementById("problem").value.trim();
+
+const work=document.getElementById("work").value.trim();
+
+const result=document.getElementById("resultInput").value.trim();
+
+if(
+!name||
+!skill||
+!project||
+!client||
+!problem||
+!work||
+!result
+){
+
+alert(
+"Please complete all the fields before creating your portfolio project."
+);
+
+return;
+}
+
+const portfolio=
+
+"<h3>"+project+"</h3>"+
+
+"<p><strong>Created by:</strong> "+
+name+
+"</p>"+
+
+"<p><strong>Skill:</strong> "+
+skill+
+"</p>"+
+
+"<p><strong>Sample project for:</strong> "+
+client+
+"</p>"+
+
+"<p><strong>Problem:</strong><br>"+
+problem+
+"</p>"+
+
+"<p><strong>Work completed:</strong><br>"+
+work+
+"</p>"+
+
+"<p><strong>Project purpose:</strong><br>"+
+result+
+"</p>"+
+
+"<p><strong>Portfolio note:</strong><br>"+
+"This is a self-created sample project demonstrating my "+
+skill+
+" ability."
++"</p>";
+
+document.getElementById("portfolioText").innerHTML=portfolio;
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("status").textContent="";
+
+document.getElementById("result").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function copyPortfolio(){
+
+const element=document.getElementById("portfolioText");
+
+const text=element.innerText;
+
+navigator.clipboard.writeText(text).then(function(){
+
+document.getElementById("status").textContent=
+"✅ Portfolio copied to clipboard.";
+
+}).catch(function(){
+
+document.getElementById("status").textContent=
+"Please select and copy the portfolio manually.";
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
