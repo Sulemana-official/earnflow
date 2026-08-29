@@ -9,147 +9,536 @@
 <meta name="google-site-verification" content="pQth-QZR27d2Y8HizI8UgTAZT7DY0admI82irv0q5qk">
 <link rel="canonical" href="https://sulemana-official.github.io/earnflow/">
 <link rel="stylesheet" href="style.css">
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f6f8fb;color:#172033}
-a{text-decoration:none;color:inherit}
-.top{position:sticky;top:0;z-index:99;background:#111827;color:white;padding:12px 15px;display:flex;align-items:center;gap:8px;overflow:auto}
+html,body{margin:0;padding:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+button,a{text-decoration:none;font-family:inherit}
+button{cursor:pointer}
+
+.screen{min-height:100vh;width:100%;display:none}
+.screen.active{display:block}
+
+.nav{
+position:sticky;
+top:0;
+z-index:10;
+background:#111827;
+color:white;
+padding:13px 16px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
 .logo{font-size:22px;font-weight:800;margin-right:auto}
-.top button,.top a{white-space:nowrap;padding:9px 12px;border:0;border-radius:20px;background:#374151;color:white;font-weight:600}
-.hero{text-align:center;padding:55px 18px;background:white}
-.badge{display:inline-block;padding:7px 12px;border-radius:20px;background:#e8f0ff;color:#2563eb;font-size:12px;font-weight:bold}
-.hero h1{font-size:38px;margin:15px auto 10px;max-width:800px}
-.hero h1 span{color:#2563eb}
-.hero p{max-width:700px;margin:15px auto;line-height:1.6;color:#596273}
-.buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:25px}
-.btn{padding:14px 22px;border-radius:10px;border:0;font-weight:bold;background:#111827;color:white}
-.btn2{padding:14px 22px;border-radius:10px;border:1px solid #d1d5db;background:white;font-weight:bold}
-.section{padding:42px 18px;max-width:1100px;margin:auto}
-.section h2{text-align:center;font-size:28px;margin-bottom:8px}
-.sub{text-align:center;color:#667085;margin-bottom:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
-.card{display:block;background:white;border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
-.card .icon{font-size:32px}
-.card h3{margin:10px 0 7px}
-.card p{color:#667085;line-height:1.5;margin:0}
-.hidden{display:none}
-.reveal{display:block;animation:show .3s ease}
-@keyframes show{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-.panel{padding:30px 18px;background:#eef5ff}
-.panel h2{text-align:center}
-.panel .grid{max-width:1050px;margin:auto}
-.pro{background:#111827;color:white;border-radius:20px;padding:35px 22px}
-.pro p{color:#d1d5db;line-height:1.6}
-.pro .btn{display:inline-block;background:white;color:#111827;margin-top:10px}
-footer{text-align:center;padding:35px 18px;background:#111827;color:#d1d5db}
+
+.nav button,.nav a{
+border:0;
+background:#374151;
+color:white;
+padding:9px 13px;
+border-radius:20px;
+font-weight:bold;
+}
+
+.hero{
+min-height:calc(100vh - 60px);
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px 18px;
+background:white;
+}
+
+.hero-inner{max-width:800px}
+
+.badge{
+display:inline-block;
+padding:7px 12px;
+border-radius:20px;
+background:#e8f0ff;
+color:#2563eb;
+font-size:12px;
+font-weight:bold;
+}
+
+h1{
+font-size:clamp(32px,7vw,58px);
+margin:18px 0 12px;
+}
+
+h1 span{color:#2563eb}
+
+.hero p{
+color:#667085;
+line-height:1.7;
+font-size:17px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.btn{
+border:0;
+background:#111827;
+color:white;
+padding:15px 23px;
+border-radius:11px;
+font-weight:bold;
+font-size:16px;
+}
+
+.btn2{
+border:1px solid #d1d5db;
+background:white;
+color:#111827;
+padding:15px 23px;
+border-radius:11px;
+font-weight:bold;
+font-size:16px;
+}
+
+.page{
+min-height:100vh;
+padding-bottom:40px;
+}
+
+.page-head{
+background:white;
+padding:25px 18px;
+border-bottom:1px solid #e5e7eb;
+}
+
+.back{
+border:0;
+background:#111827;
+color:white;
+padding:11px 16px;
+border-radius:9px;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.page-head h2{
+font-size:30px;
+margin:5px 0;
+}
+
+.page-head p{
+color:#667085;
+line-height:1.6;
+}
+
+.content{
+max-width:1100px;
+margin:auto;
+padding:25px 18px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.card{
+display:block;
+background:white;
+border:1px solid #e5e7eb;
+border-radius:17px;
+padding:22px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+}
+
+.icon{font-size:35px}
+
+.card h3{
+margin:11px 0 7px;
+}
+
+.card p{
+margin:0;
+color:#667085;
+line-height:1.5;
+}
+
+.note{
+background:#eef5ff;
+padding:18px;
+border-radius:13px;
+margin-bottom:20px;
+line-height:1.6;
+}
+
+.pro{
+background:#111827;
+color:white;
+border-radius:20px;
+padding:30px 22px;
+}
+
+.pro p{
+color:#d1d5db;
+line-height:1.6;
+}
+
+.pro .btn{
+background:white;
+color:#111827;
+display:inline-block;
+margin-top:10px;
+}
+
+footer{
+text-align:center;
+padding:30px 18px;
+background:#111827;
+color:#d1d5db;
+}
+
+@media(max-width:600px){
+.nav{overflow:auto}
+.nav a,.nav button{white-space:nowrap}
+h1{font-size:36px}
+}
 </style>
 </head>
+
 <body>
 
-<nav class="top">
+<!-- HOME SCREEN -->
+<div id="home" class="screen active">
+
+<nav class="nav">
 <div class="logo">EarnFlow</div>
-<button onclick="togglePanel('explore','exploreBtn')">Explore</button>
-<button onclick="togglePanel('tools','toolsBtn')">Free Tools</button>
-<a href="#learn">Learn</a>
-<a href="#pro">Pro</a>
+<button onclick="openScreen('explore')">Explore</button>
+<button onclick="openScreen('tools')">Free Tools</button>
+<button onclick="openScreen('learn')">Learn</button>
+<button onclick="openScreen('pro')">Pro</button>
 </nav>
 
-<header class="hero">
+<section class="hero">
+<div class="hero-inner">
+
 <div class="badge">SMARTPHONE-FIRST • BEGINNER FRIENDLY</div>
-<h1>Build skills. Find opportunities. <span>Grow.</span></h1>
-<p>EarnFlow is a practical platform for beginners who want to learn useful online skills, discover legitimate opportunities and build toward real work using a smartphone.</p>
+
+<h1>
+Build skills.<br>
+Find opportunities.<br>
+<span>Grow.</span>
+</h1>
+
+<p>
+EarnFlow is a practical platform for beginners who want to learn useful online skills, discover legitimate opportunities and build toward real work using a smartphone.
+</p>
+
 <div class="buttons">
-<button class="btn" id="exploreBtn" onclick="togglePanel('explore','exploreBtn')">🚀 Start Exploring</button>
-<button class="btn2" id="toolsBtn" onclick="togglePanel('tools','toolsBtn')">🛠️ Free Tools</button>
+<button class="btn" onclick="openScreen('explore')">
+🚀 Start Exploring
+</button>
+
+<button class="btn2" onclick="openScreen('tools')">
+🛠️ Free Tools
+</button>
 </div>
-<p><small>No guaranteed income • No betting • Learn first, earn through useful work.</small></p>
-</header>
 
-<section id="explore" class="panel hidden">
-<h2>💰 Explore Income Paths</h2>
-<p class="sub">Choose an area and open its dedicated learning page.</p>
-<div class="grid">
+<p>
+<small>No guaranteed income • No betting • Learn first, earn through useful work.</small>
+</p>
 
-<a class="card" href="freelancing.html"><div class="icon">💼</div><h3>Freelancing</h3><p>Learn how skills can become services.</p></a>
-<a class="card" href="content.html"><div class="icon">🎬</div><h3>Content Creation</h3><p>Learn content creation and creator income models.</p></a>
-<a class="card" href="digital-products.html"><div class="icon">📦</div><h3>Digital Products</h3><p>Create useful guides, templates and resources.</p></a>
-<a class="card" href="ai-work.html"><div class="icon">🤖</div><h3>AI-Assisted Work</h3><p>Use AI responsibly for productive work.</p></a>
-<a class="card" href="tutoring.html"><div class="icon">📚</div><h3>Online Tutoring</h3><p>Explore teaching and knowledge-based services.</p></a>
-<a class="card" href="affiliate.html"><div class="icon">📢</div><h3>Affiliate Marketing</h3><p>Understand affiliate promotion and its risks.</p></a>
-
-</div>
-</section>
-
-<section id="tools" class="panel hidden">
-<h2>🛠️ Free EarnFlow Tools</h2>
-<p class="sub">Open a tool and try it without buying anything.</p>
-<div class="grid">
-
-<a class="card" href="calculator.html"><div class="icon">🧮</div><h3>Income Calculator</h3><p>Calculate simple sales and income targets.</p></a>
-<a class="card" href="scam-checker.html"><div class="icon">🛡️</div><h3>Scam Checker</h3><p>Learn warning signs of suspicious opportunities.</p></a>
-<a class="card" href="ai-prompts.html"><div class="icon">🤖</div><h3>AI Prompt Library</h3><p>Try practical prompts for learning and work.</p></a>
-<a class="card" href="cv-builder.html"><div class="icon">📝</div><h3>CV Builder</h3><p>Build a simple professional CV.</p></a>
-<a class="card" href="offer-builder.html"><div class="icon">💼</div><h3>Offer Builder</h3><p>Create a clear service offer.</p></a>
-<a class="card" href="skill-finder.html"><div class="icon">🎯</div><h3>Skill Finder</h3><p>Find a skill path to explore.</p></a>
-
-</div>
-</section>
-
-<section id="learn" class="section">
-<h2>📚 Learn With EarnFlow</h2>
-<p class="sub">Build knowledge before chasing money.</p>
-<div class="grid">
-
-<a class="card" href="learn.html"><div class="icon">🌱</div><h3>Beginner Start Here</h3><p>Understand the basics of online work.</p></a>
-<a class="card" href="portfolio.html"><div class="icon">🖼️</div><h3>Build Your Portfolio</h3><p>Create examples that show what you can do.</p></a>
-<a class="card" href="first-customer.html"><div class="icon">👤</div><h3>Find Your First Customer</h3><p>Learn ethical ways to approach customers.</p></a>
-<a class="card" href="pricing.html"><div class="icon">💵</div><h3>How To Price</h3><p>Understand simple service pricing.</p></a>
-<a class="card" href="communication.html"><div class="icon">💬</div><h3>Customer Communication</h3><p>Communicate clearly and professionally.</p></a>
-<a class="card" href="30-day-plan.html"><div class="icon">📅</div><h3>30-Day Challenge</h3><p>Follow a focused month of action.</p></a>
-
-</div>
-</section>
-
-<section class="section" id="pro">
-<div class="pro">
-<div class="badge">SMARTPHONE INCOME PRO</div>
-<h2 style="text-align:left">Unlock the complete EarnFlow toolkit.</h2>
-<p>Get the structured system, templates, worksheets, AI prompts, trackers and action plans designed to help you move from learning to practical action.</p>
-<ul>
-<li>Complete 30-day action system</li>
-<li>AI Prompt Vault</li>
-<li>Freelance templates</li>
-<li>Digital product builder</li>
-<li>Income trackers</li>
-<li>Scam-defense resources</li>
-<li>First-customer system</li>
-<li>Growth framework</li>
-</ul>
-<h2 style="text-align:left">GH₵250</h2>
-<a class="btn" href="https://paystack.shop/pay/earnflow-pro-250" target="_blank" rel="noopener">Get EarnFlow Pro →</a>
 </div>
 </section>
 
 <footer>
 <strong>EarnFlow</strong>
-<p>Build skills. Find opportunities. Grow.</p>
+<br>
+Educational resources for building practical online skills.
+<br><br>
 <small>© 2026 EarnFlow • No guaranteed income.</small>
 </footer>
 
+</div>
+
+
+<!-- EXPLORE SCREEN -->
+<div id="explore" class="screen">
+
+<div class="page">
+
+<div class="page-head">
+
+<button class="back" onclick="openScreen('home')">
+← Back
+</button>
+
+<h2>💰 Explore Income Paths</h2>
+
+<p>
+Choose an area you want to understand and start building practical skills.
+</p>
+
+</div>
+
+<div class="content">
+
+<div class="note">
+💡 <strong>EarnFlow principle:</strong>
+Don't chase everything at once. Choose one useful path, learn it, practise it and build proof of your ability.
+</div>
+
+<div class="grid">
+
+<a class="card" href="freelancing.html">
+<div class="icon">💼</div>
+<h3>Freelancing</h3>
+<p>Learn how useful skills can become services for customers and businesses.</p>
+</a>
+
+<a class="card" href="content.html">
+<div class="icon">🎬</div>
+<h3>Content Creation</h3>
+<p>Learn how to create helpful content and understand creator income models.</p>
+</a>
+
+<a class="card" href="digital-products.html">
+<div class="icon">📦</div>
+<h3>Digital Products</h3>
+<p>Learn how to create guides, templates and useful digital resources.</p>
+</a>
+
+<a class="card" href="ai-work.html">
+<div class="icon">🤖</div>
+<h3>AI-Assisted Work</h3>
+<p>Learn responsible ways to use AI for research, planning and productivity.</p>
+</a>
+
+<a class="card" href="tutoring.html">
+<div class="icon">📚</div>
+<h3>Online Tutoring</h3>
+<p>Explore ways knowledge and teaching skills can become useful services.</p>
+</a>
+
+<a class="card" href="affiliate.html">
+<div class="icon">📢</div>
+<h3>Affiliate Marketing</h3>
+<p>Understand affiliate promotion and what beginners should watch for.</p>
+</a>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- FREE TOOLS SCREEN -->
+<div id="tools" class="screen">
+
+<div class="page">
+
+<div class="page-head">
+
+<button class="back" onclick="openScreen('home')">
+← Back
+</button>
+
+<h2>🛠️ Free EarnFlow Tools</h2>
+
+<p>
+Try useful tools before spending anything.
+</p>
+
+</div>
+
+<div class="content">
+
+<div class="grid">
+
+<a class="card" href="calculator.html">
+<div class="icon">🧮</div>
+<h3>Income Calculator</h3>
+<p>Calculate customers, sales and simple income targets.</p>
+</a>
+
+<a class="card" href="scam-checker.html">
+<div class="icon">🛡️</div>
+<h3>Scam Checker</h3>
+<p>Learn how to identify warning signs in online opportunities.</p>
+</a>
+
+<a class="card" href="ai-prompts.html">
+<div class="icon">🤖</div>
+<h3>AI Prompt Library</h3>
+<p>Try practical prompts for learning, research, work and content.</p>
+</a>
+
+<a class="card" href="cv-builder.html">
+<div class="icon">📝</div>
+<h3>CV Builder</h3>
+<p>Build a simple professional CV structure.</p>
+</a>
+
+<a class="card" href="offer-builder.html">
+<div class="icon">💼</div>
+<h3>Offer Builder</h3>
+<p>Create a clear service offer for potential customers.</p>
+</a>
+
+<a class="card" href="skill-finder.html">
+<div class="icon">🎯</div>
+<h3>Skill Finder</h3>
+<p>Answer questions to identify a skill path to explore.</p>
+</a>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- LEARN SCREEN -->
+<div id="learn" class="screen">
+
+<div class="page">
+
+<div class="page-head">
+
+<button class="back" onclick="openScreen('home')">
+← Back
+</button>
+
+<h2>📚 EarnFlow Learning Center</h2>
+
+<p>
+Build knowledge and practical ability before chasing income.
+</p>
+
+</div>
+
+<div class="content">
+
+<div class="grid">
+
+<a class="card" href="learn.html">
+<div class="icon">🌱</div>
+<h3>Beginner Start Here</h3>
+<p>Understand the basics of online work.</p>
+</a>
+
+<a class="card" href="portfolio.html">
+<div class="icon">🖼️</div>
+<h3>Build Your Portfolio</h3>
+<p>Create examples that demonstrate your ability.</p>
+</a>
+
+<a class="card" href="first-customer.html">
+<div class="icon">👤</div>
+<h3>Find Your First Customer</h3>
+<p>Learn practical and ethical outreach methods.</p>
+</a>
+
+<a class="card" href="pricing.html">
+<div class="icon">💵</div>
+<h3>Learn Pricing</h3>
+<p>Understand simple ways to think about pricing.</p>
+</a>
+
+<a class="card" href="communication.html">
+<div class="icon">💬</div>
+<h3>Customer Communication</h3>
+<p>Learn to communicate clearly and professionally.</p>
+</a>
+
+<a class="card" href="30-day-plan.html">
+<div class="icon">📅</div>
+<h3>30-Day Challenge</h3>
+<p>Follow a focused month of learning and action.</p>
+</a>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- PRO SCREEN -->
+<div id="pro" class="screen">
+
+<div class="page">
+
+<div class="page-head">
+
+<button class="back" onclick="openScreen('home')">
+← Back
+</button>
+
+<h2>🔐 EarnFlow Smartphone Income Pro</h2>
+
+<p>
+The complete structured EarnFlow toolkit.
+</p>
+
+</div>
+
+<div class="content">
+
+<div class="pro">
+
+<h2>Everything in one toolkit.</h2>
+
+<p>
+For beginners who want a structured system, practical templates and resources to help turn learning into action.
+</p>
+
+<ul>
+<li>Complete 30-day action system</li>
+<li>AI Prompt Vault</li>
+<li>Freelance offer templates</li>
+<li>Proposal templates</li>
+<li>Digital product builder</li>
+<li>Content-to-income system</li>
+<li>Scam-defense resources</li>
+<li>Income trackers</li>
+<li>First-customer system</li>
+<li>Growth framework</li>
+</ul>
+
+<h2>GH₵250</h2>
+
+<p>One-time payment.</p>
+
+<a class="btn" href="https://paystack.shop/pay/earnflow-pro-250" target="_blank" rel="noopener">
+Get EarnFlow Pro →
+</a>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
 <script>
-function togglePanel(id,btn){
-const p=document.getElementById(id);
-const b=document.getElementById(btn);
-if(p.classList.contains("hidden")){
-p.classList.remove("hidden");
-p.classList.add("reveal");
-b.textContent=id==="explore"?"✕ Close Exploring":"✕ Close Tools";
-p.scrollIntoView({behavior:"smooth",block:"start"});
-}else{
-p.classList.add("hidden");
-p.classList.remove("reveal");
-b.textContent=id==="explore"?"🚀 Start Exploring":"🛠️ Free Tools";
-}
+function openScreen(id){
+document.querySelectorAll(".screen").forEach(function(screen){
+screen.classList.remove("active");
+});
+document.getElementById(id).classList.add("active");
+window.scrollTo(0,0);
 }
 </script>
 
