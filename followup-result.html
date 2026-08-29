@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnFlow — Your Follow-Up</title>
+<meta name="description" content="Your personalized EarnFlow customer follow-up message.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+.top{background:#111827;color:white;padding:14px 18px;display:flex;align-items:center}
+.logo{font-size:21px;font-weight:800;margin-right:auto}
+.back{border:0;background:#374151;color:white;padding:10px 15px;border-radius:9px;font-weight:bold}
+.hero{background:white;text-align:center;padding:35px 18px}
+.icon{font-size:46px}
+.hero h1{font-size:30px;margin:10px 0}
+.hero p{max-width:680px;margin:auto;color:#667085;line-height:1.6}
+.container{max-width:850px;margin:auto;padding:25px 18px}
+.card{background:white;padding:22px;border-radius:17px;margin-bottom:18px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+.message{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:20px;line-height:1.7;white-space:pre-wrap}
+.copy{width:100%;margin-top:18px;padding:15px;border:0;border-radius:10px;background:#111827;color:white;font-size:16px;font-weight:bold}
+.status{text-align:center;margin-top:12px;font-weight:bold}
+.tip{padding:15px;background:#eef5ff;border-radius:10px;line-height:1.5}
+footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;margin-top:25px}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+<div class="logo">EarnFlow</div>
+<button class="back" onclick="history.back()">← Back</button>
+</nav>
+
+<header class="hero">
+<div class="icon">📩</div>
+<h1>Your Follow-Up Message</h1>
+<p>Review and personalize this message before sending it.</p>
+</header>
+
+<main class="container">
+
+<div class="card">
+<h2>💬 Message</h2>
+
+<div class="message" id="message"></div>
+
+<button class="copy" onclick="copyMessage()">
+📋 Copy Message
+</button>
+
+<div class="status" id="status"></div>
+</div>
+
+<div class="card">
+<h2>💡 Follow-Up Guidance</h2>
+<p id="guidance"></p>
+</div>
+
+<div class="card">
+<h2>🚫 Respect Their Decision</h2>
+<p>
+If the customer is not interested, thank them and move on. A professional freelancer does not pressure people or repeatedly contact someone who has clearly declined.
+</p>
+</div>
+
+<div class="tip">
+<strong>EarnFlow reminder:</strong> Personalize your message, be honest about your experience and never promise results you cannot guarantee.
+</div>
+
+</main>
+
+<footer>
+<strong>EarnFlow</strong><br>
+Build skills. Find opportunities. Grow.
+<br><br>
+<small>© 2026 EarnFlow • No guaranteed income.</small>
+</footer>
+
+<script>
+const params=new URLSearchParams(window.location.search);
+
+const name=params.get("name")||"Your Name";
+const customer=params.get("customer")||"the customer";
+const service=params.get("service")||"your service";
+const situation=params.get("situation")||"no-response";
+const detail=params.get("detail")||"";
+
+let message="";
+let guidance="";
+
+if(situation==="no-response"){
+
+message=
+"Hello "+customer+",\n\n"+
+"I hope you're doing well. I wanted to follow up on my previous message about "+service+".\n\n"+
+"I understand you may be busy. If you have a need for this service, I'd be happy to discuss it and answer any questions.\n\n"+
+"Thank you for your time.\n\n"+
+name;
+
+guidance=
+"Send one polite follow-up after giving the customer reasonable time to respond. If they still don't respond, move on to other potential customers.";
+
+}
+
+if(situation==="interested"){
+
+message=
+"Hello "+customer+",\n\n"+
+"Thank you for your interest in my "+service+" service.\n\n"+
+"I'd be happy to learn more about what you need so I can understand the project properly and explain how I can help.\n\n"+
+(detail?detail+"\n\n":"")+
+"Please let me know what you'd like to discuss next.\n\n"+
+"Thank you,\n"+
+name;
+
+guidance=
+"Since they showed interest, focus on understanding their needs before discussing the final scope and price.";
+
+}
+
+if(situation==="price"){
+
+message=
+"Hello "+customer+",\n\n"+
+"Thank you for asking about my "+service+" service.\n\n"+
+"I'd like to understand exactly what you need so I can give you a clear and appropriate price rather than guessing.\n\n"+
+(detail?detail+"\n\n":"")+
+"Please share any important details about the work, and I'll review them.\n\n"+
+"Thank you,\n"+
+name;
+
+guidance=
+"Don't give an arbitrary price without understanding the scope. Clarify what the customer needs, what you will deliver and when you can deliver it.";
+
+}
+
+if(situation==="later"){
+
+message=
+"Hello "+customer+",\n\n"+
+"I hope you're doing well. I'm following up as requested regarding my "+service+" service.\n\n"+
+(detail?detail+"\n\n":"")+
+"If the timing is still convenient, I'd be happy to discuss what you need.\n\n"+
+"Thank you,\n"+
+name;
+
+guidance=
+"Contact them around the time they requested. Keep the message short and remind them why you are contacting them.";
+
+}
+
+if(situation==="question"){
+
+message=
+"Hello "+customer+",\n\n"+
+"Thank you for your question about my "+service+" service.\n\n"+
+"I'd be happy to clarify anything you need before you decide whether the service is right for you.\n\n"+
+(detail?detail+"\n\n":"")+
+"Please let me know if there is anything else you'd like me to explain.\n\n"+
+"Thank you,\n"+
+name;
+
+guidance=
+"Answer the customer's question honestly and clearly. If you don't know something, say so rather than making up an answer.";
+
+}
+
+if(situation==="declined"){
+
+message=
+"Hello "+customer+",\n\n"+
+"Thank you for letting me know. I understand and I appreciate your time.\n\n"+
+"If you ever need "+service+" in the future, you're welcome to reach out.\n\n"+
+"Wishing you all the best.\n\n"+
+name;
+
+guidance=
+"Do not continue trying to persuade someone who has declined. Leave the relationship on a professional and respectful note.";
+
+}
+
+document.getElementById("message").textContent=message;
+document.getElementById("guidance").textContent=guidance;
+
+function copyMessage(){
+
+const text=document.getElementById("message").textContent;
+
+if(navigator.clipboard){
+
+navigator.clipboard.writeText(text).then(function(){
+
+document.getElementById("status").textContent=
+"✅ Message copied to clipboard.";
+
+}).catch(function(){
+
+document.getElementById("status").textContent=
+"Please select the message and copy it manually.";
+
+});
+
+}else{
+
+document.getElementById("status").textContent=
+"Please select the message and copy it manually.";
+
+}
+
+}
+</script>
+
+</body>
+</html>
