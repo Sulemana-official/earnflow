@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnFlow — Service Builder</title>
+<meta name="description" content="Create a clear freelance service offer with EarnFlow.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+.top{background:#111827;color:white;padding:14px 18px;display:flex;align-items:center}
+.logo{font-size:21px;font-weight:800;margin-right:auto}
+.back{border:0;background:#374151;color:white;padding:10px 15px;border-radius:9px;font-weight:bold}
+.hero{background:white;text-align:center;padding:35px 18px}
+.icon{font-size:46px}
+.hero h1{font-size:30px;margin:10px 0}
+.hero p{max-width:680px;margin:auto;color:#667085;line-height:1.6}
+.container{max-width:900px;margin:auto;padding:25px 18px}
+.box,.result{background:white;padding:22px;border-radius:17px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+label{display:block;font-weight:bold;margin:16px 0 7px}
+input,textarea,select{width:100%;padding:13px;border:1px solid #d1d5db;border-radius:9px;font:inherit}
+textarea{min-height:90px;resize:vertical}
+.primary{width:100%;margin-top:22px;padding:15px;border:0;border-radius:10px;background:#111827;color:white;font-size:16px;font-weight:bold}
+.result{display:none;margin-top:22px}
+.offer{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:20px;line-height:1.6}
+.offer h2{margin-top:0}
+.copy{margin-top:14px;padding:12px 18px;border:0;border-radius:9px;background:#2563eb;color:white;font-weight:bold}
+.tip{margin-top:18px;padding:15px;background:#eef5ff;border-radius:10px;line-height:1.5}
+footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;margin-top:25px}
+</style>
+</head>
+<body>
+<nav class="top">
+<div class="logo">EarnFlow</div>
+<button class="back" onclick="history.back()">← Back</button>
+</nav>
+<header class="hero">
+<div class="icon">🛠️</div>
+<h1>Create Your Service</h1>
+<p>Turn one useful skill into a clear service that you can offer to real customers.</p>
+</header>
+<main class="container">
+<div class="box">
+<h2>Build Your Service Offer</h2>
+<label for="name">Your name</label>
+<input id="name" placeholder="Example: Abdulai">
+<label for="skill">What skill do you offer?</label>
+<input id="skill" placeholder="Example: Graphic Design">
+<label for="customer">Who do you want to help?</label>
+<input id="customer" placeholder="Example: Small businesses">
+<label for="service">What will you do for them?</label>
+<textarea id="service" placeholder="Example: Create attractive social media flyers for their promotions."></textarea>
+<label for="deliver">What will the customer receive?</label>
+<textarea id="deliver" placeholder="Example: 5 social media flyers in JPG and PNG format."></textarea>
+<label for="time">How quickly can you deliver?</label>
+<select id="time">
+<option value="">Choose delivery time</option>
+<option>Same day</option>
+<option>1 day</option>
+<option>2 days</option>
+<option>3 days</option>
+<option>5 days</option>
+<option>7 days</option>
+</select>
+<label for="price">Starting price (GH₵)</label>
+<input id="price" type="number" min="1" placeholder="Example: 100">
+<button class="primary" onclick="buildOffer()">🚀 Create My Service Offer</button>
+<div class="tip">💡 Start with a price you can confidently justify with the quality and amount of work you provide. You can increase it as your skills and proof improve.</div>
+</div>
+<div class="result" id="result">
+<h2>🎉 Your Service Offer</h2>
+<div class="offer" id="offerText"></div>
+<button class="copy" onclick="copyOffer()">📋 Copy Offer</button>
+<p id="status"></p>
+</div>
+</main>
+<footer>
+<strong>EarnFlow</strong><br>
+Build skills. Find opportunities. Grow.
+<br><br>
+<small>© 2026 EarnFlow • No guaranteed income.</small>
+</footer>
+<script>
+function buildOffer(){
+const name=document.getElementById("name").value.trim();
+const skill=document.getElementById("skill").value.trim();
+const customer=document.getElementById("customer").value.trim();
+const service=document.getElementById("service").value.trim();
+const deliver=document.getElementById("deliver").value.trim();
+const time=document.getElementById("time").value;
+const price=document.getElementById("price").value.trim();
+if(!name||!skill||!customer||!service||!deliver||!time||!price){
+alert("Please complete all the fields before creating your service offer.");
+return;
+}
+const offer=
+"<h2>"+skill+" Service</h2>"+
+"<p><strong>Service provider:</strong> "+name+"</p>"+
+"<p><strong>Who I help:</strong> "+customer+"</p>"+
+"<p><strong>What I offer:</strong><br>"+service+"</p>"+
+"<p><strong>What you receive:</strong><br>"+deliver+"</p>"+
+"<p><strong>Delivery:</strong> "+time+"</p>"+
+"<p><strong>Starting price:</strong> GH₵"+price+"</p>"+
+"<hr>"+
+"<p><strong>My offer:</strong><br>"+
+"I help "+customer+" with "+service+
+". You will receive "+deliver+
+". Delivery is "+time+
+", starting from GH₵"+price+"."+
+"</p>";
+document.getElementById("offerText").innerHTML=offer;
+document.getElementById("result").style.display="block";
+document.getElementById("status").textContent="";
+document.getElementById("result").scrollIntoView({behavior:"smooth"});
+}
+function copyOffer(){
+const text=document.getElementById("offerText").innerText;
+if(navigator.clipboard){
+navigator.clipboard.writeText(text).then(function(){
+document.getElementById("status").textContent="✅ Offer copied to clipboard.";
+}).catch(function(){
+document.getElementById("status").textContent="Please select and copy the offer manually.";
+});
+}else{
+document.getElementById("status").textContent="Please select and copy the offer manually.";
+}
+}
+</script>
+</body>
+</html>
