@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnFlow — Customer Search Plan</title>
+<meta name="description" content="Your personalized EarnFlow customer search plan.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+.top{background:#111827;color:white;padding:14px 18px;display:flex;align-items:center}
+.logo{font-size:21px;font-weight:800;margin-right:auto}
+.back{border:0;background:#374151;color:white;padding:10px 15px;border-radius:9px;font-weight:bold}
+.hero{background:white;text-align:center;padding:35px 18px}
+.icon{font-size:46px}
+.hero h1{font-size:30px;margin:10px 0}
+.hero p{max-width:680px;margin:auto;color:#667085;line-height:1.6}
+.container{max-width:850px;margin:auto;padding:25px 18px}
+.card{background:white;padding:22px;border-radius:17px;margin-bottom:18px;box-shadow:0 5px 18px rgba(0,0,0,.05);line-height:1.6}
+.card h2{margin-top:0}
+.check{display:flex;gap:10px;margin:13px 0}
+.tip{background:#eef5ff;padding:15px;border-radius:10px;line-height:1.5}
+footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;margin-top:25px}
+</style>
+</head>
+<body>
+
+<nav class="top">
+<div class="logo">EarnFlow</div>
+<button class="back" onclick="history.back()">← Back</button>
+</nav>
+
+<header class="hero">
+<div class="icon">🎯</div>
+<h1>Your Customer Search Plan</h1>
+<p id="intro"></p>
+</header>
+
+<main class="container">
+
+<div class="card">
+<h2>📍 Where to Look</h2>
+<div id="places"></div>
+</div>
+
+<div class="card">
+<h2>🔍 What to Look For</h2>
+
+<div class="check">
+<input type="checkbox">
+<span>They appear to have a genuine need for my service.</span>
+</div>
+
+<div class="check">
+<input type="checkbox">
+<span>I can clearly explain how my service could help them.</span>
+</div>
+
+<div class="check">
+<input type="checkbox">
+<span>I can find a legitimate way to contact them.</span>
+</div>
+
+<div class="check">
+<input type="checkbox">
+<span>I have researched them before contacting them.</span>
+</div>
+</div>
+
+<div class="card">
+<h2>📝 Research Before Contacting</h2>
+<p>
+Look at what the person or business does. Check their existing work and identify one specific problem your service could help solve.
+</p>
+<p id="research"></p>
+</div>
+
+<div class="card">
+<h2>💬 Prepare Your Approach</h2>
+<p>
+Keep your first message short and personalized. Explain why you are contacting them and focus on how your service could be useful.
+</p>
+</div>
+
+<div class="card">
+<h2>🚫 Avoid Spam</h2>
+<p>
+Do not send the same message to hundreds of people. Respect people's decisions and stop contacting someone if they are not interested.
+</p>
+</div>
+
+<div class="tip">
+💡 <strong>Remember:</strong> Finding a potential customer is only the beginning. Your goal is to build trust, communicate clearly and provide useful work.
+</div>
+
+</main>
+
+<footer>
+<strong>EarnFlow</strong><br>
+Build skills. Find opportunities. Grow.
+<br><br>
+<small>© 2026 EarnFlow • No guaranteed income.</small>
+</footer>
+
+<script>
+const params=new URLSearchParams(window.location.search);
+
+const skill=params.get("skill")||"your service";
+const customer=params.get("customer")||"your target customers";
+const location=params.get("location")||"your chosen location";
+
+document.getElementById("intro").textContent=
+"You offer "+skill+" to "+customer+" and selected "+location+" as your starting point.";
+
+let places="";
+
+if(location==="My local area"){
+places="<p>Look for relevant businesses, shops, offices, schools, community organizations and other legitimate local prospects.</p>";
+}
+
+if(location==="Social media"){
+places="<p>Search relevant businesses, creators and professionals on social media. Study their recent work and look for genuine opportunities where your service could help.</p>";
+}
+
+if(location==="Online communities"){
+places="<p>Look for relevant groups and communities where your target customers participate. Follow community rules and avoid unwanted advertising.</p>";
+}
+
+if(location==="Freelance platforms"){
+places="<p>Search legitimate freelance platforms for projects that match your skills. Read each project carefully before applying.</p>";
+}
+
+if(location==="Businesses I already know"){
+places="<p>Start with businesses, organizations or individuals you already know. Ask whether they need your service or know someone who might benefit from it.</p>";
+}
+
+if(location==="Anywhere online"){
+places="<p>Combine social media, online communities, freelance platforms and business websites. Keep your search focused on your target customer.</p>";
+}
+
+document.getElementById("places").innerHTML=places;
+
+document.getElementById("research").textContent=
+"Because your service is "+skill+", identify a specific problem that "+customer+" may have before making your approach.";
+
+</script>
+
+</body>
+</html>
