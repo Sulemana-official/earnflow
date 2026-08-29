@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnFlow — Your Customer Message</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+.top{background:#111827;color:white;padding:14px 18px;display:flex;align-items:center}
+.logo{font-size:21px;font-weight:800;margin-right:auto}
+.back{border:0;background:#374151;color:white;padding:10px 15px;border-radius:9px;font-weight:bold}
+.hero{background:white;text-align:center;padding:35px 18px}
+.icon{font-size:46px}
+.hero h1{font-size:30px;margin:10px 0}
+.hero p{max-width:680px;margin:auto;color:#667085;line-height:1.6}
+.container{max-width:850px;margin:auto;padding:25px 18px}
+.card{background:white;padding:22px;border-radius:17px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+.message{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:20px;line-height:1.7;white-space:pre-wrap}
+.copy{width:100%;margin-top:18px;padding:15px;border:0;border-radius:10px;background:#111827;color:white;font-size:16px;font-weight:bold}
+.status{text-align:center;margin-top:12px;font-weight:bold}
+.tip{margin-top:18px;padding:15px;background:#eef5ff;border-radius:10px;line-height:1.5}
+footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;margin-top:25px}
+</style>
+</head>
+<body>
+
+<nav class="top">
+<div class="logo">EarnFlow</div>
+<button class="back" onclick="history.back()">← Back</button>
+</nav>
+
+<header class="hero">
+<div class="icon">💬</div>
+<h1>Your First Customer Message</h1>
+<p>Personalize this message before sending it to your potential customer.</p>
+</header>
+
+<main class="container">
+
+<div class="card">
+<h2>✉️ Your Message</h2>
+<div class="message" id="message"></div>
+
+<button class="copy" onclick="copyMessage()">
+📋 Copy Message
+</button>
+
+<div class="status" id="status"></div>
+
+<div class="tip">
+💡 Don't send the message blindly. Check that the person or business is a genuine potential customer, personalize the message and respect their response.
+</div>
+</div>
+
+</main>
+
+<footer>
+<strong>EarnFlow</strong><br>
+Build skills. Find opportunities. Grow.
+<br><br>
+<small>© 2026 EarnFlow • No guaranteed income.</small>
+</footer>
+
+<script>
+const params=new URLSearchParams(window.location.search);
+
+const name=params.get("name")||"Your Name";
+const customer=params.get("customer")||"the customer";
+const service=params.get("service")||"your service";
+const observation=params.get("observation")||"something I noticed about your work";
+const help=params.get("help")||"I believe my service could be useful to you";
+const proof=params.get("proof")||"I can show you some sample work";
+
+const message=
+"Hello "+customer+",\n\n"+
+"My name is "+name+". I offer "+service+".\n\n"+
+"I noticed that "+observation+"\n\n"+
+"I believe I could help because "+help+"\n\n"+
+"For reference, "+proof+"\n\n"+
+"If you're interested, I'd be happy to discuss what you need and see whether I can help.\n\n"+
+"Thank you,\n"+
+name;
+
+document.getElementById("message").textContent=message;
+
+function copyMessage(){
+
+const text=document.getElementById("message").textContent;
+
+if(navigator.clipboard){
+
+navigator.clipboard.writeText(text).then(function(){
+
+document.getElementById("status").textContent=
+"✅ Message copied to clipboard.";
+
+}).catch(function(){
+
+document.getElementById("status").textContent=
+"Please select the message and copy it manually.";
+
+});
+
+}else{
+
+document.getElementById("status").textContent=
+"Please select the message and copy it manually.";
+
+}
+
+}
+</script>
+
+</body>
+</html>
