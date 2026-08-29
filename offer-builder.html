@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnFlow — Freelance Offer Builder</title>
+<meta name="description" content="Create a clear freelance service offer with the EarnFlow Offer Builder.">
+<link rel="stylesheet" href="style.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+.top{background:#111827;color:white;padding:14px 18px;display:flex;align-items:center}
+.logo{font-size:21px;font-weight:800;margin-right:auto}
+.back{border:0;background:#374151;color:white;padding:10px 15px;border-radius:9px;font-weight:bold}
+.hero{text-align:center;background:white;padding:35px 18px}
+.hero .icon{font-size:45px}
+.hero h1{margin:10px 0;font-size:32px}
+.hero p{color:#667085;line-height:1.6;max-width:650px;margin:auto}
+.box{max-width:850px;margin:25px auto;padding:22px 18px}
+.form,.result{background:white;border-radius:17px;padding:22px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+label{display:block;font-weight:bold;margin:16px 0 7px}
+input,textarea,select{width:100%;padding:13px;border:1px solid #d1d5db;border-radius:9px;font:inherit}
+textarea{min-height:90px;resize:vertical}
+.generate{width:100%;margin-top:22px;padding:15px;border:0;border-radius:10px;background:#111827;color:white;font-weight:bold;font-size:16px}
+.result{margin-top:20px;display:none}
+.result h2{margin-top:0}
+.offer{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:18px;white-space:pre-wrap;line-height:1.6}
+.copy{margin-top:12px;padding:12px 18px;border:0;border-radius:9px;background:#2563eb;color:white;font-weight:bold}
+.tip{background:#eef5ff;padding:15px;border-radius:10px;margin-top:18px;line-height:1.5;color:#334155}
+footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;margin-top:20px}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+<div class="logo">EarnFlow</div>
+<button class="back" onclick="history.back()">← Back</button>
+</nav>
+
+<header class="hero">
+<div class="icon">💼</div>
+<h1>Freelance Offer Builder</h1>
+<p>
+Create a simple, clear service offer that tells potential customers what you do, who you help and what they receive.
+</p>
+</header>
+
+<main class="box">
+
+<div class="form">
+
+<h2>Build Your Offer</h2>
+
+<label for="skill">What skill or service do you provide?</label>
+<input id="skill" placeholder="Example: Video editing">
+
+<label for="customer">Who do you want to help?</label>
+<input id="customer" placeholder="Example: Small business owners">
+
+<label for="problem">What problem can you help them solve?</label>
+<textarea id="problem" placeholder="Example: Their videos look basic and don't keep viewers interested."></textarea>
+
+<label for="deliver">What will the customer receive?</label>
+<textarea id="deliver" placeholder="Example: A professionally edited 60-second video with captions."></textarea>
+
+<label for="time">How long will delivery take?</label>
+<select id="time">
+<option>1 day</option>
+<option>2 days</option>
+<option>3 days</option>
+<option>5 days</option>
+<option>7 days</option>
+<option>14 days</option>
+</select>
+
+<label for="price">Starting price</label>
+<input id="price" type="number" min="0" placeholder="Example: 100">
+
+<button class="generate" onclick="buildOffer()">
+🚀 Generate My Offer
+</button>
+
+<div class="tip">
+💡 <strong>Tip:</strong> Be honest about your ability. Don't promise results you cannot guarantee.
+</div>
+
+</div>
+
+<div class="result" id="result">
+
+<h2>🎉 Your Offer</h2>
+
+<div class="offer" id="offerText"></div>
+
+<button class="copy" onclick="copyOffer()">
+📋 Copy Offer
+</button>
+
+<p id="copyStatus"></p>
+
+</div>
+
+</main>
+
+<footer>
+<strong>EarnFlow</strong>
+<br>
+Build skills. Find opportunities. Grow.
+<br><br>
+<small>© 2026 EarnFlow • No guaranteed income.</small>
+</footer>
+
+<script>
+function buildOffer(){
+
+const skill=document.getElementById("skill").value.trim();
+const customer=document.getElementById("customer").value.trim();
+const problem=document.getElementById("problem").value.trim();
+const deliver=document.getElementById("deliver").value.trim();
+const time=document.getElementById("time").value;
+const price=document.getElementById("price").value.trim();
+
+if(!skill||!customer||!problem||!deliver||!price){
+alert("Please complete all the fields before generating your offer.");
+return;
+}
+
+const offer=
+"FREELANCE SERVICE OFFER\n\n"+
+"Hi! I provide "+skill+" services for "+customer+".\n\n"+
+"PROBLEM I HELP WITH\n"+
+problem+"\n\n"+
+"WHAT YOU RECEIVE\n"+
+deliver+"\n\n"+
+"DELIVERY\n"+
+"I can deliver the agreed work within "+time+".\n\n"+
+"STARTING PRICE\n"+
+"GH₵"+price+"\n\n"+
+"NEXT STEP\n"+
+"If this is something you need, feel free to message me so we can discuss the project and requirements.\n\n"+
+"— EarnFlow Freelance Offer";
+
+document.getElementById("offerText").textContent=offer;
+document.getElementById("result").style.display="block";
+document.getElementById("copyStatus").textContent="";
+document.getElementById("result").scrollIntoView({behavior:"smooth"});
+}
+
+function copyOffer(){
+
+const text=document.getElementById("offerText").textContent;
+
+navigator.clipboard.writeText(text).then(function(){
+document.getElementById("copyStatus").textContent="✅ Offer copied to clipboard.";
+}).catch(function(){
+document.getElementById("copyStatus").textContent="Please select and copy the offer manually.";
+});
+
+}
+</script>
+
+</body>
+</html>
