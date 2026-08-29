@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnFlow — Follow-Up Builder</title>
+<meta name="description" content="Create a respectful freelance customer follow-up message with EarnFlow.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+.top{background:#111827;color:white;padding:14px 18px;display:flex;align-items:center}
+.logo{font-size:21px;font-weight:800;margin-right:auto}
+.back{border:0;background:#374151;color:white;padding:10px 15px;border-radius:9px;font-weight:bold}
+.hero{background:white;text-align:center;padding:35px 18px}
+.icon{font-size:46px}
+.hero h1{font-size:30px;margin:10px 0}
+.hero p{max-width:680px;margin:auto;color:#667085;line-height:1.6}
+.container{max-width:850px;margin:auto;padding:25px 18px}
+.box{background:white;padding:22px;border-radius:17px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+label{display:block;font-weight:bold;margin:16px 0 7px}
+input,select{width:100%;padding:13px;border:1px solid #d1d5db;border-radius:9px;font:inherit}
+.primary{width:100%;margin-top:22px;padding:15px;border:0;border-radius:10px;background:#111827;color:white;font-size:16px;font-weight:bold}
+.tip{margin-top:18px;padding:15px;background:#eef5ff;border-radius:10px;line-height:1.5}
+footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;margin-top:25px}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+<div class="logo">EarnFlow</div>
+<button class="back" onclick="history.back()">← Back</button>
+</nav>
+
+<header class="hero">
+<div class="icon">📩</div>
+<h1>Follow-Up Builder</h1>
+<p>Create a polite follow-up message based on what happened after your first contact.</p>
+</header>
+
+<main class="container">
+
+<div class="box">
+
+<h2>Build Your Follow-Up</h2>
+
+<label for="name">Your name</label>
+<input id="name" placeholder="Example: Abdulai">
+
+<label for="customer">Customer's name or business</label>
+<input id="customer" placeholder="Example: ABC Restaurant">
+
+<label for="service">Your service</label>
+<input id="service" placeholder="Example: Graphic Design">
+
+<label for="situation">What happened after your first message?</label>
+
+<select id="situation">
+<option value="">Choose a situation</option>
+<option value="no-response">No response</option>
+<option value="interested">They showed interest</option>
+<option value="price">They asked about the price</option>
+<option value="later">They asked me to contact them later</option>
+<option value="question">They asked a question</option>
+<option value="declined">They said they are not interested</option>
+</select>
+
+<label for="detail">Optional detail</label>
+<input id="detail" placeholder="Example: They asked me to send the price tomorrow.">
+
+<button class="primary" onclick="buildFollowUp()">
+📩 Create My Follow-Up
+</button>
+
+<div class="tip">
+💡 A follow-up should be helpful and respectful. Avoid repeatedly messaging someone who has clearly said they are not interested.
+</div>
+
+</div>
+
+</main>
+
+<footer>
+<strong>EarnFlow</strong><br>
+Build skills. Find opportunities. Grow.
+<br><br>
+<small>© 2026 EarnFlow • No guaranteed income.</small>
+</footer>
+
+<script>
+function buildFollowUp(){
+
+const name=document.getElementById("name").value.trim();
+const customer=document.getElementById("customer").value.trim();
+const service=document.getElementById("service").value.trim();
+const situation=document.getElementById("situation").value;
+const detail=document.getElementById("detail").value.trim();
+
+if(!name||!customer||!service||!situation){
+alert("Please complete the required fields first.");
+return;
+}
+
+const data=new URLSearchParams();
+
+data.set("name",name);
+data.set("customer",customer);
+data.set("service",service);
+data.set("situation",situation);
+data.set("detail",detail);
+
+window.location.href=
+"followup-result.html?"+data.toString();
+
+}
+</script>
+
+</body>
+</html>
