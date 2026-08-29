@@ -1,9 +1,10 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EarnFlow — Pricing Calculator</title>
+<title>EarnFlow — Pricing Results</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
@@ -15,48 +16,77 @@ body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
 .hero h1{font-size:30px;margin:10px 0}
 .hero p{max-width:680px;margin:auto;color:#667085;line-height:1.6}
 .container{max-width:850px;margin:auto;padding:25px 18px}
-.box{background:white;padding:22px;border-radius:17px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
-label{display:block;font-weight:bold;margin:16px 0 7px}
-input{width:100%;padding:13px;border:1px solid #d1d5db;border-radius:9px;font:inherit}
-.primary{width:100%;margin-top:22px;padding:15px;border:0;border-radius:10px;background:#111827;color:white;font-size:16px;font-weight:bold}
-.tip{margin-top:18px;padding:15px;background:#eef5ff;border-radius:10px;line-height:1.5}
+.card{background:white;padding:22px;border-radius:17px;margin-bottom:18px;box-shadow:0 5px 18px rgba(0,0,0,.05)}
+.price{text-align:center;font-size:40px;font-weight:800;margin:20px 0}
+.row{display:flex;justify-content:space-between;border-bottom:1px solid #e5e7eb;padding:13px 0}
+.tip{background:#eef5ff;padding:15px;border-radius:10px;line-height:1.5}
 footer{text-align:center;background:#111827;color:#d1d5db;padding:30px 18px;margin-top:25px}
 </style>
 </head>
 <body>
+
 <nav class="top">
 <div class="logo">EarnFlow</div>
 <button class="back" onclick="history.back()">← Back</button>
 </nav>
 
 <header class="hero">
-<div class="icon">💰</div>
-<h1>Freelance Pricing Calculator</h1>
-<p>Estimate a practical starting price based on your time, costs and target hourly value.</p>
+<div class="icon">📊</div>
+<h1>Your Pricing Estimate</h1>
+<p>Here's the estimate based on the information you entered.</p>
 </header>
 
 <main class="container">
-<div class="box">
-<h2>Calculate Your Starting Price</h2>
 
-<label for="hours">Estimated hours of work</label>
-<input id="hours" type="number" min="0.5" step="0.5" placeholder="Example: 4">
+<div class="card">
+<h2>💰 Suggested Starting Price</h2>
+<div class="price" id="price">GH₵0.00</div>
+</div>
 
-<label for="rate">Your target hourly value (GH₵)</label>
-<input id="rate" type="number" min="1" step="1" placeholder="Example: 30">
+<div class="card">
+<h2>📋 Breakdown</h2>
 
-<label for="costs">Other project costs (GH₵)</label>
-<input id="costs" type="number" min="0" step="1" placeholder="Example: 20">
+<div class="row">
+<strong>Estimated hours</strong>
+<span id="hours">0</span>
+</div>
 
-<label for="margin">Extra margin (%)</label>
-<input id="margin" type="number" min="0" max="100" step="1" value="10">
+<div class="row">
+<strong>Hourly value</strong>
+<span>GH₵<span id="rate">0</span></span>
+</div>
 
-<button class="primary" onclick="calculatePrice()">💰 Calculate Starting Price</button>
+<div class="row">
+<strong>Time value</strong>
+<span>GH₵<span id="timeValue">0</span></span>
+</div>
+
+<div class="row">
+<strong>Other costs</strong>
+<span>GH₵<span id="costs">0</span></span>
+</div>
+
+<div class="row">
+<strong>Extra margin</strong>
+<span><span id="margin">0</span>%</span>
+</div>
+
+</div>
+
+<div class="card">
+<h2>💡 Before You Quote</h2>
+<p>
+Use this number as a starting point. Make sure you understand exactly what the customer wants and what is included in your service.
+</p>
+<p>
+As you gain experience and produce stronger work, you can review and adjust your pricing.
+</p>
+</div>
 
 <div class="tip">
-💡 This is a starting estimate, not a guaranteed market price. Consider your experience, quality, customer requirements and the actual scope of the work.
+<strong>Remember:</strong> A price is only one part of a good freelance offer. Clear communication, useful work and reliable delivery also matter.
 </div>
-</div>
+
 </main>
 
 <footer>
@@ -67,32 +97,16 @@ Build skills. Find opportunities. Grow.
 </footer>
 
 <script>
-function calculatePrice(){
-const hours=parseFloat(document.getElementById("hours").value);
-const rate=parseFloat(document.getElementById("rate").value);
-const costs=parseFloat(document.getElementById("costs").value)||0;
-const margin=parseFloat(document.getElementById("margin").value)||0;
+const params=new URLSearchParams(window.location.search);
 
-if(!hours||!rate||hours<=0||rate<=0){
-alert("Please enter your estimated hours and hourly value.");
-return;
-}
+document.getElementById("hours").textContent=params.get("hours")||"0";
+document.getElementById("rate").textContent=params.get("rate")||"0";
+document.getElementById("costs").textContent=params.get("costs")||"0";
+document.getElementById("margin").textContent=params.get("margin")||"0";
+document.getElementById("timeValue").textContent=params.get("timeValue")||"0";
+document.getElementById("price").textContent="GH₵"+(params.get("finalPrice")||"0.00");
 
-const timeValue=hours*rate;
-const base=timeValue+costs;
-const marginAmount=base*(margin/100);
-const finalPrice=base+marginAmount;
-
-const data=new URLSearchParams();
-data.set("hours",hours);
-data.set("rate",rate);
-data.set("costs",costs);
-data.set("margin",margin);
-data.set("timeValue",timeValue.toFixed(2));
-data.set("finalPrice",finalPrice.toFixed(2));
-
-window.location.href="pricing-result.html?"+data.toString();
-}
 </script>
+
 </body>
 </html>
