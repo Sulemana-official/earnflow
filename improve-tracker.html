@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnFlow — Improve From Results</title>
+<meta name="description" content="Track results, feedback and improvement goals with EarnFlow.">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:35px 18px;
+}
+
+.icon{
+font-size:46px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:680px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:850px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.primary{
+width:100%;
+margin-top:22px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.secondary{
+width:100%;
+margin-top:10px;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:10px;
+background:white;
+color:#172033;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.rating{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.rating button{
+border:1px solid #d1d5db;
+background:white;
+padding:10px 14px;
+border-radius:9px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.rating button.selected{
+background:#111827;
+color:white;
+}
+
+.result{
+display:none;
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+margin-top:18px;
+line-height:1.6;
+}
+
+.result.show{
+display:block;
+}
+
+.tip{
+background:#eef5ff;
+padding:16px;
+border-radius:10px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:16px;
+border-radius:10px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button class="back" onclick="history.back()">
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+📈
+</div>
+
+<h1>
+Learn From Results
+</h1>
+
+<p>
+Track what happened, learn from feedback and choose one useful improvement for your next project.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>
+📊 Project Results
+</h2>
+
+<p>
+Record what happened after completing your work.
+</p>
+
+
+<label for="project">
+Project or service
+</label>
+
+<input
+id="project"
+placeholder="Example: Restaurant social media design"
+>
+
+
+<label for="worked">
+What worked well?
+</label>
+
+<textarea
+id="worked"
+placeholder="Example: The customer liked the design and responded quickly."
+></textarea>
+
+
+<label for="didntWork">
+What didn't work well?
+</label>
+
+<textarea
+id="didntWork"
+placeholder="Example: I underestimated the time needed to complete the revisions."
+></textarea>
+
+
+<label for="feedback">
+Customer feedback
+</label>
+
+<textarea
+id="feedback"
+placeholder="Write useful feedback you received from the customer."
+></textarea>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+⭐ Rate Your Work
+</h2>
+
+<p>
+Give yourself an honest rating based on the quality of the work and how professionally you handled the project.
+</p>
+
+<div class="rating">
+
+<button onclick="setRating(1)" id="rate1">1 ⭐</button>
+<button onclick="setRating(2)" id="rate2">2 ⭐</button>
+<button onclick="setRating(3)" id="rate3">3 ⭐</button>
+<button onclick="setRating(4)" id="rate4">4 ⭐</button>
+<button onclick="setRating(5)" id="rate5">5 ⭐</button>
+
+</div>
+
+<input
+type="hidden"
+id="rating"
+value=""
+>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🔧 Choose One Improvement
+</h2>
+
+<p>
+Don't try to change everything at once. Choose one important improvement.
+</p>
+
+<label for="improvement">
+What do you want to improve?
+</label>
+
+<select id="improvement">
+
+<option value="">
+Choose one
+</option>
+
+<option>
+Quality of my work
+</option>
+
+<option>
+Communication with customers
+</option>
+
+<option>
+Speed of delivery
+</option>
+
+<option>
+Understanding customer requirements
+</option>
+
+<option>
+Pricing
+</option>
+
+<option>
+Finding customers
+</option>
+
+<option>
+Presentation of my service
+</option>
+
+<option>
+Organization
+</option>
+
+<option>
+Something else
+</option>
+
+</select>
+
+
+<label for="goal">
+My next improvement goal
+</label>
+
+<textarea
+id="goal"
+placeholder="Example: Before starting my next project, I will confirm all requirements in writing."
+></textarea>
+
+
+<button
+class="primary"
+onclick="saveResults()"
+>
+💾 Save My Improvement
+</button>
+
+
+<button
+class="secondary"
+onclick="clearResults()"
+>
+↻ Clear Tracker
+</button>
+
+
+<div
+class="result"
+id="result"
+>
+<strong>
+🎉 Improvement plan saved!
+</strong>
+
+<p id="resultText"></p>
+
+</div>
+
+</div>
+
+
+<div class="tip">
+
+<strong>
+💡 EarnFlow principle:
+</strong>
+
+<p>
+Improvement doesn't mean constantly changing direction. Keep what works, identify one weakness and deliberately improve it.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>
+⚠️ Be honest with yourself:
+</strong>
+
+<p>
+A high rating is not useful if it hides problems. Use feedback and actual results to decide what needs improvement.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+let selectedRating=0;
+
+
+function setRating(number){
+
+selectedRating=number;
+
+document.getElementById("rating").value=number;
+
+for(let i=1;i<=5;i++){
+
+const button=document.getElementById("rate"+i);
+
+if(i===number){
+
+button.classList.add("selected");
+
+}else{
+
+button.classList.remove("selected");
+
+}
+
+}
+
+}
+
+
+function saveResults(){
+
+const project=
+document.getElementById("project").value.trim();
+
+const worked=
+document.getElementById("worked").value.trim();
+
+const didntWork=
+document.getElementById("didntWork").value.trim();
+
+const feedback=
+document.getElementById("feedback").value.trim();
+
+const improvement=
+document.getElementById("improvement").value;
+
+const goal=
+document.getElementById("goal").value.trim();
+
+
+if(
+!project||
+!worked||
+!didntWork||
+!improvement||
+!goal||
+selectedRating===0
+){
+
+alert(
+"Please complete the project details, choose a rating, select one improvement and enter your goal."
+);
+
+return;
+
+}
+
+
+const data={
+project:project,
+worked:worked,
+didntWork:didntWork,
+feedback:feedback,
+rating:selectedRating,
+improvement:improvement,
+goal:goal
+};
+
+
+localStorage.setItem(
+"earnflowImprovement",
+JSON.stringify(data)
+);
+
+
+document.getElementById("resultText").textContent=
+"You rated your work "+selectedRating+
+"/5. Your next improvement focus is: "+
+improvement+
+". Your goal: "+
+goal;
+
+
+document.getElementById("result").classList.add("show");
+
+}
+
+
+function clearResults(){
+
+localStorage.removeItem(
+"earnflowImprovement"
+);
+
+document.getElementById("project").value="";
+document.getElementById("worked").value="";
+document.getElementById("didntWork").value="";
+document.getElementById("feedback").value="";
+document.getElementById("improvement").value="";
+document.getElementById("goal").value="";
+
+selectedRating=0;
+
+document.getElementById("rating").value="";
+
+for(let i=1;i<=5;i++){
+
+document
+.getElementById("rate"+i)
+.classList.remove("selected");
+
+}
+
+document.getElementById("result").classList.remove("show");
+
+}
+
+
+function loadResults(){
+
+const saved=
+localStorage.getItem("earnflowImprovement");
+
+if(!saved){
+return;
+}
+
+try{
+
+const data=JSON.parse(saved);
+
+document.getElementById("project").value=
+data.project||"";
+
+document.getElementById("worked").value=
+data.worked||"";
+
+document.getElementById("didntWork").value=
+data.didntWork||"";
+
+document.getElementById("feedback").value=
+data.feedback||"";
+
+document.getElementById("improvement").value=
+data.improvement||"";
+
+document.getElementById("goal").value=
+data.goal||"";
+
+if(data.rating){
+
+setRating(Number(data.rating));
+
+}
+
+}catch(error){
+
+console.log("Saved data could not be loaded.");
+
+}
+
+}
+
+
+loadResults();
+
+</script>
+
+</body>
+  </html>
