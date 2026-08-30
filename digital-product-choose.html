@@ -462,23 +462,23 @@ Build skills. Find opportunities. Grow.
 
 function generateIdea(){
 
-const audience=
+const audience =
 document.getElementById("audience").value.trim();
 
-const problem=
+const problem =
 document.getElementById("problem").value.trim();
 
-const outcome=
+const outcome =
 document.getElementById("outcome").value.trim();
 
-const type=
+const type =
 document.getElementById("productType").value;
 
 
 if(
-!audience||
-!problem||
-!outcome||
+!audience ||
+!problem ||
+!outcome ||
 !type
 ){
 
@@ -491,7 +491,7 @@ return;
 }
 
 
-const names={
+const names = {
 
 guide:"Practical Guide",
 
@@ -508,39 +508,44 @@ workbook:"Practical Workbook"
 };
 
 
-const title=
-names[type]+
-" for "+
+const title =
+names[type] +
+" for " +
 audience;
 
 
-const text=
-"<strong>"+title+"</strong><br><br>"+
-"This product could help "+
-audience+
-" with this problem: <strong>"+
-problem+
-"</strong><br><br>"+
-"Desired result: "+
-outcome+
-"<br><br>"+
-"Start by creating a simple first version that focuses on this one problem and useful result.";
+const params =
+new URLSearchParams();
 
-
-document.getElementById("idea").innerHTML=text;
-
-document.getElementById("result").classList.add("show");
-
-localStorage.setItem(
-"earnflowProductIdea",
-JSON.stringify({
-audience:audience,
-problem:problem,
-outcome:outcome,
-type:type,
-title:title
-})
+params.set(
+"audience",
+audience
 );
+
+params.set(
+"problem",
+problem
+);
+
+params.set(
+"outcome",
+outcome
+);
+
+params.set(
+"type",
+type
+);
+
+params.set(
+"title",
+title
+);
+
+
+window.location.href =
+"digital-product-idea.html?" +
+params.toString();
 
 }
 
