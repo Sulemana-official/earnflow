@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>EarnFlow — Your Product Idea</title>
+
+<meta name="description" content="Your personalized digital product idea from EarnFlow.">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:40px 18px;
+}
+
+.icon{
+font-size:52px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:850px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.idea-box{
+background:#eef5ff;
+padding:20px;
+border-radius:13px;
+line-height:1.7;
+}
+
+.title{
+font-size:25px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.detail{
+margin:15px 0;
+padding:15px;
+background:#f8fafc;
+border-radius:10px;
+}
+
+.detail strong{
+display:block;
+margin-bottom:6px;
+}
+
+.primary{
+width:100%;
+margin-top:18px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.secondary{
+width:100%;
+margin-top:10px;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:10px;
+background:white;
+color:#172033;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#ecfdf3;
+padding:17px;
+border-radius:11px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:17px;
+border-radius:11px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+💡
+</div>
+
+<h1>
+Your Digital Product Idea
+</h1>
+
+<p>
+You now have a starting point. Turn the idea into a simple useful product and improve it as you learn.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>
+🎉 Your Product Concept
+</h2>
+
+<div class="idea-box">
+
+<div
+class="title"
+id="productTitle"
+>
+Your Product
+</div>
+
+<p>
+<strong>Who it is for:</strong>
+</p>
+
+<p id="audience">
+</p>
+
+<p>
+<strong>The problem:</strong>
+</p>
+
+<p id="problem">
+</p>
+
+<p>
+<strong>Useful outcome:</strong>
+</p>
+
+<p id="outcome">
+</p>
+
+<p>
+<strong>Suggested format:</strong>
+</p>
+
+<p id="type">
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🛠️ Build the First Version
+</h2>
+
+<div class="detail">
+<strong>01 — Keep it focused</strong>
+
+Start by solving the single problem you identified instead of trying to build a huge product.
+</div>
+
+<div class="detail">
+<strong>02 — Create useful content</strong>
+
+Give the customer practical information, steps, examples, templates or exercises that help them reach the desired outcome.
+</div>
+
+<div class="detail">
+<strong>03 — Make it easy to use</strong>
+
+Organize the product clearly so the customer can understand what to do next.
+</div>
+
+<div class="detail">
+<strong>04 — Test it</strong>
+
+Let a suitable person review the product and look for confusing instructions, missing information or unnecessary complexity.
+</div>
+
+<div class="detail">
+<strong>05 — Improve it</strong>
+
+Use useful feedback to improve future versions rather than trying to make everything perfect immediately.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎯 Your First Version Plan
+</h2>
+
+<p>
+A simple first version could follow this structure:
+</p>
+
+<div class="detail">
+<strong>Problem</strong>
+Explain the problem clearly.
+</div>
+
+<div class="detail">
+<strong>Solution</strong>
+Show the customer how your resource helps solve it.
+</div>
+
+<div class="detail">
+<strong>Steps</strong>
+Give practical steps the customer can follow.
+</div>
+
+<div class="detail">
+<strong>Examples</strong>
+Include examples where they make the idea easier to understand.
+</div>
+
+<div class="detail">
+<strong>Action</strong>
+Tell the customer what to do next.
+</div>
+
+<button
+class="primary"
+onclick="copyIdea()"
+>
+📋 Copy My Product Idea
+</button>
+
+<div
+id="copyStatus"
+style="text-align:center;margin-top:10px;font-weight:bold;"
+>
+</div>
+
+</div>
+
+
+<div class="tip">
+
+<strong>
+💡 EarnFlow principle:
+</strong>
+
+<p>
+Your first version doesn't need to be enormous. Focus on making it genuinely useful for the person you are trying to help.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>
+⚠️ Important:
+</strong>
+
+<p>
+Before selling a product, make sure your content is original or properly licensed and that any claims you make are accurate.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+
+const audience =
+params.get("audience") ||
+"Your target customer";
+
+
+const problem =
+params.get("problem") ||
+"The problem you want to solve";
+
+
+const outcome =
+params.get("outcome") ||
+"The useful result you want to provide";
+
+
+const type =
+params.get("type") ||
+"Digital resource";
+
+
+const title =
+params.get("title") ||
+"Your Digital Product";
+
+
+const typeNames={
+
+guide:"📘 Practical Guide",
+
+checklist:"📋 Step-by-Step Checklist",
+
+template:"📝 Ready-to-Use Template",
+
+planner:"📅 Action Planner",
+
+tracker:"📊 Progress Tracker",
+
+workbook:"📚 Practical Workbook"
+
+};
+
+
+document.getElementById("productTitle").textContent=
+title;
+
+
+document.getElementById("audience").textContent=
+audience;
+
+
+document.getElementById("problem").textContent=
+problem;
+
+
+document.getElementById("outcome").textContent=
+outcome;
+
+
+document.getElementById("type").textContent=
+typeNames[type]||type;
+
+
+function copyIdea(){
+
+const text=
+
+"EarnFlow Digital Product Idea\n\n"+
+"Product: "+title+"\n"+
+"For: "+audience+"\n"+
+"Problem: "+problem+"\n"+
+"Outcome: "+outcome+"\n"+
+"Format: "+(typeNames[type]||type);
+
+
+if(navigator.clipboard){
+
+navigator.clipboard.writeText(text)
+.then(function(){
+
+document.getElementById("copyStatus").textContent=
+"✅ Product idea copied!";
+
+})
+.catch(function(){
+
+document.getElementById("copyStatus").textContent=
+"Please copy the information manually.";
+
+});
+
+}else{
+
+document.getElementById("copyStatus").textContent=
+"Please copy the information manually.";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
