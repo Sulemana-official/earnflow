@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>EarnFlow — Choose Your Content Niche</title>
+
+<meta name="description" content="Choose a practical content niche and build a focused content direction with EarnFlow.">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:38px 18px;
+}
+
+.icon{
+font-size:50px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.niche-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:12px;
+margin-top:18px;
+}
+
+.niche{
+border:1px solid #e5e7eb;
+background:#f8fafc;
+padding:18px;
+border-radius:12px;
+cursor:pointer;
+}
+
+.niche:hover{
+background:#eef5ff;
+}
+
+.niche strong{
+display:block;
+font-size:17px;
+margin-bottom:7px;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.primary{
+width:100%;
+margin-top:20px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#eef5ff;
+padding:17px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:17px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.selected{
+border:2px solid #111827;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+🎬
+</div>
+
+<h1>
+01 — Choose Your Content Niche
+</h1>
+
+<p>
+A focused niche makes it easier to decide what to create, who you are creating for and what type of value your content provides.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>🎯 What Is a Content Niche?</h2>
+
+<p>
+A niche is a focused subject or audience that your content regularly serves.
+</p>
+
+<p>
+You don't have to choose the perfect niche immediately. Start with something you can learn about, create useful content around and continue improving.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>💡 Choose a Starting Direction</h2>
+
+<p>
+Tap an option that interests you most.
+</p>
+
+<div class="niche-grid">
+
+<div class="niche" onclick="selectNiche('Education',this)">
+<strong>📚 Education</strong>
+Study tips, explanations and learning resources.
+</div>
+
+<div class="niche" onclick="selectNiche('Technology',this)">
+<strong>📱 Technology</strong>
+Apps, smartphones, software and useful technology tips.
+</div>
+
+<div class="niche" onclick="selectNiche('Finance Education',this)">
+<strong>💰 Finance Education</strong>
+Budgeting, saving and general financial education.
+</div>
+
+<div class="niche" onclick="selectNiche('Career Skills',this)">
+<strong>💼 Career Skills</strong>
+CVs, interviews, workplace skills and career development.
+</div>
+
+<div class="niche" onclick="selectNiche('Content Creation',this)">
+<strong>🎬 Content Creation</strong>
+Video creation, editing, storytelling and creator skills.
+</div>
+
+<div class="niche" onclick="selectNiche('Business Skills',this)">
+<strong>🚀 Business Skills</strong>
+Small-business education, marketing and useful business tools.
+</div>
+
+<div class="niche" onclick="selectNiche('Personal Development',this)">
+<strong>🧠 Personal Development</strong>
+Productivity, habits, learning and personal growth.
+</div>
+
+<div class="niche" onclick="selectNiche('Other',this)">
+<strong>✨ Other</strong>
+Another useful subject you want to explore.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧭 Define Your Direction</h2>
+
+<label for="niche">
+Your chosen niche
+</label>
+
+<input
+id="niche"
+placeholder="Example: Technology"
+>
+
+<label for="audience">
+Who do you want to help?
+</label>
+
+<input
+id="audience"
+placeholder="Example: Smartphone beginners"
+>
+
+<label for="value">
+What useful value will your content provide?
+</label>
+
+<textarea
+id="value"
+placeholder="Example: Simple smartphone tutorials that beginners can follow."
+></textarea>
+
+<button
+class="primary"
+onclick="buildDirection()"
+>
+🚀 Build My Content Direction
+</button>
+
+</div>
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle:</strong>
+
+<p>
+Don't choose a niche only because you think it will make money. Choose a subject where you can consistently learn, create useful content and serve a specific audience.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>⚠️ Important:</strong>
+
+<p>
+Avoid misleading claims, fake results and copied content. Build your audience by providing genuine value.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+let selectedNiche="";
+
+
+function selectNiche(niche,element){
+
+selectedNiche=niche;
+
+document.getElementById("niche").value=niche;
+
+document.querySelectorAll(".niche").forEach(
+function(item){
+
+item.classList.remove("selected");
+
+}
+);
+
+element.classList.add("selected");
+
+}
+
+
+function buildDirection(){
+
+const niche=
+document.getElementById("niche").value.trim();
+
+const audience=
+document.getElementById("audience").value.trim();
+
+const value=
+document.getElementById("value").value.trim();
+
+
+if(
+!niche ||
+!audience ||
+!value
+){
+
+alert(
+"Please complete your niche, audience and value before continuing."
+);
+
+return;
+
+}
+
+
+const params=
+new URLSearchParams();
+
+params.set(
+"niche",
+niche
+);
+
+params.set(
+"audience",
+audience
+);
+
+params.set(
+"value",
+value
+);
+
+
+window.location.href=
+"content-niche-result.html?" +
+params.toString();
+
+}
+
+</script>
+
+</body>
+  </html>
