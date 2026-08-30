@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>EarnFlow — Validate Your Product Idea</title>
+
+<meta name="description" content="Validate a digital product idea by checking the customer, problem, value and evidence of demand.">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:38px 18px;
+}
+
+.icon{
+font-size:48px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.question{
+padding:18px 0;
+border-bottom:1px solid #e5e7eb;
+}
+
+.question:last-child{
+border-bottom:0;
+}
+
+.question-title{
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.options{
+display:flex;
+gap:9px;
+flex-wrap:wrap;
+}
+
+.options button{
+border:1px solid #d1d5db;
+background:white;
+padding:10px 14px;
+border-radius:9px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.options button.selected{
+background:#111827;
+color:white;
+}
+
+.primary{
+width:100%;
+margin-top:22px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.secondary{
+width:100%;
+margin-top:10px;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:10px;
+background:white;
+color:#172033;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.score{
+display:none;
+text-align:center;
+padding:25px;
+border-radius:14px;
+margin-top:20px;
+background:#eef5ff;
+}
+
+.score.show{
+display:block;
+}
+
+.score-number{
+font-size:42px;
+font-weight:800;
+margin:10px 0;
+}
+
+.verdict{
+font-size:20px;
+font-weight:bold;
+}
+
+.next{
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+margin-top:18px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:16px;
+border-radius:10px;
+line-height:1.6;
+}
+
+.tip{
+background:#eef5ff;
+padding:16px;
+border-radius:10px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+🔎
+</div>
+
+<h1>
+Validate Your Product Idea
+</h1>
+
+<p>
+Before spending a lot of time creating your product, check whether the problem, customer and value are clear.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>🎯 Your Product Idea</h2>
+
+<label for="product">
+What product are you considering?
+</label>
+
+<input
+id="product"
+placeholder="Example: Study Planner for SHS Students"
+>
+
+<label for="customer">
+Who is the specific customer?
+</label>
+
+<input
+id="customer"
+placeholder="Example: SHS students preparing for exams"
+>
+
+<label for="problem">
+What problem does it solve?
+</label>
+
+<textarea
+id="problem"
+placeholder="Describe the problem clearly."
+></textarea>
+
+</div>
+
+
+<div class="card">
+
+<h2>📊 Validation Questions</h2>
+
+<p>
+Answer honestly. The score is only a simple decision aid—it is not proof that a product will sell.
+</p>
+
+
+<div class="question">
+
+<div class="question-title">
+1. Is the problem clear and specific?
+</div>
+
+<div class="options">
+
+<button onclick="answer(1,1,this)">
+Yes
+</button>
+
+<button onclick="answer(1,0,this)">
+Not sure
+</button>
+
+<button onclick="answer(1,-1,this)">
+No
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<div class="question-title">
+2. Can you clearly identify people who experience this problem?
+</div>
+
+<div class="options">
+
+<button onclick="answer(2,1,this)">
+Yes
+</button>
+
+<button onclick="answer(2,0,this)">
+Not sure
+</button>
+
+<button onclick="answer(2,-1,this)">
+No
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<div class="question-title">
+3. Does your product provide a useful outcome?
+</div>
+
+<div class="options">
+
+<button onclick="answer(3,1,this)">
+Yes
+</button>
+
+<button onclick="answer(3,0,this)">
+Not sure
+</button>
+
+<button onclick="answer(3,-1,this)">
+No
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<div class="question-title">
+4. Have you found evidence that people are interested in this problem?
+</div>
+
+<div class="options">
+
+<button onclick="answer(4,1,this)">
+Yes
+</button>
+
+<button onclick="answer(4,0,this)">
+Not sure
+</button>
+
+<button onclick="answer(4,-1,this)">
+No
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<div class="question-title">
+5. Can you create a useful first version without making it unnecessarily large?
+</div>
+
+<div class="options">
+
+<button onclick="answer(5,1,this)">
+Yes
+</button>
+
+<button onclick="answer(5,0,this)">
+Not sure
+</button>
+
+<button onclick="answer(5,-1,this)">
+No
+</button>
+
+</div>
+
+</div>
+
+
+<div class="question">
+
+<div class="question-title">
+6. Can you explain the value of the product in one simple sentence?
+</div>
+
+<div class="options">
+
+<button onclick="answer(6,1,this)">
+Yes
+</button>
+
+<button onclick="answer(6,0,this)">
+Not sure
+</button>
+
+<button onclick="answer(6,-1,this)">
+No
+</button>
+
+</div>
+
+</div>
+
+
+<button
+class="primary"
+onclick="calculateValidation()"
+>
+🔎 Check My Idea
+</button>
+
+<button
+class="secondary"
+onclick="resetValidation()"
+>
+↻ Reset
+</button>
+
+
+<div
+class="score"
+id="scoreBox"
+>
+
+<div>
+Validation score
+</div>
+
+<div
+class="score-number"
+id="scoreNumber"
+>
+0/6
+</div>
+
+<div
+class="verdict"
+id="verdict"
+>
+</div>
+
+<div
+class="next"
+id="nextStep"
+>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🔎 Simple Demand Research</h2>
+
+<p>
+Before creating the full product, look for real evidence that the problem matters.
+</p>
+
+<p>
+<strong>Ask potential customers:</strong>
+</p>
+
+<ul>
+<li>Do you experience this problem?</li>
+<li>How do you currently solve it?</li>
+<li>What is difficult about your current solution?</li>
+<li>What would make a better solution useful?</li>
+</ul>
+
+<p>
+You can also examine relevant discussions, search results, communities and existing products to understand the problem better.
+</p>
+
+</div>
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle:</strong>
+
+<p>
+Validation isn't about guaranteeing sales. It is about reducing avoidable mistakes by learning about the problem and customer before investing heavily in the product.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>⚠️ Important:</strong>
+
+<p>
+Never invent testimonials, customer demand, sales numbers or research results to make a product appear more successful than it is.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+const answers = {};
+
+function answer(question,value,button){
+
+answers[question]=value;
+
+const buttons =
+button.parentElement.querySelectorAll("button");
+
+buttons.forEach(function(item){
+
+item.classList.remove("selected");
+
+});
+
+button.classList.add("selected");
+
+}
+
+
+function calculateValidation(){
+
+const product =
+document.getElementById("product").value.trim();
+
+const customer =
+document.getElementById("customer").value.trim();
+
+const problem =
+document.getElementById("problem").value.trim();
+
+
+if(
+!product ||
+!customer ||
+!problem
+){
+
+alert(
+"Please complete your product, customer and problem first."
+);
+
+return;
+
+}
+
+
+for(let i=1;i<=6;i++){
+
+if(
+answers[i] === undefined
+){
+
+alert(
+"Please answer all six validation questions."
+);
+
+return;
+
+}
+
+}
+
+
+let positive=0;
+
+for(let i=1;i<=6;i++){
+
+if(answers[i]===1){
+
+positive++;
+
+}
+
+}
+
+
+const score =
+positive;
+
+
+let verdict="";
+
+let next="";
+
+
+if(score>=5){
+
+verdict=
+"🟢 Strong starting signal";
+
+next=
+"<strong>Next step:</strong><br><br>"+
+"Your idea has several positive signals. Start building a small first version and continue learning from potential customers.";
+
+}else if(score>=3){
+
+verdict=
+"🟡 Needs more validation";
+
+next=
+"<strong>Next step:</strong><br><br>"+
+"Your idea has some promising elements, but investigate the uncertain areas before spending significant time or money creating the product.";
+
+}else{
+
+verdict=
+"🔴 Go back and investigate";
+
+next=
+"<strong>Next step:</strong><br><br>"+
+"Several important areas are unclear. Talk to potential customers, clarify the problem and improve the idea before building a full product.";
+
+}
+
+
+document.getElementById("scoreNumber").textContent=
+score+"/6";
+
+document.getElementById("verdict").textContent=
+verdict;
+
+document.getElementById("nextStep").innerHTML=
+next;
+
+document.getElementById("scoreBox").classList.add("show");
+
+}
+
+
+function resetValidation(){
+
+document.getElementById("product").value="";
+
+document.getElementById("customer").value="";
+
+document.getElementById("problem").value="";
+
+
+for(let i=1;i<=6;i++){
+
+delete answers[i];
+
+}
+
+
+document.querySelectorAll(".options button").forEach(
+function(button){
+
+button.classList.remove("selected");
+
+}
+);
+
+
+document.getElementById("scoreBox").classList.remove("show");
+
+}
+
+</script>
+
+</body>
+</html>
