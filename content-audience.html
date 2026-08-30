@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>EarnFlow — Understand Your Audience</title>
+
+<meta name="description" content="Learn how to define and understand your content audience with EarnFlow.">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:40px 18px;
+}
+
+.icon{
+font-size:52px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.profile{
+display:none;
+background:#eef5ff;
+padding:20px;
+border-radius:13px;
+margin-top:20px;
+line-height:1.7;
+}
+
+.profile.show{
+display:block;
+}
+
+.detail{
+background:#f8fafc;
+padding:16px;
+border-radius:11px;
+margin-top:12px;
+line-height:1.6;
+}
+
+.tip{
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+👥
+</div>
+
+<h1>
+02 — Understand Your Audience
+</h1>
+
+<p>
+Good content starts with knowing who you are trying to help, what they care about and what problems they want solved.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>🎯 Your Audience Profile</h2>
+
+<p>
+Build a simple description of the person you want your content to serve.
+</p>
+
+<label for="audience">
+Who is your audience?
+</label>
+
+<input
+id="audience"
+placeholder="Example: SHS students preparing for exams"
+>
+
+<label for="age">
+What age group are they mostly in?
+</label>
+
+<select id="age">
+
+<option value="">
+Select an age group
+</option>
+
+<option>
+13–17
+</option>
+
+<option>
+18–24
+</option>
+
+<option>
+25–34
+</option>
+
+<option>
+35–44
+</option>
+
+<option>
+45+
+</option>
+
+<option>
+Mixed ages
+</option>
+
+</select>
+
+
+<label for="problem">
+What problem or need do they have?
+</label>
+
+<textarea
+id="problem"
+placeholder="Example: They struggle to organize their study time."
+></textarea>
+
+
+<label for="goal">
+What do they want to achieve?
+</label>
+
+<textarea
+id="goal"
+placeholder="Example: They want to study more effectively and prepare for exams."
+></textarea>
+
+
+<button
+class="primary"
+onclick="buildAudienceProfile()"
+>
+👥 Build My Audience Profile
+</button>
+
+
+<div
+class="profile"
+id="profile"
+>
+
+<h2>🎯 Your Audience Summary</h2>
+
+<p>
+<strong>Audience:</strong>
+<span id="resultAudience"></span>
+</p>
+
+<p>
+<strong>Age group:</strong>
+<span id="resultAge"></span>
+</p>
+
+<p>
+<strong>Main problem:</strong>
+<span id="resultProblem"></span>
+</p>
+
+<p>
+<strong>Main goal:</strong>
+<span id="resultGoal"></span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🔎 Learn About Your Audience</h2>
+
+<div class="detail">
+
+<strong>01 — Listen to real questions</strong>
+
+Pay attention to questions people ask about your niche. Those questions can become future content topics.
+
+</div>
+
+<div class="detail">
+
+<strong>02 — Study useful feedback</strong>
+
+Look for recurring comments, questions and suggestions that reveal what your audience finds confusing or useful.
+
+</div>
+
+<div class="detail">
+
+<strong>03 — Don't assume everyone is your customer</strong>
+
+A focused audience is often easier to understand and serve than trying to create content for everybody.
+
+</div>
+
+<div class="detail">
+
+<strong>04 — Solve problems, not just trends</strong>
+
+Trends can attract attention, but useful problem-solving content can build longer-term value.
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>💡 Audience Question Bank</h2>
+
+<p>
+Use these questions when researching your audience:
+</p>
+
+<ul>
+<li>What are they trying to learn?</li>
+<li>What mistakes do they commonly make?</li>
+<li>What takes too much time?</li>
+<li>What confuses them?</li>
+<li>What result are they trying to achieve?</li>
+<li>What information is difficult for them to find?</li>
+</ul>
+
+</div>
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle:</strong>
+
+<p>
+The goal isn't to manipulate people into watching. The goal is to understand their needs well enough to create content that genuinely helps them.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>⚠️ Protect your audience:</strong>
+
+<p>
+Don't collect unnecessary personal information from viewers. Respect privacy and avoid making unsupported claims about your audience.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+const niche =
+params.get("niche") ||
+"Your chosen niche";
+
+const previousAudience =
+params.get("audience") ||
+"";
+
+
+const audienceInput =
+document.getElementById("audience");
+
+if(previousAudience){
+
+audienceInput.value =
+previousAudience;
+
+}
+
+
+function buildAudienceProfile(){
+
+const audience =
+document.getElementById("audience").value.trim();
+
+const age =
+document.getElementById("age").value;
+
+const problem =
+document.getElementById("problem").value.trim();
+
+const goal =
+document.getElementById("goal").value.trim();
+
+
+if(
+!audience ||
+!age ||
+!problem ||
+!goal
+){
+
+alert(
+"Please complete all four audience fields."
+);
+
+return;
+
+}
+
+
+document.getElementById(
+"resultAudience"
+).textContent =
+audience;
+
+document.getElementById(
+"resultAge"
+).textContent =
+age;
+
+document.getElementById(
+"resultProblem"
+).textContent =
+problem;
+
+document.getElementById(
+"resultGoal"
+).textContent =
+goal;
+
+
+document.getElementById(
+"profile"
+).classList.add("show");
+
+}
+
+</script>
+
+</body>
+</html>
