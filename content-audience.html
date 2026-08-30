@@ -454,7 +454,6 @@ document.getElementById("problem").value.trim();
 const goal =
 document.getElementById("goal").value.trim();
 
-
 if(
 !audience ||
 !age ||
@@ -470,31 +469,37 @@ return;
 
 }
 
+const nextParams =
+new URLSearchParams();
 
-document.getElementById(
-"resultAudience"
-).textContent =
-audience;
+nextParams.set(
+"niche",
+niche
+);
 
-document.getElementById(
-"resultAge"
-).textContent =
-age;
+nextParams.set(
+"audience",
+audience
+);
 
-document.getElementById(
-"resultProblem"
-).textContent =
-problem;
+nextParams.set(
+"age",
+age
+);
 
-document.getElementById(
-"resultGoal"
-).textContent =
-goal;
+nextParams.set(
+"problem",
+problem
+);
 
+nextParams.set(
+"goal",
+goal
+);
 
-document.getElementById(
-"profile"
-).classList.add("show");
+window.location.href =
+"content-audience-result.html?" +
+nextParams.toString();
 
 }
 
