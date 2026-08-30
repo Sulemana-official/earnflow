@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnFlow — Review Your Work</title>
+<meta name="description" content="Review your freelance work before delivering it to a customer.">
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:35px 18px;
+}
+
+.icon{
+font-size:46px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:680px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:850px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.progress-box{
+margin-top:18px;
+}
+
+.progress-track{
+width:100%;
+height:14px;
+background:#e5e7eb;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#111827;
+transition:width .25s ease;
+}
+
+.progress-text{
+text-align:center;
+font-weight:bold;
+margin-top:10px;
+}
+
+.check-item{
+display:flex;
+gap:13px;
+align-items:flex-start;
+padding:15px 0;
+border-bottom:1px solid #e5e7eb;
+}
+
+.check-item:last-child{
+border-bottom:0;
+}
+
+.check-item input{
+width:21px;
+height:21px;
+margin-top:2px;
+cursor:pointer;
+}
+
+.check-title{
+font-weight:bold;
+margin-bottom:4px;
+}
+
+.check-description{
+color:#667085;
+line-height:1.5;
+font-size:14px;
+}
+
+.complete{
+display:none;
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+margin-top:18px;
+line-height:1.6;
+}
+
+.complete.show{
+display:block;
+}
+
+.tip{
+background:#eef5ff;
+padding:16px;
+border-radius:10px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:16px;
+border-radius:10px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+<div class="logo">EarnFlow</div>
+
+<button class="back" onclick="history.back()">
+← Back
+</button>
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">🔍</div>
+
+<h1>Review Your Work</h1>
+
+<p>
+Check your work carefully before delivering it to your customer.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>✅ Final Review</h2>
+
+<p>
+Go through each item before you send your work.
+</p>
+
+
+<div class="progress-box">
+
+<div class="progress-track">
+
+<div class="progress-bar" id="progressBar"></div>
+
+</div>
+
+<div class="progress-text" id="progressText">
+0% complete
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+
+<div class="check-item">
+
+<input type="checkbox" onchange="updateProgress()">
+
+<div>
+
+<div class="check-title">
+📋 Requirements checked
+</div>
+
+<div class="check-description">
+Confirm that you completed the work according to the customer's instructions and the agreed scope.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="check-item">
+
+<input type="checkbox" onchange="updateProgress()">
+
+<div>
+
+<div class="check-title">
+🔤 Spelling and grammar checked
+</div>
+
+<div class="check-description">
+Review written content for obvious spelling, grammar and typing mistakes.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="check-item">
+
+<input type="checkbox" onchange="updateProgress()">
+
+<div>
+
+<div class="check-title">
+🎨 Quality checked
+</div>
+
+<div class="check-description">
+Look at the final work carefully and make sure it meets the quality level you intended to provide.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="check-item">
+
+<input type="checkbox" onchange="updateProgress()">
+
+<div>
+
+<div class="check-title">
+📁 Files organized
+</div>
+
+<div class="check-description">
+Make sure the correct files are included, clearly named and easy for the customer to understand.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="check-item">
+
+<input type="checkbox" onchange="updateProgress()">
+
+<div>
+
+<div class="check-title">
+📱 Tested where possible
+</div>
+
+<div class="check-description">
+If your work is a website, document, design or other digital product, test it where practical before delivery.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="check-item">
+
+<input type="checkbox" onchange="updateProgress()">
+
+<div>
+
+<div class="check-title">
+⏰ Deadline checked
+</div>
+
+<div class="check-description">
+Confirm that you are delivering within the deadline you agreed with the customer.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="check-item">
+
+<input type="checkbox" onchange="updateProgress()">
+
+<div>
+
+<div class="check-title">
+🔒 Privacy checked
+</div>
+
+<div class="check-description">
+Remove unnecessary private information, passwords or sensitive data before sending files.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="check-item">
+
+<input type="checkbox" onchange="updateProgress()">
+
+<div>
+
+<div class="check-title">
+💬 Customer instructions followed
+</div>
+
+<div class="check-description">
+Check the customer's important instructions one final time before delivery.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="check-item">
+
+<input type="checkbox" onchange="updateProgress()">
+
+<div>
+
+<div class="check-title">
+📦 Final delivery prepared
+</div>
+
+<div class="check-description">
+Make sure everything the customer is supposed to receive is ready to send.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="complete" id="complete">
+
+<strong>🎉 Final review complete!</strong>
+
+<p>
+You've checked all the items. You can now prepare your final delivery.
+</p>
+
+<p>
+Remember to communicate clearly with the customer and deliver only what was agreed.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle:</strong>
+
+<p>
+Taking a few minutes to review your work can help you catch mistakes before the customer receives it.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>⚠️ Important:</strong>
+
+<p>
+A completed checklist does not guarantee that the work is perfect. Use your own judgment and review the actual requirements of every project.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>EarnFlow</strong><br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+function updateProgress(){
+
+const boxes=document.querySelectorAll(
+'.check-item input[type="checkbox"]'
+);
+
+let checked=0;
+
+boxes.forEach(function(box){
+
+if(box.checked){
+checked++;
+}
+
+});
+
+const total=boxes.length;
+
+const percentage=Math.round(
+(checked/total)*100
+);
+
+document.getElementById("progressBar").style.width=
+percentage+"%";
+
+document.getElementById("progressText").textContent=
+percentage+"% complete";
+
+const complete=
+document.getElementById("complete");
+
+if(percentage===100){
+
+complete.classList.add("show");
+
+}else{
+
+complete.classList.remove("show");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
