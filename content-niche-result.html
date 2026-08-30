@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>EarnFlow — Your Content Direction</title>
+
+<meta name="description" content="Build a focused content direction with EarnFlow.">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:40px 18px;
+}
+
+.icon{
+font-size:52px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.direction{
+background:#eef5ff;
+padding:20px;
+border-radius:13px;
+line-height:1.7;
+}
+
+.big{
+font-size:25px;
+font-weight:800;
+margin-bottom:12px;
+}
+
+.detail{
+background:#f8fafc;
+padding:16px;
+border-radius:11px;
+margin-top:12px;
+line-height:1.6;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:18px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+🎯
+</div>
+
+<h1>
+Your Content Direction
+</h1>
+
+<p>
+You now have a starting direction. The next step is to understand your audience and create content that consistently provides useful value.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>🚀 Your Content Direction</h2>
+
+<div class="direction">
+
+<div
+class="big"
+id="niche"
+>
+Your Niche
+</div>
+
+<p>
+<strong>👥 Target audience</strong>
+</p>
+
+<p id="audience">
+Your audience
+</p>
+
+<p>
+<strong>💎 Value you plan to provide</strong>
+</p>
+
+<p id="value">
+Your content value
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧭 Your Content Focus</h2>
+
+<div class="detail">
+
+<strong>01 — Stay focused</strong>
+
+Create content mainly around your chosen subject instead of jumping between unrelated topics constantly.
+
+</div>
+
+<div class="detail">
+
+<strong>02 — Understand your audience</strong>
+
+Learn what your audience wants to know, what problems they experience and what questions they frequently ask.
+
+</div>
+
+<div class="detail">
+
+<strong>03 — Provide useful information</strong>
+
+Each piece of content should teach, explain, demonstrate, entertain responsibly or help the audience solve a problem.
+
+</div>
+
+<div class="detail">
+
+<strong>04 — Build consistency</strong>
+
+Create a realistic publishing routine that you can maintain without sacrificing quality.
+
+</div>
+
+<div class="detail">
+
+<strong>05 — Improve from feedback</strong>
+
+Pay attention to useful audience feedback and performance data and use it to improve future content.
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>💡 Content Ideas to Explore</h2>
+
+<div class="detail">
+<strong>How-to content</strong>
+Explain how to complete a useful task related to your niche.
+</div>
+
+<div class="detail">
+<strong>Beginner guides</strong>
+Explain difficult concepts in a simple way for people who are just starting.
+</div>
+
+<div class="detail">
+<strong>Common mistakes</strong>
+Explain mistakes beginners commonly make and how they can avoid them.
+</div>
+
+<div class="detail">
+<strong>Tips and shortcuts</strong>
+Share practical techniques that save time or make a task easier.
+</div>
+
+<div class="detail">
+<strong>Questions and answers</strong>
+Turn real questions from your audience into useful content topics.
+</div>
+
+<button
+class="primary"
+onclick="continueToAudience()"
+>
+👥 Understand My Audience
+</button>
+
+</div>
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle:</strong>
+
+<p>
+Your niche is only the starting point. Your long-term advantage comes from understanding the people you serve and consistently creating content that is genuinely useful to them.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>⚠️ Remember:</strong>
+
+<p>
+There is no guaranteed income from content creation. Focus on building useful skills, serving an audience and improving your work over time.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+
+const niche =
+params.get("niche") ||
+"Your Content Niche";
+
+
+const audience =
+params.get("audience") ||
+"Your Target Audience";
+
+
+const value =
+params.get("value") ||
+"Useful content";
+
+
+document.getElementById("niche").textContent =
+niche;
+
+
+document.getElementById("audience").textContent =
+audience;
+
+
+document.getElementById("value").textContent =
+value;
+
+
+function continueToAudience(){
+
+const nextParams =
+new URLSearchParams();
+
+nextParams.set(
+"niche",
+niche
+);
+
+nextParams.set(
+"audience",
+audience
+);
+
+nextParams.set(
+"value",
+value
+);
+
+
+window.location.href =
+"content-audience.html?" +
+nextParams.toString();
+
+}
+
+</script>
+
+</body>
+</html>
