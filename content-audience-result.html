@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>EarnFlow — Audience Profile</title>
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:40px 18px;
+}
+
+.icon{
+font-size:52px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.profile{
+background:#eef5ff;
+padding:20px;
+border-radius:13px;
+line-height:1.7;
+}
+
+.detail{
+background:#f8fafc;
+padding:16px;
+border-radius:11px;
+margin-top:12px;
+line-height:1.6;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+<header class="hero">
+
+<div class="icon">👥</div>
+
+<h1>
+Your Audience Profile
+</h1>
+
+<p>
+A clear audience profile gives you a better starting point for creating useful content.
+</p>
+
+</header>
+
+<main class="container">
+
+<div class="card">
+
+<h2>🎯 Your Audience</h2>
+
+<div class="profile">
+
+<p>
+<strong>👥 Who you want to reach</strong>
+</p>
+
+<p id="audience">
+Your audience
+</p>
+
+<p>
+<strong>🎂 Age group</strong>
+</p>
+
+<p id="age">
+Not specified
+</p>
+
+<p>
+<strong>⚠️ Main problem</strong>
+</p>
+
+<p id="problem">
+Not specified
+</p>
+
+<p>
+<strong>🏆 Main goal</strong>
+</p>
+
+<p id="goal">
+Not specified
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🧠 Turn Audience Knowledge Into Content</h2>
+
+<div class="detail">
+<strong>01 — Answer questions</strong>
+<p>
+Create content that answers questions your audience regularly asks.
+</p>
+</div>
+
+<div class="detail">
+<strong>02 — Solve problems</strong>
+<p>
+Show practical ways to overcome problems connected to your niche.
+</p>
+</div>
+
+<div class="detail">
+<strong>03 — Teach beginners</strong>
+<p>
+Explain complicated subjects in simple language when your audience is still learning.
+</p>
+</div>
+
+<div class="detail">
+<strong>04 — Demonstrate results responsibly</strong>
+<p>
+Show examples, processes and lessons without promising guaranteed outcomes.
+</p>
+</div>
+
+<div class="detail">
+<strong>05 — Listen and improve</strong>
+<p>
+Use appropriate audience feedback to understand what content is useful and what needs improvement.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>💡 Your Next Step</h2>
+
+<p>
+Now that you know who you want to serve, the next challenge is deciding exactly what to create.
+</p>
+
+<button
+class="primary"
+onclick="continueToIdeas()"
+>
+💡 Generate Content Ideas
+</button>
+
+</div>
+
+<div class="tip">
+
+<strong>EarnFlow principle:</strong>
+
+<p>
+Great content is not simply about getting attention. It should provide something useful to the people who choose to watch, read or listen.
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>⚠️ Remember:</strong>
+
+<p>
+Audience research should respect people's privacy. Don't collect or expose unnecessary personal information.
+</p>
+
+</div>
+
+</main>
+
+<footer>
+
+<strong>EarnFlow</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+const audience =
+params.get("audience") ||
+"Your audience";
+
+const age =
+params.get("age") ||
+"Not specified";
+
+const problem =
+params.get("problem") ||
+"Not specified";
+
+const goal =
+params.get("goal") ||
+"Not specified";
+
+const niche =
+params.get("niche") ||
+"Your niche";
+
+document.getElementById("audience").textContent =
+audience;
+
+document.getElementById("age").textContent =
+age;
+
+document.getElementById("problem").textContent =
+problem;
+
+document.getElementById("goal").textContent =
+goal;
+
+function continueToIdeas(){
+
+const next =
+new URLSearchParams();
+
+next.set("niche",niche);
+next.set("audience",audience);
+next.set("problem",problem);
+next.set("goal",goal);
+
+window.location.href =
+"content-ideas.html?" +
+next.toString();
+
+}
+
+</script>
+
+</body>
+</html>
