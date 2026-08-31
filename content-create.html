@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>EarnFlow — Create Your Content</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:40px 18px;
+}
+
+.icon{
+font-size:52px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.plan{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
+line-height:1.7;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:150px;
+resize:vertical;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+🎬
+</div>
+
+<h1>
+05 — Create Your Content
+</h1>
+
+<p>
+Turn your content plan into an actual piece of useful content for your audience.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>
+🎯 Your Content Plan
+</h2>
+
+<div class="plan">
+
+<p>
+<strong>Niche:</strong>
+<span id="niche">
+Your niche
+</span>
+</p>
+
+<p>
+<strong>Audience:</strong>
+<span id="audience">
+Your audience
+</span>
+</p>
+
+<p>
+<strong>Format:</strong>
+<span id="format">
+Short video
+</span>
+</p>
+
+<p>
+<strong>Goal:</strong>
+<span id="goal">
+Teach something useful
+</span>
+</p>
+
+<p>
+<strong>Topic:</strong>
+<span id="topic">
+Your topic
+</span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+✍️ Create Your Content
+</h2>
+
+<label for="title">
+Content title
+</label>
+
+<input
+id="title"
+placeholder="Example: 5 Smartphone Settings Beginners Should Know"
+>
+
+
+<label for="opening">
+Opening / Hook
+</label>
+
+<textarea
+id="opening"
+placeholder="Write the first thing your audience will see or hear."
+></textarea>
+
+
+<label for="body">
+Main Content
+</label>
+
+<textarea
+id="body"
+placeholder="Write the useful information, explanation, steps or story."
+></textarea>
+
+
+<label for="ending">
+Ending
+</label>
+
+<textarea
+id="ending"
+placeholder="Summarize the main point and give an appropriate next step."
+></textarea>
+
+
+<label for="publish">
+What do you want to do next?
+</label>
+
+<select id="publish">
+
+<option>
+Save as draft
+</option>
+
+<option>
+Prepare for review
+</option>
+
+<option>
+Prepare for publishing
+</option>
+
+</select>
+
+
+<button
+class="primary"
+onclick="finishContent()"
+>
+✅ Finish My Content
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🧠 Quality Checklist
+</h2>
+
+<p>
+✓ Does the content serve the intended audience?
+</p>
+
+<p>
+✓ Does it provide genuine useful value?
+</p>
+
+<p>
+✓ Is the information clear and understandable?
+</p>
+
+<p>
+✓ Does the content deliver what the title promises?
+</p>
+
+<p>
+✓ Have you avoided misleading claims?
+</p>
+
+</div>
+
+
+<div class="tip">
+
+<strong>
+💡 EarnFlow principle:
+</strong>
+
+<p>
+Consistency matters, but quality matters too. Focus on creating content that genuinely helps the people you want to serve.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>
+⚠️ Before publishing:</strong>
+
+<p>
+Check facts, respect copyright and avoid presenting guesses or opinions as established facts.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+
+const niche =
+params.get("niche") ||
+"Your niche";
+
+
+const audience =
+params.get("audience") ||
+"Your audience";
+
+
+const format =
+params.get("format") ||
+"Short video";
+
+
+const goal =
+params.get("goal") ||
+"Teach something useful";
+
+
+const topic =
+params.get("topic") ||
+"Your topic";
+
+
+document.getElementById(
+"niche"
+).textContent =
+niche;
+
+
+document.getElementById(
+"audience"
+).textContent =
+audience;
+
+
+document.getElementById(
+"format"
+).textContent =
+format;
+
+
+document.getElementById(
+"goal"
+).textContent =
+goal;
+
+
+document.getElementById(
+"topic"
+).textContent =
+topic;
+
+
+function finishContent(){
+
+const title =
+document.getElementById(
+"title"
+).value.trim();
+
+
+const opening =
+document.getElementById(
+"opening"
+).value.trim();
+
+
+const body =
+document.getElementById(
+"body"
+).value.trim();
+
+
+const ending =
+document.getElementById(
+"ending"
+).value.trim();
+
+
+const publish =
+document.getElementById(
+"publish"
+).value;
+
+
+if(
+!title ||
+!opening ||
+!body ||
+!ending
+){
+
+alert(
+"Please complete the title, opening, main content and ending."
+);
+
+return;
+
+}
+
+
+const next =
+new URLSearchParams();
+
+
+next.set(
+"niche",
+niche
+);
+
+next.set(
+"audience",
+audience
+);
+
+next.set(
+"format",
+format
+);
+
+next.set(
+"goal",
+goal
+);
+
+next.set(
+"topic",
+topic
+);
+
+next.set(
+"title",
+title
+);
+
+next.set(
+"opening",
+opening
+);
+
+next.set(
+"body",
+body
+);
+
+next.set(
+"ending",
+ending
+);
+
+next.set(
+"publish",
+publish
+);
+
+
+window.location.href =
+"content-review.html?" +
+next.toString();
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
