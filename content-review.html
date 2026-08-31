@@ -548,9 +548,7 @@ document.querySelectorAll(
 'input[type="checkbox"]'
 );
 
-
 let completed = 0;
-
 
 checks.forEach(
 function(check){
@@ -562,7 +560,6 @@ completed++;
 }
 
 });
-
 
 if(
 completed <
@@ -577,11 +574,18 @@ return;
 
 }
 
+const currentScroll =
+window.scrollY;
 
 document.getElementById(
 "success"
 ).style.display =
 "block";
+
+window.scrollTo(
+0,
+currentScroll
+);
 
 }
 
