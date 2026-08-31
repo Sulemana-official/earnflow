@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>EarnFlow — Your Content Plan</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:40px 18px;
+}
+
+.icon{
+font-size:52px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.plan{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:13px;
+margin-top:14px;
+line-height:1.7;
+}
+
+.plan h3{
+margin-top:0;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+📋
+</div>
+
+<h1>
+Your Content Plan
+</h1>
+
+<p>
+Your idea has been turned into a simple, practical content plan.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>
+🎯 Content Direction
+</h2>
+
+<div class="plan">
+
+<p>
+<strong>Niche:</strong>
+<span id="niche"></span>
+</p>
+
+<p>
+<strong>Audience:</strong>
+<span id="audience"></span>
+</p>
+
+<p>
+<strong>Format:</strong>
+<span id="format"></span>
+</p>
+
+<p>
+<strong>Goal:</strong>
+<span id="goal"></span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+💡 Your Content Topic
+</h2>
+
+<div class="plan">
+
+<h3 id="topic">
+Your topic
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🪝 Your Opening / Hook
+</h2>
+
+<div class="plan">
+
+<p id="hook">
+Your opening
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎁 Useful Value
+</h2>
+
+<div class="plan">
+
+<p id="value">
+Your useful value
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🚀 Next Action
+</h2>
+
+<div class="plan">
+
+<p>
+<strong>Recommended action:</strong>
+<span id="action"></span>
+</p>
+
+<p>
+Your next step is to turn this plan into an actual piece of content.
+</p>
+
+</div>
+
+<button
+class="primary"
+onclick="continueToCreate()"
+>
+🎬 Create My Content
+</button>
+
+</div>
+
+
+<div class="tip">
+
+<strong>
+💡 EarnFlow principle:
+</strong>
+
+<p>
+A plan is useful when it helps you take action. Use this plan as your blueprint, then create something genuinely useful for your audience.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+
+const niche =
+params.get("niche") ||
+"Your niche";
+
+
+const audience =
+params.get("audience") ||
+"Your audience";
+
+
+const format =
+params.get("format") ||
+"Short video";
+
+
+const goal =
+params.get("goal") ||
+"Teach something useful";
+
+
+const topic =
+params.get("topic") ||
+"Your topic";
+
+
+const hook =
+params.get("hook") ||
+"Your opening";
+
+
+const value =
+params.get("value") ||
+"Your useful value";
+
+
+const action =
+params.get("action") ||
+"Publish it";
+
+
+document.getElementById(
+"niche"
+).textContent =
+niche;
+
+
+document.getElementById(
+"audience"
+).textContent =
+audience;
+
+
+document.getElementById(
+"format"
+).textContent =
+format;
+
+
+document.getElementById(
+"goal"
+).textContent =
+goal;
+
+
+document.getElementById(
+"topic"
+).textContent =
+topic;
+
+
+document.getElementById(
+"hook"
+).textContent =
+hook;
+
+
+document.getElementById(
+"value"
+).textContent =
+value;
+
+
+document.getElementById(
+"action"
+).textContent =
+action;
+
+
+function continueToCreate(){
+
+const next =
+new URLSearchParams();
+
+
+next.set(
+"niche",
+niche
+);
+
+next.set(
+"audience",
+audience
+);
+
+next.set(
+"format",
+format
+);
+
+next.set(
+"goal",
+goal
+);
+
+next.set(
+"topic",
+topic
+);
+
+next.set(
+"hook",
+hook
+);
+
+next.set(
+"value",
+value
+);
+
+next.set(
+"action",
+action
+);
+
+
+window.location.href =
+"content-create.html?" +
+next.toString();
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
