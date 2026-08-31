@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>EarnFlow — Build My Content Plan</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:40px 18px;
+}
+
+.icon{
+font-size:52px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.plan{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:13px;
+margin-top:14px;
+line-height:1.6;
+}
+
+.tip{
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+📅
+</div>
+
+<h1>
+04 — Build My Content Plan
+</h1>
+
+<p>
+Turn one content idea into a simple plan that tells you what to create, who it is for and what value it should provide.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>
+🎯 Your Content Direction
+</h2>
+
+<div class="plan">
+
+<p>
+<strong>Niche:</strong>
+<span id="niche">
+Your niche
+</span>
+</p>
+
+<p>
+<strong>Audience:</strong>
+<span id="audience">
+Your audience
+</span>
+</p>
+
+<p>
+<strong>Format:</strong>
+<span id="format">
+Short video
+</span>
+</p>
+
+<p>
+<strong>Goal:</strong>
+<span id="goal">
+Teach something useful
+</span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+📝 Create Your Plan
+</h2>
+
+<label for="topic">
+What specific topic will you create?
+</label>
+
+<input
+id="topic"
+placeholder="Example: 5 smartphone settings beginners should know"
+>
+
+
+<label for="hook">
+What will your opening say?
+</label>
+
+<textarea
+id="hook"
+placeholder="Example: If you recently bought a smartphone, check these five settings..."
+></textarea>
+
+
+<label for="value">
+What useful value will the audience receive?
+</label>
+
+<textarea
+id="value"
+placeholder="Explain what the audience will learn, solve or be able to do."
+></textarea>
+
+
+<label for="action">
+What should you do after creating it?
+</label>
+
+<select id="action">
+
+<option>
+Publish it
+</option>
+
+<option>
+Schedule it
+</option>
+
+<option>
+Send it to a reviewer
+</option>
+
+<option>
+Save it for later
+</option>
+
+</select>
+
+
+<button
+class="primary"
+onclick="createPlan()"
+>
+🚀 Create My Content Plan
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🧩 Simple Content Structure
+</h2>
+
+<div class="plan">
+
+<strong>1. Hook</strong>
+
+<p>
+Give the audience a reason to continue watching or reading.
+</p>
+
+</div>
+
+<div class="plan">
+
+<strong>2. Value</strong>
+
+<p>
+Deliver the useful information, explanation, demonstration or story.
+</p>
+
+</div>
+
+<div class="plan">
+
+<strong>3. Clear ending</strong>
+
+<p>
+Summarize the main point and give an appropriate next step.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tip">
+
+<strong>
+💡 EarnFlow principle:
+</strong>
+
+<p>
+A content plan does not need to be complicated. The goal is to make it easier to consistently create useful content instead of waiting for inspiration.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+
+const niche =
+params.get("niche") ||
+"Your niche";
+
+
+const audience =
+params.get("audience") ||
+"Your audience";
+
+
+const format =
+params.get("format") ||
+"Short video";
+
+
+const goal =
+params.get("goal") ||
+"Teach something useful";
+
+
+document.getElementById(
+"niche"
+).textContent =
+niche;
+
+
+document.getElementById(
+"audience"
+).textContent =
+audience;
+
+
+document.getElementById(
+"format"
+).textContent =
+format;
+
+
+document.getElementById(
+"goal"
+).textContent =
+goal;
+
+
+function createPlan(){
+
+const topic =
+document.getElementById(
+"topic"
+).value.trim();
+
+
+const hook =
+document.getElementById(
+"hook"
+).value.trim();
+
+
+const value =
+document.getElementById(
+"value"
+).value.trim();
+
+
+const action =
+document.getElementById(
+"action"
+).value;
+
+
+if(
+!topic ||
+!hook ||
+!value
+){
+
+alert(
+"Please complete the topic, opening and useful value fields."
+);
+
+return;
+
+}
+
+
+const nextParams =
+new URLSearchParams();
+
+
+nextParams.set(
+"niche",
+niche
+);
+
+nextParams.set(
+"audience",
+audience
+);
+
+nextParams.set(
+"format",
+format
+);
+
+nextParams.set(
+"goal",
+goal
+);
+
+nextParams.set(
+"topic",
+topic
+);
+
+nextParams.set(
+"hook",
+hook
+);
+
+nextParams.set(
+"value",
+value
+);
+
+nextParams.set(
+"action",
+action
+);
+
+
+window.location.href =
+"content-plan-result.html?" +
+nextParams.toString();
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
