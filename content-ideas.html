@@ -1,12 +1,21 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>EarnFlow — Generate Content Ideas</title>
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>
+EarnFlow — Generate Content Ideas
+</title>
 
 <style>
+
 *{
 box-sizing:border-box;
 }
@@ -84,13 +93,13 @@ font-weight:bold;
 margin:16px 0 7px;
 }
 
-input,
 select{
 width:100%;
 padding:13px;
 border:1px solid #d1d5db;
 border-radius:9px;
 font:inherit;
+background:white;
 }
 
 .primary{
@@ -106,37 +115,19 @@ font-weight:bold;
 cursor:pointer;
 }
 
-.secondary{
-width:100%;
-padding:13px;
-margin-top:10px;
-border:1px solid #d1d5db;
-border-radius:10px;
-background:white;
-font-size:15px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.idea{
-background:#f8fafc;
-border:1px solid #e5e7eb;
+.direction{
+background:#eef5ff;
 padding:18px;
-border-radius:13px;
-margin-top:14px;
+border-radius:12px;
+line-height:1.7;
 }
 
-.idea h3{
-margin-top:0;
-}
-
-.copy{
-border:0;
-background:#e5e7eb;
-padding:9px 12px;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
+.detail{
+background:#f8fafc;
+padding:16px;
+border-radius:11px;
+margin-top:12px;
+line-height:1.6;
 }
 
 .tip{
@@ -161,10 +152,14 @@ color:#d1d5db;
 padding:30px 18px;
 margin-top:25px;
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <nav class="top">
 
@@ -204,24 +199,36 @@ Turn your niche and audience knowledge into practical content ideas you can deve
 
 <div class="card">
 
-<h2>🎯 Your Content Direction</h2>
+<h2>
+🎯 Your Content Direction
+</h2>
+
+<div class="direction">
 
 <p>
 <strong>Niche:</strong>
-<span id="niche">Your niche</span>
+<span id="niche">
+Your niche
+</span>
 </p>
 
 <p>
 <strong>Audience:</strong>
-<span id="audience">Your audience</span>
+<span id="audience">
+Your audience
+</span>
 </p>
+
+</div>
 
 </div>
 
 
 <div class="card">
 
-<h2>🧠 Build Your Ideas</h2>
+<h2>
+🧠 Build Your Ideas
+</h2>
 
 <label for="format">
 What type of content do you want?
@@ -292,40 +299,180 @@ onclick="generateIdeas()"
 💡 Generate Content Ideas
 </button>
 
-
-<button
-class="secondary"
-onclick="clearIdeas()"
->
-↻ Clear Ideas
-</button>
-
-</div>
-
-
-<div
-class="card"
-id="ideasBox"
-style="display:none;"
->
-
-<h2>✨ Your Content Ideas</h2>
-
-<div id="ideas"></div>
-
 </div>
 
 
 <div class="card">
 
-<h2>🧩 Content Idea Formula</h2>
+<h2>
+🧩 Content Idea Formula
+</h2>
 
-<div class="idea">
+<div class="detail">
 
-<strong>Audience + Problem + Useful Outcome</strong>
+<strong>
+Audience + Problem + Useful Outcome
+</strong>
 
 <p>
 Start with something your audience cares about, identify a problem or question and create content that provides a useful outcome.
 </p>
 
-</
+</div>
+
+
+<div class="detail">
+
+<strong>
+Example
+</strong>
+
+<p>
+Instead of:
+"5 things about smartphones."
+</p>
+
+<p>
+Try:
+"5 smartphone settings beginners should check today."
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tip">
+
+<strong>
+💡 EarnFlow principle:
+</strong>
+
+<p>
+You don't need hundreds of ideas before you start. One useful idea developed well is more valuable than a long list of ideas that never become actual content.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>
+⚠️ Avoid clickbait deception:
+</strong>
+
+<p>
+A strong title can attract attention, but the content should actually deliver what the title promises.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+
+const niche =
+params.get("niche") ||
+"Your niche";
+
+
+const audience =
+params.get("audience") ||
+"Your audience";
+
+
+document.getElementById(
+"niche"
+).textContent =
+niche;
+
+
+document.getElementById(
+"audience"
+).textContent =
+audience;
+
+
+function generateIdeas(){
+
+const format =
+document.getElementById(
+"format"
+).value;
+
+
+const goal =
+document.getElementById(
+"goal"
+).value;
+
+
+const nextParams =
+new URLSearchParams();
+
+
+nextParams.set(
+"niche",
+niche
+);
+
+
+nextParams.set(
+"audience",
+audience
+);
+
+
+nextParams.set(
+"format",
+format
+);
+
+
+nextParams.set(
+"goal",
+goal
+);
+
+
+window.location.href =
+"content-ideas-result.html?" +
+nextParams.toString();
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
