@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>EarnFlow — Generate Content Ideas</title>
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:40px 18px;
+}
+
+.icon{
+font-size:52px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.secondary{
+width:100%;
+padding:13px;
+margin-top:10px;
+border:1px solid #d1d5db;
+border-radius:10px;
+background:white;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.idea{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:13px;
+margin-top:14px;
+}
+
+.idea h3{
+margin-top:0;
+}
+
+.copy{
+border:0;
+background:#e5e7eb;
+padding:9px 12px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+💡
+</div>
+
+<h1>
+03 — Generate Content Ideas
+</h1>
+
+<p>
+Turn your niche and audience knowledge into practical content ideas you can develop into useful posts, videos or educational resources.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>🎯 Your Content Direction</h2>
+
+<p>
+<strong>Niche:</strong>
+<span id="niche">Your niche</span>
+</p>
+
+<p>
+<strong>Audience:</strong>
+<span id="audience">Your audience</span>
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧠 Build Your Ideas</h2>
+
+<label for="format">
+What type of content do you want?
+</label>
+
+<select id="format">
+
+<option value="Short video">
+🎬 Short video
+</option>
+
+<option value="Educational post">
+📚 Educational post
+</option>
+
+<option value="Tutorial">
+🛠️ Tutorial
+</option>
+
+<option value="List">
+📋 List / tips
+</option>
+
+<option value="Story">
+📖 Story
+</option>
+
+<option value="Question and answer">
+❓ Question and answer
+</option>
+
+</select>
+
+
+<label for="goal">
+What is the main goal?
+</label>
+
+<select id="goal">
+
+<option value="Teach something useful">
+Teach something useful
+</option>
+
+<option value="Solve a problem">
+Solve a problem
+</option>
+
+<option value="Build trust">
+Build trust
+</option>
+
+<option value="Start a discussion">
+Start a discussion
+</option>
+
+<option value="Show a useful process">
+Show a useful process
+</option>
+
+</select>
+
+
+<button
+class="primary"
+onclick="generateIdeas()"
+>
+💡 Generate Content Ideas
+</button>
+
+
+<button
+class="secondary"
+onclick="clearIdeas()"
+>
+↻ Clear Ideas
+</button>
+
+</div>
+
+
+<div
+class="card"
+id="ideasBox"
+style="display:none;"
+>
+
+<h2>✨ Your Content Ideas</h2>
+
+<div id="ideas"></div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧩 Content Idea Formula</h2>
+
+<div class="idea">
+
+<strong>Audience + Problem + Useful Outcome</strong>
+
+<p>
+Start with something your audience cares about, identify a problem or question and create content that provides a useful outcome.
+</p>
+
+</
