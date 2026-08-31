@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>EarnFlow — Content Ideas</title>
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:40px 18px;
+}
+
+.icon{
+font-size:52px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.idea{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:13px;
+margin-top:14px;
+}
+
+.idea h3{
+margin-top:0;
+}
+
+.copy{
+border:0;
+background:#e5e7eb;
+padding:9px 12px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:18px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#ecfdf3;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button class="back" onclick="history.back()">
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">✨</div>
+
+<h1>
+Your Content Ideas
+</h1>
+
+<p>
+Here are practical ideas based on your chosen niche, audience and content goal.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>🎯 Your Direction</h2>
+
+<p>
+<strong>Niche:</strong>
+<span id="niche"></span>
+</p>
+
+<p>
+<strong>Audience:</strong>
+<span id="audience"></span>
+</p>
+
+<p>
+<strong>Format:</strong>
+<span id="format"></span>
+</p>
+
+<p>
+<strong>Goal:</strong>
+<span id="goal"></span>
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>💡 Content Ideas</h2>
+
+<div id="ideas"></div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🚀 What To Do Next</h2>
+
+<div class="idea">
+
+<strong>Choose one idea.</strong>
+
+<p>
+Don't try to create everything at once. Choose one idea and turn it into a useful piece of content.
+</p>
+
+</div>
+
+<div class="idea">
+
+<strong>Create a strong opening.</strong>
+
+<p>
+Tell your audience what they will learn or gain from the content.
+</p>
+
+</div>
+
+<div class="idea">
+
+<strong>Deliver useful value.</strong>
+
+<p>
+Make sure the actual content fulfills the promise made by the title or opening.
+</p>
+
+</div>
+
+<button
+class="primary"
+onclick="continueToPlan()"
+>
+📅 Build My Content Plan
+</button>
+
+</div>
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle:</strong>
+
+<p>
+A good idea only becomes valuable when you turn it into useful content and consistently improve it.
+</p>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<strong>EarnFlow</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+const niche =
+params.get("niche") ||
+"Your niche";
+
+const audience =
+params.get("audience") ||
+"Your audience";
+
+const format =
+params.get("format") ||
+"Short video";
+
+const goal =
+params.get("goal") ||
+"Teach something useful";
+
+
+document.getElementById("niche").textContent =
+niche;
+
+document.getElementById("audience").textContent =
+audience;
+
+document.getElementById("format").textContent =
+format;
+
+document.getElementById("goal").textContent =
+goal;
+
+
+const ideas = [
+
+"Beginner's Guide to " + niche,
+
+"3 Common Problems " + audience + " Face With " + niche,
+
+"How to Get Better at " + niche,
+
+"What I Wish I Knew About " + niche,
+
+"5 Questions About " + niche + " Answered",
+
+"Step-by-Step " + niche + " Tutorial"
+
+];
+
+
+const descriptions = [
+
+"Create a simple " + format + " explaining the basics of " + niche + " for " + audience + ".",
+
+"Identify three common problems and provide practical solutions your audience can use.",
+
+"Show simple steps that can help your audience improve their knowledge or skills.",
+
+"Share useful beginner lessons, mistakes to avoid and practical advice.",
+
+"Answer five common questions your audience may have about this subject.",
+
+"Demonstrate a useful process from beginning to end."
+
+];
+
+
+const container =
+document.getElementById("ideas");
+
+
+ideas.forEach(function(title,index){
+
+const div =
+document.createElement("div");
+
+div.className="idea";
+
+div.innerHTML=
+
+"<h3>"+
+(index+1)+
+". "+
+title+
+"</h3>"+
+
+"<p>"+
+descriptions[index]+
+"</p>"+
+
+"<button class='copy' onclick='copyIdea(this)'>"+
+"📋 Copy Idea"+
+"</button>";
+
+container.appendChild(div);
+
+});
+
+
+function copyIdea(button){
+
+const text =
+button.parentElement.innerText.replace(
+"📋 Copy Idea",
+""
+);
+
+if(navigator.clipboard){
+
+navigator.clipboard.writeText(text);
+
+button.textContent="✅ Copied";
+
+setTimeout(function(){
+
+button.textContent="📋 Copy Idea";
+
+},1500);
+
+}else{
+
+alert("Copy is not supported by this browser.");
+
+}
+
+}
+
+
+function continueToPlan(){
+
+const next =
+new URLSearchParams();
+
+next.set("niche",niche);
+next.set("audience",audience);
+next.set("format",format);
+next.set("goal",goal);
+
+window.location.href =
+"content-plan.html?" +
+next.toString();
+
+}
+
+</script>
+
+</body>
+</html>
