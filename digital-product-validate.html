@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
 
 <title>EarnFlow — Validate Your Product Idea</title>
 
-<meta name="description" content="Validate a digital product idea by checking the customer, problem, value and evidence of demand.">
+<meta name="description" content="Validate your digital product idea before investing significant time or money.">
 
 <style>
 *{
@@ -87,8 +88,7 @@ margin:16px 0 7px;
 }
 
 input,
-textarea,
-select{
+textarea{
 width:100%;
 padding:13px;
 border:1px solid #d1d5db;
@@ -112,7 +112,8 @@ border-bottom:0;
 
 .question-title{
 font-weight:bold;
-margin-bottom:8px;
+margin-bottom:10px;
+line-height:1.5;
 }
 
 .options{
@@ -161,51 +162,68 @@ font-weight:bold;
 cursor:pointer;
 }
 
-.score{
+.result{
 display:none;
-text-align:center;
-padding:25px;
+margin-top:22px;
+padding:22px;
 border-radius:14px;
-margin-top:20px;
-background:#eef5ff;
+background:#ecfdf3;
+border:1px solid #bbf7d0;
 }
 
-.score.show{
+.result.show{
 display:block;
 }
 
 .score-number{
 font-size:42px;
 font-weight:800;
-margin:10px 0;
+margin:8px 0;
 }
 
 .verdict{
 font-size:20px;
 font-weight:bold;
+margin-bottom:12px;
 }
 
-.next{
-background:#ecfdf3;
-padding:18px;
-border-radius:12px;
-margin-top:18px;
+.result-text{
 line-height:1.6;
 }
 
-.warning{
-background:#fff7ed;
-padding:16px;
+.continue{
+width:100%;
+margin-top:18px;
+padding:15px;
+border:0;
 border-radius:10px;
+background:#16a34a;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.research{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
 line-height:1.6;
 }
 
 .tip{
-background:#eef5ff;
-padding:16px;
-border-radius:10px;
+background:#f0fdf4;
+padding:18px;
+border-radius:12px;
 line-height:1.6;
-margin-top:18px;
+margin-bottom:18px;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
 }
 
 footer{
@@ -247,7 +265,7 @@ Validate Your Product Idea
 </h1>
 
 <p>
-Before spending a lot of time creating your product, check whether the problem, customer and value are clear.
+Before building the full product, check whether the customer, problem, value and demand are clear enough to justify moving forward.
 </p>
 
 </header>
@@ -295,7 +313,7 @@ placeholder="Describe the problem clearly."
 <h2>📊 Validation Questions</h2>
 
 <p>
-Answer honestly. The score is only a simple decision aid—it is not proof that a product will sell.
+Answer honestly. This score is a simple decision aid, not proof that your product will sell.
 </p>
 
 
@@ -465,12 +483,12 @@ onclick="resetValidation()"
 
 
 <div
-class="score"
-id="scoreBox"
+class="result"
+id="resultBox"
 >
 
 <div>
-Validation score
+<strong>Validation result</strong>
 </div>
 
 <div
@@ -487,10 +505,17 @@ id="verdict"
 </div>
 
 <div
-class="next"
-id="nextStep"
+class="result-text"
+id="resultText"
 >
 </div>
+
+<button
+class="continue"
+onclick="continueToPlan()"
+>
+Continue to Step 04 →
+</button>
 
 </div>
 
@@ -500,6 +525,8 @@ id="nextStep"
 <div class="card">
 
 <h2>🔎 Simple Demand Research</h2>
+
+<div class="research">
 
 <p>
 Before creating the full product, look for real evidence that the problem matters.
@@ -514,21 +541,24 @@ Before creating the full product, look for real evidence that the problem matter
 <li>How do you currently solve it?</li>
 <li>What is difficult about your current solution?</li>
 <li>What would make a better solution useful?</li>
+<li>Would you consider paying for a better solution?</li>
 </ul>
 
 <p>
-You can also examine relevant discussions, search results, communities and existing products to understand the problem better.
+You can also examine relevant discussions, search results, communities and existing products to understand the problem and the alternatives people already use.
 </p>
+
+</div>
 
 </div>
 
 
 <div class="tip">
 
-<strong>💡 EarnFlow principle:</strong>
+<strong>💡 EarnFlow principle</strong>
 
 <p>
-Validation isn't about guaranteeing sales. It is about reducing avoidable mistakes by learning about the problem and customer before investing heavily in the product.
+Validation is not about guaranteeing sales. It is about reducing avoidable mistakes by learning about the customer and problem before investing heavily in the product.
 </p>
 
 </div>
@@ -536,10 +566,10 @@ Validation isn't about guaranteeing sales. It is about reducing avoidable mistak
 
 <div class="warning">
 
-<strong>⚠️ Important:</strong>
+<strong>⚠️ Important</strong>
 
 <p>
-Never invent testimonials, customer demand, sales numbers or research results to make a product appear more successful than it is.
+Never invent testimonials, customer demand, sales numbers or research results to make a product appear more successful than it really is.
 </p>
 
 </div>
@@ -571,9 +601,10 @@ Build skills. Find opportunities. Grow.
 
 const answers = {};
 
+
 function answer(question,value,button){
 
-answers[question]=value;
+answers[question] = value;
 
 const buttons =
 button.parentElement.querySelectorAll("button");
@@ -601,11 +632,7 @@ const problem =
 document.getElementById("problem").value.trim();
 
 
-if(
-!product ||
-!customer ||
-!problem
-){
+if(!product || !customer || !problem){
 
 alert(
 "Please complete your product, customer and problem first."
@@ -618,9 +645,7 @@ return;
 
 for(let i=1;i<=6;i++){
 
-if(
-answers[i] === undefined
-){
+if(answers[i] === undefined){
 
 alert(
 "Please answer all six validation questions."
@@ -633,102 +658,57 @@ return;
 }
 
 
-let positive=0;
+let positive = 0;
+
+let uncertain = 0;
+
+let negative = 0;
+
 
 for(let i=1;i<=6;i++){
 
-if(answers[i]===1){
+if(answers[i] === 1){
 
 positive++;
 
 }
 
+if(answers[i] === 0){
+
+uncertain++;
+
+}
+
+if(answers[i] === -1){
+
+negative++;
+
+}
+
 }
 
 
-const score =
-positive;
+const score = positive;
 
 
-let verdict="";
+let verdict = "";
 
-let next="";
+let resultText = "";
 
 
-if(score>=5){
+if(score >= 5){
 
-verdict=
+verdict =
 "🟢 Strong starting signal";
 
-next=
-"<strong>Next step:</strong><br><br>"+
-"Your idea has several positive signals. Start building a small first version and continue learning from potential customers.";
+resultText =
+"You have several positive signals. This does not guarantee sales, but the idea appears ready for a small first version. Keep validating the problem while you build.";
 
-}else if(score>=3){
+}
+else if(score >= 3){
 
-verdict=
+verdict =
 "🟡 Needs more validation";
 
-next=
-"<strong>Next step:</strong><br><br>"+
-"Your idea has some promising elements, but investigate the uncertain areas before spending significant time or money creating the product.";
-
-}else{
-
-verdict=
-"🔴 Go back and investigate";
-
-next=
-"<strong>Next step:</strong><br><br>"+
-"Several important areas are unclear. Talk to potential customers, clarify the problem and improve the idea before building a full product.";
-
-}
-
-
-document.getElementById("scoreNumber").textContent=
-score+"/6";
-
-document.getElementById("verdict").textContent=
-verdict;
-
-document.getElementById("nextStep").innerHTML=
-next;
-
-document.getElementById("scoreBox").classList.add("show");
-
-}
-
-
-function resetValidation(){
-
-document.getElementById("product").value="";
-
-document.getElementById("customer").value="";
-
-document.getElementById("problem").value="";
-
-
-for(let i=1;i<=6;i++){
-
-delete answers[i];
-
-}
-
-
-document.querySelectorAll(".options button").forEach(
-function(button){
-
-button.classList.remove("selected");
-
-}
-);
-
-
-document.getElementById("scoreBox").classList.remove("show");
-
-}
-
-</script>
-
-</body>
-</html>
+resultText =
+"Your idea has some promising elements, but some areas are uncertain. Investigate the weak areas and learn more from potential customers before investing significant time or money.";
