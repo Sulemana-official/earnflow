@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -134,12 +135,13 @@ cursor:pointer;
 
 .secondary{
 width:100%;
-padding:13px;
-margin-top:10px;
-border:1px solid #d1d5db;
+padding:15px;
+margin-top:12px;
+border:1px solid #111827;
 border-radius:10px;
 background:white;
-font-size:15px;
+color:#111827;
+font-size:16px;
 font-weight:bold;
 cursor:pointer;
 }
@@ -263,4 +265,432 @@ placeholder="Example: 1500"
 
 <label for="likes">
 ❤️ Likes / Reactions
-</label
+</label>
+
+<input
+id="likes"
+type="number"
+min="0"
+placeholder="Example: 120"
+>
+
+</div>
+
+
+<div class="metric">
+
+<label for="comments">
+💬 Comments
+</label>
+
+<input
+id="comments"
+type="number"
+min="0"
+placeholder="Example: 25"
+>
+
+</div>
+
+
+<div class="metric">
+
+<label for="shares">
+🔗 Shares
+</label>
+
+<input
+id="shares"
+type="number"
+min="0"
+placeholder="Example: 18"
+>
+
+</div>
+
+
+<div class="metric">
+
+<label for="followers">
+👥 New Followers
+</label>
+
+<input
+id="followers"
+type="number"
+min="0"
+placeholder="Example: 12"
+>
+
+</div>
+
+
+<div class="metric">
+
+<label for="saves">
+🔖 Saves
+</label>
+
+<input
+id="saves"
+type="number"
+min="0"
+placeholder="Example: 30"
+>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🧠 What Worked?
+</h2>
+
+<label for="worked">
+What do you think worked well?
+</label>
+
+<textarea
+id="worked"
+placeholder="Example: The opening question attracted attention and people shared the video."
+></textarea>
+
+
+<label for="improve">
+What could be improved?
+</label>
+
+<textarea
+id="improve"
+placeholder="Example: The explanation was too long and the ending was not clear."
+></textarea>
+
+
+<label for="lesson">
+What did you learn?
+</label>
+
+<textarea
+id="lesson"
+placeholder="Write the most useful lesson you learned from this result."
+></textarea>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎯 Overall Result
+</h2>
+
+<label for="result">
+How would you describe the result?
+</label>
+
+<select id="result">
+
+<option value="Better than expected">
+Better than expected
+</option>
+
+<option value="About what I expected">
+About what I expected
+</option>
+
+<option value="Below expectations">
+Below expectations
+</option>
+
+<option value="Not enough data yet">
+Not enough data yet
+</option>
+
+</select>
+
+
+<button
+class="primary"
+onclick="saveResults()"
+>
+💾 Save My Results
+</button>
+
+
+<div
+class="result"
+id="saved"
+>
+
+<strong>
+✅ Results Saved
+</strong>
+
+<p>
+Your results have been recorded on this device.
+</p>
+
+<p>
+You can now continue to the improvement stage.
+</p>
+
+</div>
+
+
+<button
+class="secondary"
+onclick="continueImproving()"
+>
+🚀 Continue Improving
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🔄 Learn From Your Results
+</h2>
+
+<div class="lesson">
+
+<strong>
+1. Identify the strongest signal
+</strong>
+
+<p>
+Look for the part of the content that received the most useful audience response.
+</p>
+
+</div>
+
+
+<div class="lesson">
+
+<strong>
+2. Identify one weakness
+</strong>
+
+<p>
+Find one specific thing you can improve rather than changing everything at once.
+</p>
+
+</div>
+
+
+<div class="lesson">
+
+<strong>
+3. Apply the lesson
+</strong>
+
+<p>
+Use what you learned when creating your next piece of content.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tip">
+
+<strong>
+💡 EarnFlow principle:
+</strong>
+
+<p>
+Don't judge your progress from one result alone. Track patterns over time, learn from your audience and keep improving the quality of your work.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+
+function saveResults(){
+
+const views =
+document.getElementById(
+"views"
+).value;
+
+
+const likes =
+document.getElementById(
+"likes"
+).value;
+
+
+const comments =
+document.getElementById(
+"comments"
+).value;
+
+
+const shares =
+document.getElementById(
+"shares"
+).value;
+
+
+const followers =
+document.getElementById(
+"followers"
+).value;
+
+
+const saves =
+document.getElementById(
+"saves"
+).value;
+
+
+const worked =
+document.getElementById(
+"worked"
+).value.trim();
+
+
+const improve =
+document.getElementById(
+"improve"
+).value.trim();
+
+
+const lesson =
+document.getElementById(
+"lesson"
+).value.trim();
+
+
+const result =
+document.getElementById(
+"result"
+).value;
+
+
+if(
+!views &&
+!likes &&
+!comments &&
+!shares &&
+!followers &&
+!saves
+){
+
+alert(
+"Please enter at least one performance result."
+);
+
+return;
+
+}
+
+
+if(
+!worked ||
+!improve ||
+!lesson
+){
+
+alert(
+"Please complete the What Worked, What Could Be Improved and What Did You Learn sections."
+);
+
+return;
+
+}
+
+
+const data = {
+
+views:views,
+likes:likes,
+comments:comments,
+shares:shares,
+followers:followers,
+saves:saves,
+worked:worked,
+improve:improve,
+lesson:lesson,
+result:result
+
+};
+
+
+localStorage.setItem(
+"earnflowContentResults",
+JSON.stringify(data)
+);
+
+
+document.getElementById(
+"saved"
+).style.display =
+"block";
+
+}
+
+
+function continueImproving(){
+
+const savedResults =
+localStorage.getItem(
+"earnflowContentResults"
+);
+
+
+if(!savedResults){
+
+alert(
+"Please save your results first."
+);
+
+return;
+
+}
+
+
+window.location.href =
+"improvement.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
