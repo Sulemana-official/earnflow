@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>EarnFlow — Next Content Direction</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:45px 18px;
+}
+
+.icon{
+font-size:58px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:720px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.direction{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:20px;
+border-radius:14px;
+line-height:1.7;
+}
+
+.direction h2{
+margin-top:0;
+}
+
+.item{
+padding:14px 0;
+border-bottom:1px solid #e5e7eb;
+}
+
+.item:last-child{
+border-bottom:0;
+}
+
+.label{
+font-weight:bold;
+display:block;
+margin-bottom:5px;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.secondary{
+width:100%;
+padding:15px;
+margin-top:12px;
+border:1px solid #111827;
+border-radius:10px;
+background:white;
+color:#111827;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+🎯
+</div>
+
+<h1>
+Your Next Content Direction
+</h1>
+
+<p>
+Your previous results have been turned into a clear direction for your next piece of content.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>
+🚀 Your Next Content
+</h2>
+
+<div class="direction">
+
+
+<div class="item">
+
+<span class="label">
+Topic
+</span>
+
+<span id="topic">
+No topic found.
+</span>
+
+</div>
+
+
+<div class="item">
+
+<span class="label">
+Format
+</span>
+
+<span id="format">
+No format found.
+</span>
+
+</div>
+
+
+<div class="item">
+
+<span class="label">
+Audience
+</span>
+
+<span id="audience">
+No audience found.
+</span>
+
+</div>
+
+
+<div class="item">
+
+<span class="label">
+Useful Outcome
+</span>
+
+<span id="outcome">
+No outcome found.
+</span>
+
+</div>
+
+
+<div class="item">
+
+<span class="label">
+Improvement To Test
+</span>
+
+<span id="experiment">
+No improvement plan found.
+</span>
+
+</div>
+
+
+<div class="item">
+
+<span class="label">
+Main Goal
+</span>
+
+<span id="nextGoal">
+No goal found.
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🧠 Your Content Strategy
+</h2>
+
+<div class="tip">
+
+<p>
+<strong>Start with what you learned.</strong>
+</p>
+
+<p>
+Keep the things that worked, improve the weakness you identified and test the new idea deliberately.
+</p>
+
+<p>
+You do not need to make everything different. One meaningful improvement is enough to learn something new.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎬 Ready To Create?
+</h2>
+
+<p>
+Your direction is ready. The next step is to turn it into the actual content.
+</p>
+
+
+<button
+class="primary"
+onclick="continueToCreate()"
+>
+🎬 Create My Content
+</button>
+
+
+<button
+class="secondary"
+onclick="history.back()"
+>
+← Back To Planning
+</button>
+
+</div>
+
+
+<div class="warning">
+
+<strong>
+⚠️ Remember:
+</strong>
+
+<p>
+This plan is a starting point, not a guarantee of results. Continue testing, reviewing and improving based on real audience feedback.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+
+const savedContent =
+localStorage.getItem(
+"earnflowNextContent"
+);
+
+
+if(savedContent){
+
+const data =
+JSON.parse(
+savedContent
+);
+
+
+document.getElementById(
+"topic"
+).textContent =
+data.topic ||
+"No topic found.";
+
+
+document.getElementById(
+"format"
+).textContent =
+data.format ||
+"No format found.";
+
+
+document.getElementById(
+"audience"
+).textContent =
+data.audience ||
+"No audience found.";
+
+
+document.getElementById(
+"outcome"
+).textContent =
+data.outcome ||
+"No outcome found.";
+
+
+document.getElementById(
+"experiment"
+).textContent =
+data.experiment ||
+"No improvement plan found.";
+
+
+document.getElementById(
+"nextGoal"
+).textContent =
+data.nextGoal ||
+"No goal found.";
+
+}
+
+
+function continueToCreate(){
+
+window.location.href =
+"create-content.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
