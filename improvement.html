@@ -103,7 +103,6 @@ font-weight:bold;
 margin:16px 0 7px;
 }
 
-input,
 textarea,
 select{
 width:100%;
@@ -126,6 +125,19 @@ border:0;
 border-radius:10px;
 background:#111827;
 color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.secondary{
+width:100%;
+padding:15px;
+margin-top:12px;
+border:1px solid #111827;
+border-radius:10px;
+background:white;
+color:#111827;
 font-size:16px;
 font-weight:bold;
 cursor:pointer;
@@ -334,6 +346,15 @@ Focus on one or two meaningful improvements instead of changing everything at on
 
 </div>
 
+
+<button
+class="secondary"
+onclick="startNextContent()"
+>
+🚀 Create My Next Content
+</button>
+
+
 </div>
 
 
@@ -391,7 +412,8 @@ Improvement is easier when you change one clear thing, observe the result and le
 <div class="warning">
 
 <strong>
-⚠️ Remember:</strong>
+⚠️ Remember:
+</strong>
 
 <p>
 One successful or unsuccessful post does not prove a strategy works or fails. Look for patterns over multiple pieces of content.
@@ -523,6 +545,31 @@ document.getElementById(
 "saved"
 ).style.display =
 "block";
+
+}
+
+
+function startNextContent(){
+
+const plan =
+localStorage.getItem(
+"earnflowImprovementPlan"
+);
+
+
+if(!plan){
+
+alert(
+"Please save your improvement plan first."
+);
+
+return;
+
+}
+
+
+window.location.href =
+"next-content.html";
 
 }
 
