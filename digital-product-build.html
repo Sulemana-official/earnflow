@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -125,4 +126,609 @@ flex-shrink:0;
 label{
 display:block;
 font-weight:bold;
-margin:15
+margin:15px 0 7px;
+}
+
+textarea,
+input,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.primary{
+width:100%;
+margin-top:22px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.secondary{
+width:100%;
+margin-top:10px;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:10px;
+background:white;
+color:#172033;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.success{
+display:none;
+background:#ecfdf3;
+border:1px solid #bbf7d0;
+padding:20px;
+border-radius:13px;
+margin-top:20px;
+line-height:1.6;
+}
+
+.success.show{
+display:block;
+}
+
+.continue{
+width:100%;
+margin-top:18px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#16a34a;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#f0fdf4;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-bottom:18px;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+🛠️
+</div>
+
+<h1>
+Step 05 — Build Your Product
+</h1>
+
+<p>
+Turn your product plan into a useful first version that customers can actually use.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>🎯 Your Build Plan</h2>
+
+<div
+class="info"
+id="planSummary"
+>
+Loading your product plan...
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧱 Build Your First Version</h2>
+
+<p>
+Work through these tasks in order. The goal is to create something useful—not something unnecessarily large.
+</p>
+
+
+<div class="task">
+
+<h3>1️⃣ Set Up the Product</h3>
+
+<p>
+Create the main document, workbook, template, course area or other format you selected in your product plan.
+</p>
+
+<div class="check">
+<input type="checkbox" id="task1">
+<label for="task1">
+My main product file or workspace has been created.
+</label>
+</div>
+
+</div>
+
+
+<div class="task">
+
+<h3>2️⃣ Build the Core Content</h3>
+
+<p>
+Create the content for each planned section. Focus on practical information, examples and instructions that help the customer achieve the intended outcome.
+</p>
+
+<div class="check">
+<input type="checkbox" id="task2">
+<label for="task2">
+I have created the core content for my planned sections.
+</label>
+</div>
+
+</div>
+
+
+<div class="task">
+
+<h3>3️⃣ Add Useful Resources</h3>
+
+<p>
+Add the worksheets, checklists, templates, examples, prompts or other resources included in your plan.
+</p>
+
+<div class="check">
+<input type="checkbox" id="task3">
+<label for="task3">
+I have added the important supporting resources.
+</label>
+</div>
+
+</div>
+
+
+<div class="task">
+
+<h3>4️⃣ Make It Easy to Use</h3>
+
+<p>
+Organize the product clearly. Customers should understand where to start, what to do next and how to use each resource.
+</p>
+
+<div class="check">
+<input type="checkbox" id="task4">
+<label for="task4">
+The product has a clear and simple structure.
+</label>
+</div>
+
+</div>
+
+
+<div class="task">
+
+<h3>5️⃣ Check the Customer Outcome</h3>
+
+<p>
+Compare your product with the outcome you promised to provide. Remove content that does not help the customer reach that outcome.
+</p>
+
+<div class="check">
+<input type="checkbox" id="task5">
+<label for="task5">
+The product directly supports the main customer outcome.
+</label>
+</div>
+
+</div>
+
+
+<div class="task">
+
+<h3>6️⃣ Remove Unnecessary Features</h3>
+
+<p>
+Do not add features simply because they sound impressive. Keep Version 1 focused on solving the customer's main problem.
+</p>
+
+<div class="check">
+<input type="checkbox" id="task6">
+<label for="task6">
+I have removed unnecessary Version 1 features.
+</label>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🔍 Build Notes</h2>
+
+<label for="buildNotes">
+What have you created so far?
+</label>
+
+<textarea
+id="buildNotes"
+placeholder="Describe the parts of your product you have completed."
+></textarea>
+
+
+<label for="remaining">
+What still needs to be completed?
+</label>
+
+<textarea
+id="remaining"
+placeholder="List the remaining work."
+></textarea>
+
+
+<label for="tools">
+What tools are you using to build it?
+</label>
+
+<input
+id="tools"
+placeholder="Example: Canva, Google Docs, CapCut, Notion..."
+>
+
+
+<button
+class="primary"
+onclick="saveBuildProgress()"
+>
+💾 Save Build Progress
+</button>
+
+
+<button
+class="secondary"
+onclick="resetBuild()"
+>
+↻ Reset
+</button>
+
+
+<div
+class="success"
+id="successBox"
+>
+
+<strong>✅ Build progress saved!</strong>
+
+<p>
+Your product is now ready for a proper review before you prepare it for sale.
+</p>
+
+<button
+class="continue"
+onclick="continueToReview()"
+>
+Continue to Step 06 →
+</button>
+
+</div>
+
+</div>
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle</strong>
+
+<p>
+Build a useful first version before trying to make it perfect. Real customer feedback can show you what needs improvement.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>⚠️ Avoid copying</strong>
+
+<p>
+Use your own original work or properly licensed material. Do not copy another creator's paid product, copyrighted content or branding.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.</small>
+
+</footer>
+
+
+<script>
+
+function getJSON(key){
+
+try{
+
+return JSON.parse(
+localStorage.getItem(key)
+);
+
+}catch(error){
+
+return null;
+
+}
+
+}
+
+
+function loadPlan(){
+
+const plan =
+getJSON("earnflowProductPlan");
+
+const idea =
+getJSON("earnflowProductIdea");
+
+const customer =
+getJSON("earnflowProductCustomer");
+
+
+let html = "";
+
+
+if(idea){
+
+html +=
+"<p><strong>Product:</strong> "+
+(idea.product || "Not provided")+
+"</p>";
+
+}
+
+
+if(customer){
+
+html +=
+"<p><strong>Customer:</strong> "+
+(customer.customer || "Not provided")+
+"</p>";
+
+}
+
+
+if(plan){
+
+html +=
+"<p><strong>Format:</strong> "+
+(plan.format || "Not provided")+
+"</p>";
+
+html +=
+"<p><strong>Main outcome:</strong> "+
+(plan.outcome || "Not provided")+
+"</p>";
+
+if(plan.sections){
+
+html += "<p><strong>Planned sections:</strong></p><ol>";
+
+plan.sections.forEach(function(section){
+
+html +=
+"<li>"+
+(section.title || "Untitled section")+
+"</li>";
+
+});
+
+html += "</ol>";
+
+}
+
+}else{
+
+html =
+"<p>No product plan was found. You can still use this page, but completing Step 04 first is recommended.</p>";
+
+}
+
+
+document.getElementById("planSummary").innerHTML =
+html;
+
+}
+
+
+function saveBuildProgress(){
+
+const buildNotes =
+document.getElementById("buildNotes").value.trim();
+
+const remaining =
+document.getElementById("remaining").value.trim();
+
+const tools =
+document.getElementById("tools").value.trim();
+
+
+const completedTasks = [];
+
+
+for(let i=1;i<=6;i++){
+
+if(
+document.getElementById("task"+i).checked
+){
+
+completedTasks.push(i);
+
+}
+
+}
+
+
+if(completedTasks.length === 0){
+
+alert(
+"Please complete at least one build task before saving your progress."
+);
+
+return;
+
+}
+
+
+const progress = {
+
+completedTasks: completedTasks,
+
+buildNotes: buildNotes,
+
+remainingWork: remaining,
+
+tools: tools,
+
+savedAt: new Date().toISOString()
+
+};
+
+
+localStorage.setItem(
+"earnflowProductBuild",
+JSON.stringify(progress)
+);
+
+
+document.getElementById("successBox")
+.classList.add("show");
+
+}
+
+
+function continueToReview(){
+
+const saved =
+localStorage.getItem("earnflowProductBuild");
+
+
+if(!saved){
+
+alert(
+"Please save your build progress first."
+);
+
+return;
+
+}
+
+
+window.location.href =
+"digital-product-review.html";
+
+}
+
+
+function resetBuild(){
+
+for(let i=1;i<=6;i++){
+
+document.getElementById("task"+i).checked =
+false;
+
+}
+
+
+document.getElementById("buildNotes").value =
+"";
+
+document.getElementById("remaining").value =
+"";
+
+document.getElementById("tools").value =
+"";
+
+
+document.getElementById("successBox")
+.classList.remove("show");
+
+
+localStorage.removeItem(
+"earnflowProductBuild"
+);
+
+}
+
+
+loadPlan();
+
+</script>
+
+</body>
+  </html>
