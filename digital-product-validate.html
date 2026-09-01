@@ -712,3 +712,125 @@ verdict =
 
 resultText =
 "Your idea has some promising elements, but some areas are uncertain. Investigate the weak areas and learn more from potential customers before investing significant time or money.";
+
+}
+else{
+
+verdict =
+"🔴 Investigate before building";
+
+resultText =
+"Several important areas need more evidence or clarity. Speak with potential customers, clarify the problem and improve the idea before building a full product.";
+
+}
+
+
+const validationData = {
+
+product: product,
+
+customer: customer,
+
+problem: problem,
+
+score: score,
+
+positive: positive,
+
+uncertain: uncertain,
+
+negative: negative,
+
+verdict: verdict,
+
+validatedAt: new Date().toISOString()
+
+};
+
+
+localStorage.setItem(
+"earnflowProductValidation",
+JSON.stringify(validationData)
+);
+
+
+document.getElementById("scoreNumber").textContent =
+score + "/6";
+
+
+document.getElementById("verdict").textContent =
+verdict;
+
+
+document.getElementById("resultText").textContent =
+resultText;
+
+
+document.getElementById("resultBox").classList.add("show");
+
+}
+
+
+function continueToPlan(){
+
+const saved =
+localStorage.getItem("earnflowProductValidation");
+
+
+if(!saved){
+
+alert(
+"Please validate your product idea first."
+);
+
+return;
+
+}
+
+
+window.location.href =
+"digital-product-plan.html";
+
+}
+
+
+function resetValidation(){
+
+document.getElementById("product").value = "";
+
+document.getElementById("customer").value = "";
+
+document.getElementById("problem").value = "";
+
+
+for(let i=1;i<=6;i++){
+
+delete answers[i];
+
+}
+
+
+document
+.querySelectorAll(".options button")
+.forEach(function(button){
+
+button.classList.remove("selected");
+
+});
+
+
+document
+.getElementById("resultBox")
+.classList.remove("show");
+
+
+localStorage.removeItem(
+"earnflowProductValidation"
+);
+
+}
+
+</script>
+
+</body>
+</html>
