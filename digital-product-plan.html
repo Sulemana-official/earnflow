@@ -1,14 +1,25 @@
+
 <!doctype html>
 <html lang="en">
+
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
 
 <title>EarnFlow — Plan Your Product</title>
 
-<meta name="description" content="Create a practical first-version plan for your digital product.">
+<meta
+name="description"
+content="Create a practical first-version plan for your digital product."
+>
 
 <style>
+
 *{
 box-sizing:border-box;
 }
@@ -149,33 +160,6 @@ font-weight:bold;
 cursor:pointer;
 }
 
-.success{
-display:none;
-background:#ecfdf3;
-border:1px solid #bbf7d0;
-padding:20px;
-border-radius:13px;
-margin-top:20px;
-line-height:1.6;
-}
-
-.success.show{
-display:block;
-}
-
-.continue{
-width:100%;
-margin-top:18px;
-padding:15px;
-border:0;
-border-radius:10px;
-background:#16a34a;
-color:white;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-}
-
 .tip{
 background:#eef5ff;
 padding:18px;
@@ -198,10 +182,14 @@ color:#d1d5db;
 padding:30px 18px;
 margin-top:25px;
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <nav class="top">
 
@@ -252,6 +240,7 @@ These details come from the earlier steps. Review them before creating your plan
 </div>
 
 
+
 <div class="card">
 
 <h2>📦 Product Format</h2>
@@ -299,6 +288,7 @@ Combination of resources
 </div>
 
 
+
 <div class="card">
 
 <h2>🏆 Main Customer Outcome</h2>
@@ -317,6 +307,7 @@ Focus on a useful result rather than promising a specific amount of money or suc
 </p>
 
 </div>
+
 
 
 <div class="card">
@@ -353,6 +344,7 @@ placeholder="Describe the useful content."
 </div>
 
 
+
 <div class="module">
 
 <h3>Section 2</h3>
@@ -378,6 +370,7 @@ placeholder="Describe the useful content."
 </div>
 
 
+
 <div class="module">
 
 <h3>Section 3</h3>
@@ -401,6 +394,7 @@ placeholder="Describe the useful content."
 ></textarea>
 
 </div>
+
 
 
 <div class="module">
@@ -430,6 +424,7 @@ placeholder="Describe the useful content."
 </div>
 
 
+
 <div class="card">
 
 <h2>🛠️ Resources to Include</h2>
@@ -444,6 +439,7 @@ placeholder="Example: worksheets, checklists, templates, examples, prompts..."
 ></textarea>
 
 </div>
+
 
 
 <div class="card">
@@ -464,6 +460,7 @@ A smaller useful product can be easier to build, test and improve.
 </p>
 
 </div>
+
 
 
 <div class="card">
@@ -505,6 +502,7 @@ Pricing is only a planning decision at this stage. Your eventual price should re
 </div>
 
 
+
 <div class="card">
 
 <h2>📝 Final Planning Note</h2>
@@ -534,26 +532,8 @@ onclick="resetPlan()"
 ↻ Reset Plan
 </button>
 
-
-<div
-class="success"
-id="successBox"
->
-
-<strong>✅ Product plan saved!</strong>
-
-<p id="successText"></p>
-
-<button
-class="continue"
-onclick="continueToBuild()"
->
-Continue to Step 05 →
-</button>
-
 </div>
 
-</div>
 
 
 <div class="tip">
@@ -565,6 +545,7 @@ Plan enough to build a useful first version. You do not need to create everythin
 </p>
 
 </div>
+
 
 
 <div class="warning">
@@ -581,6 +562,7 @@ Do not spend large amounts of money or months building features before you have 
 </main>
 
 
+
 <footer>
 
 <strong>
@@ -594,12 +576,15 @@ Build skills. Find opportunities. Grow.
 <br><br>
 
 <small>
-© 2026 EarnFlow • No guaranteed income.</small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
 
 </footer>
 
 
+
 <script>
+
 
 function getJSON(key){
 
@@ -616,6 +601,7 @@ return null;
 }
 
 }
+
 
 
 function loadFoundation(){
@@ -636,13 +622,13 @@ let html = "";
 if(idea){
 
 html +=
-"<p><strong>Product:</strong> "+
-(idea.product || "Not provided")+
+"<p><strong>Product:</strong> " +
+(idea.product || "Not provided") +
 "</p>";
 
 html +=
-"<p><strong>Problem:</strong> "+
-(idea.problem || "Not provided")+
+"<p><strong>Problem:</strong> " +
+(idea.problem || "Not provided") +
 "</p>";
 
 }
@@ -651,8 +637,8 @@ html +=
 if(customer){
 
 html +=
-"<p><strong>Customer:</strong> "+
-(customer.customer || "Not provided")+
+"<p><strong>Customer:</strong> " +
+(customer.customer || "Not provided") +
 "</p>";
 
 }
@@ -661,13 +647,13 @@ html +=
 if(validation){
 
 html +=
-"<p><strong>Validation score:</strong> "+
-(validation.score || 0)+
+"<p><strong>Validation score:</strong> " +
+(validation.score || 0) +
 "/6</p>";
 
 html +=
-"<p><strong>Validation signal:</strong> "+
-(validation.verdict || "Not available")+
+"<p><strong>Validation signal:</strong> " +
+(validation.verdict || "Not available") +
 "</p>";
 
 }
@@ -685,6 +671,7 @@ document.getElementById("foundation").innerHTML =
 html;
 
 }
+
 
 
 function saveProductPlan(){
@@ -734,7 +721,9 @@ document.getElementById("note").value.trim();
 
 if(!format){
 
-alert("Please choose a product format.");
+alert(
+"Please choose a product format."
+);
 
 return;
 
@@ -743,7 +732,9 @@ return;
 
 if(!outcome){
 
-alert("Please describe the main customer outcome.");
+alert(
+"Please describe the main customer outcome."
+);
 
 return;
 
@@ -752,7 +743,9 @@ return;
 
 if(!section1 || !section1details){
 
-alert("Please complete Section 1.");
+alert(
+"Please complete Section 1."
+);
 
 return;
 
@@ -761,7 +754,9 @@ return;
 
 if(!section2 || !section2details){
 
-alert("Please complete Section 2.");
+alert(
+"Please complete Section 2."
+);
 
 return;
 
@@ -770,7 +765,9 @@ return;
 
 if(!section3 || !section3details){
 
-alert("Please complete Section 3.");
+alert(
+"Please complete Section 3."
+);
 
 return;
 
@@ -779,7 +776,9 @@ return;
 
 if(!section4 || !section4details){
 
-alert("Please complete Section 4.");
+alert(
+"Please complete Section 4."
+);
 
 return;
 
@@ -818,4 +817,100 @@ details: section4details
 
 resources: resources,
 
-excludeFromVersion1: exclude
+excludeFromVersion1: exclude,
+
+pricingDirection: price,
+
+mainGoal: note,
+
+savedAt: new Date().toISOString()
+
+};
+
+
+localStorage.setItem(
+"earnflowProductPlan",
+JSON.stringify(plan)
+);
+
+
+// Immediately open Step 05
+window.location.href =
+"digital-product-build.html";
+
+}
+
+
+
+function resetPlan(){
+
+const confirmed =
+confirm(
+"Reset your product plan? Your current Step 04 entries will be cleared."
+);
+
+if(!confirmed){
+
+return;
+
+}
+
+
+document.getElementById("format").value =
+"";
+
+document.getElementById("outcome").value =
+"";
+
+document.getElementById("section1").value =
+"";
+
+document.getElementById("section1details").value =
+"";
+
+document.getElementById("section2").value =
+"";
+
+document.getElementById("section2details").value =
+"";
+
+document.getElementById("section3").value =
+"";
+
+document.getElementById("section3details").value =
+"";
+
+document.getElementById("section4").value =
+"";
+
+document.getElementById("section4details").value =
+"";
+
+document.getElementById("resources").value =
+"";
+
+document.getElementById("exclude").value =
+"";
+
+document.getElementById("price").value =
+"";
+
+document.getElementById("note").value =
+"";
+
+localStorage.removeItem(
+"earnflowProductPlan"
+);
+
+}
+
+
+
+loadFoundation();
+
+</script>
+
+
+</body>
+
+</html>
