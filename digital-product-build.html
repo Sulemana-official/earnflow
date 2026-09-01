@@ -617,9 +617,7 @@ document.getElementById("remaining").value.trim();
 const tools =
 document.getElementById("tools").value.trim();
 
-
 const completedTasks = [];
-
 
 for(let i=1;i<=6;i++){
 
@@ -633,7 +631,6 @@ completedTasks.push(i);
 
 }
 
-
 if(completedTasks.length === 0){
 
 alert(
@@ -643,7 +640,6 @@ alert(
 return;
 
 }
-
 
 const progress = {
 
@@ -659,15 +655,13 @@ savedAt: new Date().toISOString()
 
 };
 
-
 localStorage.setItem(
 "earnflowProductBuild",
 JSON.stringify(progress)
 );
 
-
-document.getElementById("successBox")
-.classList.add("show");
+window.location.href =
+"digital-product-review.html";
 
 }
 
