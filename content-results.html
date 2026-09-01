@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>EarnFlow — Track Your Results</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:45px 18px;
+}
+
+.icon{
+font-size:56px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+}
+
+.metric{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:16px;
+border-radius:12px;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.secondary{
+width:100%;
+padding:13px;
+margin-top:10px;
+border:1px solid #d1d5db;
+border-radius:10px;
+background:white;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+display:none;
+background:#ecfdf3;
+padding:20px;
+border-radius:13px;
+line-height:1.7;
+margin-top:18px;
+}
+
+.lesson{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:12px;
+margin-top:14px;
+line-height:1.6;
+}
+
+.tip{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+@media(max-width:600px){
+
+.metrics{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+📊
+</div>
+
+<h1>
+08 — Track Your Results
+</h1>
+
+<p>
+Record what happened after publishing your content and use the information to make better decisions about what to create next.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>
+📈 Content Performance
+</h2>
+
+<p>
+Enter the results you received from the platform where you published your content.
+</p>
+
+
+<div class="metrics">
+
+
+<div class="metric">
+
+<label for="views">
+👀 Views / Reach
+</label>
+
+<input
+id="views"
+type="number"
+min="0"
+placeholder="Example: 1500"
+>
+
+</div>
+
+
+<div class="metric">
+
+<label for="likes">
+❤️ Likes / Reactions
+</label
