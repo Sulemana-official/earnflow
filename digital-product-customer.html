@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>EarnFlow — Identify Your Customer</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:45px 18px;
+}
+
+.icon{
+font-size:58px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:720px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:17px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:110px;
+resize:vertical;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.summary{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:13px;
+line-height:1.7;
+}
+
+.summary p{
+margin:8px 0;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.result{
+display:none;
+background:#ecfdf3;
+padding:20px;
+border-radius:13px;
+margin-top:18px;
+line-height:1.7;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+👤
+</div>
+
+<h1>
+02 — Identify Your Customer
+</h1>
+
+<p>
+A useful product needs a specific person or group to serve. Define your customer clearly before building the product.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>
+📦 Your Product Idea
+</h2>
+
+<div class="summary">
+
+<p>
+<strong>Problem:</strong>
+<span id="problem">
+Loading...
+</span>
+</p>
+
+<p>
+<strong>Product type:</strong>
+<span id="productType">
+Loading...
+</span>
+</p>
+
+<p>
+<strong>Useful outcome:</strong>
+<span id="outcome">
+Loading...
+</span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎯 Define Your Customer
+</h2>
+
+<p>
+Be as specific as possible. "Everyone" is usually too broad.
+</p>
+
+
+<label for="customer">
+Who specifically needs this product?
+</label>
+
+<input
+id="customer"
+placeholder="Example: SHS students preparing for WASSCE"
+>
+
+
+<label for="situation">
+When or why does this customer need it?
+</label>
+
+<textarea
+id="situation"
+placeholder="Example: They need help organizing their revision because they don't know what to study each day."
+></textarea>
+
+
+<label for="challenge">
+What is the customer's biggest challenge?
+</label>
+
+<textarea
+id="challenge"
+placeholder="Example: They struggle to create a realistic revision schedule."
+></textarea>
+
+
+<label for="benefit">
+What would make the product genuinely useful to this customer?
+</label>
+
+<textarea
+id="benefit"
+placeholder="Example: A simple schedule they can follow without spending time creating one themselves."
+></textarea>
+
+
+<button
+class="primary"
+onclick="buildCustomerProfile()"
+>
+🎯 Build My Customer Profile
+</button>
+
+
+<div
+class="result"
+id="result"
+>
+
+<strong>
+✅ Customer Profile Created
+</strong>
+
+<p>
+Your customer profile has been saved on this device.
+</p>
+
+<p>
+<strong>Customer:</strong>
+<span id="resultCustomer"></span>
+</p>
+
+<p>
+<strong>Situation:</strong>
+<span id="resultSituation"></span>
+</p>
+
+<p>
+<strong>Main challenge:</strong>
+<span id="resultChallenge"></span>
+</p>
+
+<p>
+<strong>Useful benefit:</strong>
+<span id="resultBenefit"></span>
+</p>
+
+
+<button
+class="primary"
+onclick="continueToValidation()"
+>
+➡️ Continue to Validate the Idea
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+💡 Customer Rule
+</h2>
+
+<div class="tip">
+
+<p>
+<strong>Specific beats broad.</strong>
+</p>
+
+<p>
+Instead of saying "students", consider "SHS students preparing for WASSCE who struggle to organize revision."
+</p>
+
+<p>
+A clearer customer makes it easier to decide what to build and how to explain its value.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+⚠️ Important
+</h2>
+
+<div class="warning">
+
+<p>
+Don't invent customer testimonials, sales numbers or research results.
+</p>
+
+<p>
+This step is a planning tool. Later, you can validate your assumptions by speaking with real potential customers or observing genuine demand.
+</p>
+
+</div>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+
+const savedIdea =
+localStorage.getItem(
+"earnflowProductIdea"
+);
+
+
+if(savedIdea){
+
+try{
+
+const idea =
+JSON.parse(
+savedIdea
+);
+
+
+document.getElementById(
+"problem"
+).textContent =
+idea.problem ||
+"Not provided";
+
+
+document.getElementById(
+"productType"
+).textContent =
+idea.productType ||
+"Not provided";
+
+
+document.getElementById(
+"outcome"
+).textContent =
+idea.outcome ||
+"Not provided";
+
+}
+
+catch(error){
+
+document.getElementById(
+"problem"
+).textContent =
+"Unable to load saved idea.";
+
+}
+
+}
+else{
+
+document.getElementById(
+"problem"
+).textContent =
+"No product idea saved yet.";
+
+
+document.getElementById(
+"productType"
+).textContent =
+"No product type saved yet.";
+
+
+document.getElementById(
+"outcome"
+).textContent =
+"No outcome saved yet.";
+
+}
+
+
+function buildCustomerProfile(){
+
+const customer =
+document.getElementById(
+"customer"
+).value.trim();
+
+
+const situation =
+document.getElementById(
+"situation"
+).value.trim();
+
+
+const challenge =
+document.getElementById(
+"challenge"
+).value.trim();
+
+
+const benefit =
+document.getElementById(
+"benefit"
+).value.trim();
+
+
+if(
+!customer ||
+!situation ||
+!challenge ||
+!benefit
+){
+
+alert(
+"Please complete all four customer sections first."
+);
+
+return;
+
+}
+
+
+const profile = {
+
+customer:customer,
+
+situation:situation,
+
+challenge:challenge,
+
+benefit:benefit
+
+};
+
+
+localStorage.setItem(
+"earnflowProductCustomer",
+JSON.stringify(profile)
+);
+
+
+document.getElementById(
+"resultCustomer"
+).textContent =
+customer;
+
+
+document.getElementById(
+"resultSituation"
+).textContent =
+situation;
+
+
+document.getElementById(
+"resultChallenge"
+).textContent =
+challenge;
+
+
+document.getElementById(
+"resultBenefit"
+).textContent =
+benefit;
+
+
+document.getElementById(
+"result"
+).style.display =
+"block";
+
+}
+
+
+function continueToValidation(){
+
+window.location.href =
+"digital-product-validation.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
