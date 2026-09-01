@@ -1,14 +1,20 @@
+
 <!doctype html>
 <html lang="en">
+
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>EarnFlow — Your Product Idea</title>
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
 
-<meta name="description" content="Your personalized digital product idea from EarnFlow.">
+<title>EarnFlow — Choose a Product Idea</title>
 
 <style>
+
 *{
 box-sizing:border-box;
 }
@@ -47,11 +53,11 @@ cursor:pointer;
 .hero{
 background:white;
 text-align:center;
-padding:40px 18px;
+padding:45px 18px;
 }
 
 .icon{
-font-size:52px;
+font-size:58px;
 }
 
 .hero h1{
@@ -60,14 +66,14 @@ margin:10px 0;
 }
 
 .hero p{
-max-width:700px;
+max-width:720px;
 margin:auto;
 color:#667085;
 line-height:1.6;
 }
 
 .container{
-max-width:850px;
+max-width:900px;
 margin:auto;
 padding:25px 18px;
 }
@@ -80,35 +86,31 @@ margin-bottom:18px;
 box-shadow:0 5px 18px rgba(0,0,0,.05);
 }
 
-.idea-box{
-background:#eef5ff;
-padding:20px;
-border-radius:13px;
-line-height:1.7;
-}
-
-.title{
-font-size:25px;
-font-weight:800;
-margin-bottom:15px;
-}
-
-.detail{
-margin:15px 0;
-padding:15px;
-background:#f8fafc;
-border-radius:10px;
-}
-
-.detail strong{
+label{
 display:block;
-margin-bottom:6px;
+font-weight:bold;
+margin:17px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
 }
 
 .primary{
 width:100%;
-margin-top:18px;
 padding:15px;
+margin-top:20px;
 border:0;
 border-radius:10px;
 background:#111827;
@@ -120,30 +122,42 @@ cursor:pointer;
 
 .secondary{
 width:100%;
-margin-top:10px;
 padding:13px;
+margin-top:10px;
 border:1px solid #d1d5db;
 border-radius:10px;
 background:white;
-color:#172033;
 font-size:15px;
 font-weight:bold;
 cursor:pointer;
 }
 
-.tip{
+.result{
+display:none;
 background:#ecfdf3;
-padding:17px;
-border-radius:11px;
+padding:20px;
+border-radius:13px;
+line-height:1.7;
+margin-top:18px;
+}
+
+.result strong{
+display:block;
+margin-bottom:6px;
+}
+
+.tip{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
 line-height:1.6;
 }
 
 .warning{
 background:#fff7ed;
-padding:17px;
-border-radius:11px;
+padding:18px;
+border-radius:12px;
 line-height:1.6;
-margin-top:18px;
 }
 
 footer{
@@ -153,10 +167,14 @@ color:#d1d5db;
 padding:30px 18px;
 margin-top:25px;
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <nav class="top">
 
@@ -177,15 +195,15 @@ onclick="history.back()"
 <header class="hero">
 
 <div class="icon">
-💡
+📦
 </div>
 
 <h1>
-Your Digital Product Idea
+01 — Choose a Product Idea
 </h1>
 
 <p>
-You now have a starting point. Turn the idea into a simple useful product and improve it as you learn.
+Start with a problem that people genuinely experience and design a digital product that provides a useful solution.
 </p>
 
 </header>
@@ -197,163 +215,189 @@ You now have a starting point. Turn the idea into a simple useful product and im
 <div class="card">
 
 <h2>
-🎉 Your Product Concept
+🎯 Define Your Product Idea
 </h2>
 
-<div class="idea-box">
+<p>
+Answer the questions below. You don't need a perfect idea yet. The goal is to make your starting direction clear.
+</p>
+
+
+<label for="problem">
+What problem do you want your product to solve?
+</label>
+
+<textarea
+id="problem"
+placeholder="Example: SHS students struggle to organize their revision before exams."
+></textarea>
+
+
+<label for="customer">
+Who experiences this problem?
+</label>
+
+<input
+id="customer"
+placeholder="Example: SHS students preparing for WASSCE."
+>
+
+
+<label for="productType">
+What type of digital product could help?
+</label>
+
+<select id="productType">
+
+<option value="Ebook or guide">
+📘 Ebook or guide
+</option>
+
+<option value="Template">
+📄 Template
+</option>
+
+<option value="Checklist">
+✅ Checklist
+</option>
+
+<option value="Workbook">
+📚 Workbook
+</option>
+
+<option value="Study resource">
+🎓 Study resource
+</option>
+
+<option value="Digital toolkit">
+🧰 Digital toolkit
+</option>
+
+<option value="Other digital resource">
+✨ Other digital resource
+</option>
+
+</select>
+
+
+<label for="outcome">
+What useful result should the customer get?
+</label>
+
+<textarea
+id="outcome"
+placeholder="Example: A simple revision plan they can follow each week."
+></textarea>
+
+
+<button
+class="primary"
+onclick="buildIdea()"
+>
+🚀 Build My Product Direction
+</button>
+
+
+<button
+class="secondary"
+onclick="clearIdea()"
+>
+↻ Clear Answers
+</button>
+
 
 <div
-class="title"
-id="productTitle"
+class="result"
+id="result"
 >
-Your Product
-</div>
+
+<strong>
+✅ Product Direction Created
+</strong>
 
 <p>
-<strong>Who it is for:</strong>
-</p>
-
-<p id="audience">
+Your starting product direction has been saved on this device.
 </p>
 
 <p>
-<strong>The problem:</strong>
+<strong>Problem:</strong>
+<span id="resultProblem"></span>
 </p>
 
-<p id="problem">
+<p>
+<strong>Customer:</strong>
+<span id="resultCustomer"></span>
+</p>
+
+<p>
+<strong>Product type:</strong>
+<span id="resultType"></span>
 </p>
 
 <p>
 <strong>Useful outcome:</strong>
+<span id="resultOutcome"></span>
 </p>
 
-<p id="outcome">
-</p>
-
-<p>
-<strong>Suggested format:</strong>
-</p>
-
-<p id="type">
-</p>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>
-🛠️ Build the First Version
-</h2>
-
-<div class="detail">
-<strong>01 — Keep it focused</strong>
-
-Start by solving the single problem you identified instead of trying to build a huge product.
-</div>
-
-<div class="detail">
-<strong>02 — Create useful content</strong>
-
-Give the customer practical information, steps, examples, templates or exercises that help them reach the desired outcome.
-</div>
-
-<div class="detail">
-<strong>03 — Make it easy to use</strong>
-
-Organize the product clearly so the customer can understand what to do next.
-</div>
-
-<div class="detail">
-<strong>04 — Test it</strong>
-
-Let a suitable person review the product and look for confusing instructions, missing information or unnecessary complexity.
-</div>
-
-<div class="detail">
-<strong>05 — Improve it</strong>
-
-Use useful feedback to improve future versions rather than trying to make everything perfect immediately.
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>
-🎯 Your First Version Plan
-</h2>
-
-<p>
-A simple first version could follow this structure:
-</p>
-
-<div class="detail">
-<strong>Problem</strong>
-Explain the problem clearly.
-</div>
-
-<div class="detail">
-<strong>Solution</strong>
-Show the customer how your resource helps solve it.
-</div>
-
-<div class="detail">
-<strong>Steps</strong>
-Give practical steps the customer can follow.
-</div>
-
-<div class="detail">
-<strong>Examples</strong>
-Include examples where they make the idea easier to understand.
-</div>
-
-<div class="detail">
-<strong>Action</strong>
-Tell the customer what to do next.
-</div>
 
 <button
 class="primary"
-onclick="copyIdea()"
+onclick="continueToCustomer()"
 >
-📋 Copy My Product Idea
+➡️ Continue to Identify Your Customer
 </button>
 
-<div
-id="copyStatus"
-style="text-align:center;margin-top:10px;font-weight:bold;"
->
 </div>
 
 </div>
 
+
+<div class="card">
+
+<h2>
+💡 How to Find a Strong Product Idea
+</h2>
 
 <div class="tip">
 
-<strong>
-💡 EarnFlow principle:
-</strong>
+<p>
+<strong>Problem first.</strong>
+</p>
 
 <p>
-Your first version doesn't need to be enormous. Focus on making it genuinely useful for the person you are trying to help.
+Look for something people struggle with, repeatedly ask about or spend time trying to solve.
+</p>
+
+<p>
+Then ask whether a simple digital resource could make that problem easier.
 </p>
 
 </div>
 
+</div>
+
+
+<div class="card">
+
+<h2>
+⚠️ Important
+</h2>
 
 <div class="warning">
 
-<strong>
-⚠️ Important:
-</strong>
+<p>
+Don't copy another person's product and present it as your own.
+</p>
 
 <p>
-Before selling a product, make sure your content is original or properly licensed and that any claims you make are accurate.
+Don't make false claims about what your product can achieve.
 </p>
+
+<p>
+Your first idea doesn't have to be perfect. You can improve it after learning more about your customer.
+</p>
+
+</div>
 
 </div>
 
@@ -382,110 +426,144 @@ Build skills. Find opportunities. Grow.
 
 <script>
 
-const params =
-new URLSearchParams(window.location.search);
 
-
-const audience =
-params.get("audience") ||
-"Your target customer";
-
+function buildIdea(){
 
 const problem =
-params.get("problem") ||
-"The problem you want to solve";
+document.getElementById(
+"problem"
+).value.trim();
+
+
+const customer =
+document.getElementById(
+"customer"
+).value.trim();
+
+
+const productType =
+document.getElementById(
+"productType"
+).value;
 
 
 const outcome =
-params.get("outcome") ||
-"The useful result you want to provide";
+document.getElementById(
+"outcome"
+).value.trim();
 
 
-const type =
-params.get("type") ||
-"Digital resource";
+if(
+!problem ||
+!customer ||
+!outcome
+){
+
+alert(
+"Please complete the problem, customer and useful outcome sections first."
+);
+
+return;
+
+}
 
 
-const title =
-params.get("title") ||
-"Your Digital Product";
+const idea = {
 
+problem:problem,
 
-const typeNames={
+customer:customer,
 
-guide:"📘 Practical Guide",
+productType:productType,
 
-checklist:"📋 Step-by-Step Checklist",
-
-template:"📝 Ready-to-Use Template",
-
-planner:"📅 Action Planner",
-
-tracker:"📊 Progress Tracker",
-
-workbook:"📚 Practical Workbook"
+outcome:outcome
 
 };
 
 
-document.getElementById("productTitle").textContent=
-title;
+localStorage.setItem(
+"earnflowProductIdea",
+JSON.stringify(idea)
+);
 
 
-document.getElementById("audience").textContent=
-audience;
-
-
-document.getElementById("problem").textContent=
+document.getElementById(
+"resultProblem"
+).textContent =
 problem;
 
 
-document.getElementById("outcome").textContent=
+document.getElementById(
+"resultCustomer"
+).textContent =
+customer;
+
+
+document.getElementById(
+"resultType"
+).textContent =
+productType;
+
+
+document.getElementById(
+"resultOutcome"
+).textContent =
 outcome;
 
 
-document.getElementById("type").textContent=
-typeNames[type]||type;
-
-
-function copyIdea(){
-
-const text=
-
-"EarnFlow Digital Product Idea\n\n"+
-"Product: "+title+"\n"+
-"For: "+audience+"\n"+
-"Problem: "+problem+"\n"+
-"Outcome: "+outcome+"\n"+
-"Format: "+(typeNames[type]||type);
-
-
-if(navigator.clipboard){
-
-navigator.clipboard.writeText(text)
-.then(function(){
-
-document.getElementById("copyStatus").textContent=
-"✅ Product idea copied!";
-
-})
-.catch(function(){
-
-document.getElementById("copyStatus").textContent=
-"Please copy the information manually.";
-
-});
-
-}else{
-
-document.getElementById("copyStatus").textContent=
-"Please copy the information manually.";
+document.getElementById(
+"result"
+).style.display =
+"block";
 
 }
 
+
+function clearIdea(){
+
+document.getElementById(
+"problem"
+).value =
+"";
+
+
+document.getElementById(
+"customer"
+).value =
+"";
+
+
+document.getElementById(
+"productType"
+).selectedIndex =
+0;
+
+
+document.getElementById(
+"outcome"
+).value =
+"";
+
+
+document.getElementById(
+"result"
+).style.display =
+"none";
+
 }
+
+
+function continueToCustomer(){
+
+window.location.href =
+"digital-product-customer.html";
+
+}
+
 
 </script>
 
+
 </body>
+
 </html>
