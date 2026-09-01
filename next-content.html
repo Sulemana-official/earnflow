@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>EarnFlow — Create Your Next Content</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:45px 18px;
+}
+
+.icon{
+font-size:56px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:720px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.summary{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:13px;
+line-height:1.7;
+}
+
+.summary p{
+margin:8px 0;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.secondary{
+width:100%;
+padding:15px;
+margin-top:12px;
+border:1px solid #111827;
+border-radius:10px;
+background:white;
+color:#111827;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+display:none;
+background:#ecfdf3;
+padding:20px;
+border-radius:13px;
+line-height:1.7;
+margin-top:18px;
+}
+
+.idea{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:13px;
+margin-top:14px;
+}
+
+.idea h3{
+margin-top:0;
+}
+
+.tip{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+🚀
+</div>
+
+<h1>
+10 — Create Your Next Content
+</h1>
+
+<p>
+Turn your previous lesson and improvement plan into a clear direction for your next piece of content.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>
+📊 What You Learned
+</h2>
+
+<div class="summary">
+
+<p>
+<strong>What worked:</strong>
+<span id="worked">
+No previous result found.
+</span>
+</p>
+
+<p>
+<strong>What could improve:</strong>
+<span id="improve">
+No previous result found.
+</span>
+</p>
+
+<p>
+<strong>Lesson learned:</strong>
+<span id="lesson">
+No previous result found.
+</span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎯 Your Improvement Plan
+</h2>
+
+<div class="summary">
+
+<p>
+<strong>Keep doing:</strong>
+<span id="keep">
+No improvement plan found.
+</span>
+</p>
+
+<p>
+<strong>Improve:</strong>
+<span id="change">
+No improvement plan found.
+</span>
+</p>
+
+<p>
+<strong>Experiment:</strong>
+<span id="experiment">
+No improvement plan found.
+</span>
+</p>
+
+<p>
+<strong>Next goal:</strong>
+<span id="nextGoal">
+No improvement plan found.
+</span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🧠 Build Your Next Content Direction
+</h2>
+
+
+<label for="topic">
+What topic do you want to create about?
+</label>
+
+<input
+id="topic"
+placeholder="Example: 3 smartphone settings beginners should know"
+>
+
+
+<label for="format">
+What format will you use?
+</label>
+
+<select id="format">
+
+<option value="Short video">
+🎬 Short video
+</option>
+
+<option value="Educational post">
+📚 Educational post
+</option>
+
+<option value="Tutorial">
+🛠️ Tutorial
+</option>
+
+<option value="List / tips">
+📋 List / tips
+</option>
+
+<option value="Story">
+📖 Story
+</option>
+
+<option value="Question and answer">
+❓ Question and answer
+</option>
+
+</select>
+
+
+<label for="audience">
+Who is this content for?
+</label>
+
+<input
+id="audience"
+placeholder="Example: Smartphone beginners"
+>
+
+
+<label for="outcome">
+What useful outcome should the audience get?
+</label>
+
+<textarea
+id="outcome"
+placeholder="Example: They should learn how to make their phone easier and safer to use."
+></textarea>
+
+
+<button
+class="primary"
+onclick="buildNextContent()"
+>
+🚀 Build My Next Content Direction
+</button>
+
+
+<div
+class="result"
+id="result"
+>
+
+<strong>
+✅ Next Content Direction Created
+</strong>
+
+<div
+class="idea"
+>
+
+<h3 id="resultTitle">
+Your next content
+</h3>
+
+<p>
+<strong>Format:</strong>
+<span id="resultFormat"></span>
+</p>
+
+<p>
+<strong>Audience:</strong>
+<span id="resultAudience"></span>
+</p>
+
+<p>
+<strong>Useful outcome:</strong>
+<span id="resultOutcome"></span>
+</p>
+
+<p>
+<strong>Improvement to test:</strong>
+<span id="resultExperiment"></span>
+</p>
+
+<p>
+<strong>Main goal:</strong>
+<span id="resultGoal"></span>
+</p>
+
+</div>
+
+</div>
+
+
+<button
+class="secondary"
+onclick="continueToContentCreation()"
+>
+🎬 Continue to Create Content
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🔄 The EarnFlow Content Cycle
+</h2>
+
+<div class="tip">
+
+<p>
+<strong>Create → Review → Track → Improve → Create Again</strong>
+</p>
+
+<p>
+Each new piece of content gives you another opportunity to learn what your audience finds useful.
+</p>
+
+</div>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+
+const savedResults =
+localStorage.getItem(
+"earnflowContentResults"
+);
+
+
+if(savedResults){
+
+const data =
+JSON.parse(
+savedResults
+);
+
+
+document.getElementById(
+"worked"
+).textContent =
+data.worked ||
+"No previous result found.";
+
+
+document.getElementById(
+"improve"
+).textContent =
+data.improve ||
+"No previous result found.";
+
+
+document.getElementById(
+"lesson"
+).textContent =
+data.lesson ||
+"No previous result found.";
+
+}
+
+
+const savedPlan =
+localStorage.getItem(
+"earnflowImprovementPlan"
+);
+
+
+if(savedPlan){
+
+const plan =
+JSON.parse(
+savedPlan
+);
+
+
+document.getElementById(
+"keep"
+).textContent =
+plan.keep ||
+"No improvement plan found.";
+
+
+document.getElementById(
+"change"
+).textContent =
+plan.change ||
+"No improvement plan found.";
+
+
+document.getElementById(
+"experiment"
+).textContent =
+plan.experiment ||
+"No improvement plan found.";
+
+
+document.getElementById(
+"nextGoal"
+).textContent =
+plan.nextGoal ||
+"No improvement plan found.";
+
+}
+
+
+function buildNextContent(){
+
+const topic =
+document.getElementById(
+"topic"
+).value.trim();
+
+
+const format =
+document.getElementById(
+"format"
+).value;
+
+
+const audience =
+document.getElementById(
+"audience"
+).value.trim();
+
+
+const outcome =
+document.getElementById(
+"outcome"
+).value.trim();
+
+
+if(
+!topic ||
+!audience ||
+!outcome
+){
+
+alert(
+"Please complete the topic, audience and useful outcome sections."
+);
+
+return;
+
+}
+
+
+let experiment =
+"No specific experiment saved.";
+
+
+let nextGoal =
+"Create useful content";
+
+
+if(savedPlan){
+
+const plan =
+JSON.parse(
+savedPlan
+);
+
+
+experiment =
+plan.experiment ||
+experiment;
+
+
+nextGoal =
+plan.nextGoal ||
+nextGoal;
+
+}
+
+
+document.getElementById(
+"resultTitle"
+).textContent =
+topic;
+
+
+document.getElementById(
+"resultFormat"
+).textContent =
+format;
+
+
+document.getElementById(
+"resultAudience"
+).textContent =
+audience;
+
+
+document.getElementById(
+"resultOutcome"
+).textContent =
+outcome;
+
+
+document.getElementById(
+"resultExperiment"
+).textContent =
+experiment;
+
+
+document.getElementById(
+"resultGoal"
+).textContent =
+nextGoal;
+
+
+const nextContent = {
+
+topic:topic,
+format:format,
+audience:audience,
+outcome:outcome,
+experiment:experiment,
+nextGoal:nextGoal
+
+};
+
+
+localStorage.setItem(
+"earnflowNextContent",
+JSON.stringify(nextContent)
+);
+
+
+document.getElementById(
+"result"
+).style.display =
+"block";
+
+}
+
+
+function continueToContentCreation(){
+
+const nextContent =
+localStorage.getItem(
+"earnflowNextContent"
+);
+
+
+if(!nextContent){
+
+alert(
+"Please build your next content direction first."
+);
+
+return;
+
+}
+
+
+window.location.href =
+"create-content.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+  </html>
