@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>EarnFlow — Continue Improving</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:45px 18px;
+}
+
+.icon{
+font-size:56px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.summary{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:13px;
+line-height:1.7;
+}
+
+.summary p{
+margin:8px 0;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.primary{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+display:none;
+background:#ecfdf3;
+padding:20px;
+border-radius:13px;
+line-height:1.7;
+margin-top:18px;
+}
+
+.tip{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+🔄
+</div>
+
+<h1>
+09 — Continue Improving
+</h1>
+
+<p>
+Use what you learned from your content results to make one clear improvement in your next piece of content.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>
+📊 Your Previous Lesson
+</h2>
+
+<div class="summary">
+
+<p>
+<strong>What worked:</strong>
+<span id="worked">
+No result saved yet.
+</span>
+</p>
+
+<p>
+<strong>What could improve:</strong>
+<span id="improve">
+No result saved yet.
+</span>
+</p>
+
+<p>
+<strong>Lesson learned:</strong>
+<span id="lesson">
+No result saved yet.
+</span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🎯 Build Your Improvement Plan
+</h2>
+
+
+<label for="keep">
+What is one thing you want to keep doing?
+</label>
+
+<textarea
+id="keep"
+placeholder="Example: Keep using a clear question at the beginning of my videos."
+></textarea>
+
+
+<label for="change">
+What is one thing you want to improve?
+</label>
+
+<textarea
+id="change"
+placeholder="Example: Make the explanation shorter and easier to follow."
+></textarea>
+
+
+<label for="experiment">
+What will you test in your next piece of content?
+</label>
+
+<textarea
+id="experiment"
+placeholder="Example: Test a shorter 30-second video with a stronger opening."
+></textarea>
+
+
+<label for="nextGoal">
+What is your main goal for the next content?
+</label>
+
+<select id="nextGoal">
+
+<option value="Teach something useful">
+Teach something useful
+</option>
+
+<option value="Get more engagement">
+Get more engagement
+</option>
+
+<option value="Improve clarity">
+Improve clarity
+</option>
+
+<option value="Reach a new audience">
+Reach a new audience
+</option>
+
+<option value="Test a new content format">
+Test a new content format
+</option>
+
+</select>
+
+
+<button
+class="primary"
+onclick="savePlan()"
+>
+💾 Save My Improvement Plan
+</button>
+
+
+<div
+class="result"
+id="saved"
+>
+
+<strong>
+✅ Improvement Plan Saved
+</strong>
+
+<p>
+Your next content experiment has been saved on this device.
+</p>
+
+<p>
+Focus on one or two meaningful improvements instead of changing everything at once.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🧠 A Simple Improvement Cycle
+</h2>
+
+<div class="summary">
+
+<p>
+<strong>1. Create</strong><br>
+Make useful content for a specific audience.
+</p>
+
+<p>
+<strong>2. Review</strong><br>
+Check quality, clarity and usefulness.
+</p>
+
+<p>
+<strong>3. Track</strong><br>
+Record meaningful results and feedback.
+</p>
+
+<p>
+<strong>4. Improve</strong><br>
+Change one thing based on what you learned.
+</p>
+
+<p>
+<strong>5. Repeat</strong><br>
+Use the lesson in your next piece of content.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tip">
+
+<strong>
+💡 EarnFlow principle:
+</strong>
+
+<p>
+Improvement is easier when you change one clear thing, observe the result and learn from it. You do not need to completely reinvent your content every time.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>
+⚠️ Remember:</strong>
+
+<p>
+One successful or unsuccessful post does not prove a strategy works or fails. Look for patterns over multiple pieces of content.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+<script>
+
+
+const savedResults =
+localStorage.getItem(
+"earnflowContentResults"
+);
+
+
+if(savedResults){
+
+const data =
+JSON.parse(
+savedResults
+);
+
+
+document.getElementById(
+"worked"
+).textContent =
+data.worked ||
+"No result saved yet.";
+
+
+document.getElementById(
+"improve"
+).textContent =
+data.improve ||
+"No result saved yet.";
+
+
+document.getElementById(
+"lesson"
+).textContent =
+data.lesson ||
+"No result saved yet.";
+
+}
+
+
+function savePlan(){
+
+const keep =
+document.getElementById(
+"keep"
+).value.trim();
+
+
+const change =
+document.getElementById(
+"change"
+).value.trim();
+
+
+const experiment =
+document.getElementById(
+"experiment"
+).value.trim();
+
+
+const nextGoal =
+document.getElementById(
+"nextGoal"
+).value;
+
+
+if(
+!keep ||
+!change ||
+!experiment
+){
+
+alert(
+"Please complete all three improvement sections."
+);
+
+return;
+
+}
+
+
+const plan = {
+
+keep:keep,
+change:change,
+experiment:experiment,
+nextGoal:nextGoal
+
+};
+
+
+localStorage.setItem(
+"earnflowImprovementPlan",
+JSON.stringify(plan)
+);
+
+
+document.getElementById(
+"saved"
+).style.display =
+"block";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
