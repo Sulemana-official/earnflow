@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>EarnFlow — Plan Your Product</title>
+
+<meta name="description" content="Create a practical first-version plan for your digital product.">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:38px 18px;
+}
+
+.icon{
+font-size:48px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.card h2{
+margin-top:0;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.small{
+color:#667085;
+font-size:14px;
+line-height:1.5;
+}
+
+.module{
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:12px;
+margin-top:15px;
+background:#fafafa;
+}
+
+.module h3{
+margin-top:0;
+}
+
+.primary{
+width:100%;
+margin-top:22px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.secondary{
+width:100%;
+margin-top:10px;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:10px;
+background:white;
+color:#172033;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.success{
+display:none;
+background:#ecfdf3;
+border:1px solid #bbf7d0;
+padding:20px;
+border-radius:13px;
+margin-top:20px;
+line-height:1.6;
+}
+
+.success.show{
+display:block;
+}
+
+.continue{
+width:100%;
+margin-top:18px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#16a34a;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="icon">
+🧩
+</div>
+
+<h1>
+Step 04 — Plan Your Product
+</h1>
+
+<p>
+Turn your validated idea into a simple, practical product plan before you start building.
+</p>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>🎯 Your Product Foundation</h2>
+
+<p class="small">
+These details come from the earlier steps. Review them before creating your plan.
+</p>
+
+<div id="foundation"></div>
+
+</div>
+
+
+<div class="card">
+
+<h2>📦 Product Format</h2>
+
+<label for="format">
+What format will your product use?
+</label>
+
+<select id="format">
+
+<option value="">
+Choose a format
+</option>
+
+<option value="PDF guide">
+PDF guide / ebook
+</option>
+
+<option value="Workbook">
+Workbook
+</option>
+
+<option value="Templates">
+Templates
+</option>
+
+<option value="Checklist">
+Checklist
+</option>
+
+<option value="Course">
+Mini-course
+</option>
+
+<option value="Toolkit">
+Toolkit
+</option>
+
+<option value="Combination">
+Combination of resources
+</option>
+
+</select>
+
+</div>
+
+
+<div class="card">
+
+<h2>🏆 Main Customer Outcome</h2>
+
+<label for="outcome">
+What should the customer be able to do after using your product?
+</label>
+
+<textarea
+id="outcome"
+placeholder="Example: Create a realistic weekly study plan and follow it consistently."
+></textarea>
+
+<p class="small">
+Focus on a useful result rather than promising a specific amount of money or success.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>📚 Product Structure</h2>
+
+<p class="small">
+Plan the main sections of your first version. Keep Version 1 focused instead of trying to include everything.
+</p>
+
+
+<div class="module">
+
+<h3>Section 1</h3>
+
+<label for="section1">
+Title
+</label>
+
+<input
+id="section1"
+placeholder="Example: Getting Started"
+>
+
+<label for="section1details">
+What will this section teach or provide?
+</label>
+
+<textarea
+id="section1details"
+placeholder="Describe the useful content."
+></textarea>
+
+</div>
+
+
+<div class="module">
+
+<h3>Section 2</h3>
+
+<label for="section2">
+Title
+</label>
+
+<input
+id="section2"
+placeholder="Example: Building Your Plan"
+>
+
+<label for="section2details">
+What will this section teach or provide?
+</label>
+
+<textarea
+id="section2details"
+placeholder="Describe the useful content."
+></textarea>
+
+</div>
+
+
+<div class="module">
+
+<h3>Section 3</h3>
+
+<label for="section3">
+Title
+</label>
+
+<input
+id="section3"
+placeholder="Example: Taking Action"
+>
+
+<label for="section3details">
+What will this section teach or provide?
+</label>
+
+<textarea
+id="section3details"
+placeholder="Describe the useful content."
+></textarea>
+
+</div>
+
+
+<div class="module">
+
+<h3>Section 4</h3>
+
+<label for="section4">
+Title
+</label>
+
+<input
+id="section4"
+placeholder="Example: Tracking Progress"
+>
+
+<label for="section4details">
+What will this section teach or provide?
+</label>
+
+<textarea
+id="section4details"
+placeholder="Describe the useful content."
+></textarea>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🛠️ Resources to Include</h2>
+
+<label for="resources">
+What useful resources will the customer receive?
+</label>
+
+<textarea
+id="resources"
+placeholder="Example: worksheets, checklists, templates, examples, prompts..."
+></textarea>
+
+</div>
+
+
+<div class="card">
+
+<h2>✂️ Keep Version 1 Focused</h2>
+
+<label for="exclude">
+What will you intentionally leave out of Version 1?
+</label>
+
+<textarea
+id="exclude"
+placeholder="Example: advanced features, large video library, mobile app..."
+></textarea>
+
+<p class="small">
+A smaller useful product can be easier to build, test and improve.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>💰 Possible Pricing Direction</h2>
+
+<label for="price">
+What price range are you considering?
+</label>
+
+<select id="price">
+
+<option value="">
+Choose a range
+</option>
+
+<option value="Free">
+Free
+</option>
+
+<option value="Low-cost">
+Low-cost starter product
+</option>
+
+<option value="Mid-range">
+Mid-range digital product
+</option>
+
+<option value="Premium">
+Premium digital product
+</option>
+
+</select>
+
+<p class="small">
+Pricing is only a planning decision at this stage. Your eventual price should reflect the product's usefulness, audience and market.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>📝 Final Planning Note</h2>
+
+<label for="note">
+What is the most important thing you want your first version to accomplish?
+</label>
+
+<textarea
+id="note"
+placeholder="Write the main goal for Version 1."
+></textarea>
+
+
+<button
+class="primary"
+onclick="saveProductPlan()"
+>
+💾 Save My Product Plan
+</button>
+
+
+<button
+class="secondary"
+onclick="resetPlan()"
+>
+↻ Reset Plan
+</button>
+
+
+<div
+class="success"
+id="successBox"
+>
+
+<strong>✅ Product plan saved!</strong>
+
+<p id="successText"></p>
+
+<button
+class="continue"
+onclick="continueToBuild()"
+>
+Continue to Step 05 →
+</button>
+
+</div>
+
+</div>
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle</strong>
+
+<p>
+Plan enough to build a useful first version. You do not need to create everything at once. Build, learn from real users, then improve.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>⚠️ Avoid overbuilding</strong>
+
+<p>
+Do not spend large amounts of money or months building features before you have evidence that customers actually need them.
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.</small>
+
+</footer>
+
+
+<script>
+
+function getJSON(key){
+
+try{
+
+return JSON.parse(
+localStorage.getItem(key)
+);
+
+}catch(error){
+
+return null;
+
+}
+
+}
+
+
+function loadFoundation(){
+
+const idea =
+getJSON("earnflowProductIdea");
+
+const customer =
+getJSON("earnflowProductCustomer");
+
+const validation =
+getJSON("earnflowProductValidation");
+
+
+let html = "";
+
+
+if(idea){
+
+html +=
+"<p><strong>Product:</strong> "+
+(idea.product || "Not provided")+
+"</p>";
+
+html +=
+"<p><strong>Problem:</strong> "+
+(idea.problem || "Not provided")+
+"</p>";
+
+}
+
+
+if(customer){
+
+html +=
+"<p><strong>Customer:</strong> "+
+(customer.customer || "Not provided")+
+"</p>";
+
+}
+
+
+if(validation){
+
+html +=
+"<p><strong>Validation score:</strong> "+
+(validation.score || 0)+
+"/6</p>";
+
+html +=
+"<p><strong>Validation signal:</strong> "+
+(validation.verdict || "Not available")+
+"</p>";
+
+}
+
+
+if(!html){
+
+html =
+"<p>No previous information was found. You can still create your product plan below.</p>";
+
+}
+
+
+document.getElementById("foundation").innerHTML =
+html;
+
+}
+
+
+function saveProductPlan(){
+
+const format =
+document.getElementById("format").value;
+
+const outcome =
+document.getElementById("outcome").value.trim();
+
+const section1 =
+document.getElementById("section1").value.trim();
+
+const section1details =
+document.getElementById("section1details").value.trim();
+
+const section2 =
+document.getElementById("section2").value.trim();
+
+const section2details =
+document.getElementById("section2details").value.trim();
+
+const section3 =
+document.getElementById("section3").value.trim();
+
+const section3details =
+document.getElementById("section3details").value.trim();
+
+const section4 =
+document.getElementById("section4").value.trim();
+
+const section4details =
+document.getElementById("section4details").value.trim();
+
+const resources =
+document.getElementById("resources").value.trim();
+
+const exclude =
+document.getElementById("exclude").value.trim();
+
+const price =
+document.getElementById("price").value;
+
+const note =
+document.getElementById("note").value.trim();
+
+
+if(!format){
+
+alert("Please choose a product format.");
+
+return;
+
+}
+
+
+if(!outcome){
+
+alert("Please describe the main customer outcome.");
+
+return;
+
+}
+
+
+if(!section1 || !section1details){
+
+alert("Please complete Section 1.");
+
+return;
+
+}
+
+
+if(!section2 || !section2details){
+
+alert("Please complete Section 2.");
+
+return;
+
+}
+
+
+if(!section3 || !section3details){
+
+alert("Please complete Section 3.");
+
+return;
+
+}
+
+
+if(!section4 || !section4details){
+
+alert("Please complete Section 4.");
+
+return;
+
+}
+
+
+const plan = {
+
+format: format,
+
+outcome: outcome,
+
+sections: [
+
+{
+title: section1,
+details: section1details
+},
+
+{
+title: section2,
+details: section2details
+},
+
+{
+title: section3,
+details: section3details
+},
+
+{
+title: section4,
+details: section4details
+}
+
+],
+
+resources: resources,
+
+excludeFromVersion1: exclude
