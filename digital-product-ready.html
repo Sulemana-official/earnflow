@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>EarnFlow — Prepare Your Product for Sale</title>
+
+<meta
+name="description"
+content="Prepare your digital product for delivery and sale."
+>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:38px 18px;
+}
+
+.icon{
+font-size:48px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.card h2{
+margin-top:0;
+}
+
+.summary{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.check{
+display:flex;
+gap:12px;
+align-items:flex-start;
+padding:15px;
+margin-top:12px;
+border:1px solid #e5e7eb;
+border-radius:12px;
+background:#fafafa;
+}
+
+.check input{
+width:20px;
+height:20px;
+margin-top:2px;
+flex-shrink:0;
+}
+
+.check label{
+font-weight:normal;
+margin:0;
+line-height:1.5;
+cursor:pointer;
+}
+
+label.title{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.small{
+color:#667085;
+font-size:14px;
+line-height:1.5;
+}
+
+.primary{
+width:100%;
+margin-top:22px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+
+<header class="hero">
+
+<div class="icon">
+📦
+</div>
+
+<h1>
+Step 07 — Prepare Your Product for Sale
+</h1>
+
+<p>
+Turn your completed product into a clean, organized and customer-ready package.
+</p>
+
+</header>
+
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>📋 Product Summary</h2>
+
+<p class="small">
+Your information from the previous steps is shown below.
+</p>
+
+<div
+id="summary"
+class="summary"
+>
+Loading product information...
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>📁 Product File</h2>
+
+<label
+class="title"
+for="fileName"
+>
+What is the final file name?
+</label>
+
+<input
+id="fileName"
+placeholder="Example: My-Study-Planning-Workbook.pdf"
+>
+
+<p class="small">
+Use a simple, professional file name that customers can recognize.
+</p>
+
+
+<label
+class="title"
+for="fileFormat"
+>
+What is the main delivery format?
+</label>
+
+<select id="fileFormat">
+
+<option value="">
+Choose a format
+</option>
+
+<option value="PDF">
+PDF
+</option>
+
+<option value="ZIP">
+ZIP package
+</option>
+
+<option value="Video">
+Video files
+</option>
+
+<option value="Audio">
+Audio files
+</option>
+
+<option value="Templates">
+Template files
+</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🎨 Presentation & Branding</h2>
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check1"
+>
+
+<label for="check1">
+The product has a clear title and professional-looking cover or opening page.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check2"
+>
+
+<label for="check2">
+My brand or creator name is clearly shown where appropriate.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check3"
+>
+
+<label for="check3">
+The design, fonts and spacing are consistent throughout the product.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check4"
+>
+
+<label for="check4">
+The product is readable and usable on a smartphone.
+</label>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🧭 Customer Instructions</h2>
+
+<label
+class="title"
+for="instructions"
+>
+What should the customer do immediately after receiving the product?
+</label>
+
+<textarea
+id="instructions"
+placeholder="Example: Download the PDF, start with Module 1, complete the worksheet, then continue to Module 2."
+></textarea>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>📦 Delivery Package</h2>
+
+<p class="small">
+List everything the customer should receive after purchasing.
+</p>
+
+<label
+class="title"
+for="package"
+>
+What exactly will be delivered?
+</label>
+
+<textarea
+id="package"
+placeholder="Example: 1 PDF guide, 3 worksheets, 2 checklists and 5 reusable templates."
+></textarea>
+
+
+<label
+class="title"
+for="deliveryNote"
+>
+Important delivery note
+</label>
+
+<textarea
+id="deliveryNote"
+placeholder="Write any important information the customer should know about accessing or using the files."
+></textarea>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>💬 Customer Support</h2>
+
+<label
+class="title"
+for="support"
+>
+How can customers contact you if they have a problem?
+</label>
+
+<input
+id="support"
+placeholder="Example: support email, website contact form or social media page"
+>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>⚖️ Final Safety & Rights Check</h2>
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check5"
+>
+
+<label for="check5">
+I have permission to use the images, text, templates, music or other third-party materials included in my product.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check6"
+>
+
+<label for="check6">
+My product does not make misleading guarantees about income, health, education, employment or other outcomes.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check7"
+>
+
+<label for="check7">
+I have checked the product for broken links, missing files and incorrect instructions.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check8"
+>
+
+<label for="check8">
+I have opened the final delivery file myself and confirmed that it works correctly.
+</label>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🚀 Final Preparation</h2>
+
+<label
+class="title"
+for="launchNote"
+>
+What is the last thing you need to do before listing or delivering this product?
+</label>
+
+<textarea
+id="launchNote"
+placeholder="Example: Upload the final PDF, test the download process and prepare the sales page."
+></textarea>
+
+
+<button
+class="primary"
+onclick="saveProductReady()"
+>
+💾 Save & Continue
+</button>
+
+</div>
+
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle</strong>
+
+<p>
+A customer-ready product should be easy to understand, easy to access and easy to use. Test the complete customer experience yourself before launch.
+</p>
+
+</div>
+
+
+
+<div class="warning">
+
+<strong>⚠️ Protect your work</strong>
+
+<p>
+Keep a backup of your original product files. Do not rely on a single copy of an important customer asset.
+</p>
+
+</div>
+
+
+</main>
+
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+
+<script>
+
+
+function getJSON(key){
+
+try{
+
+return JSON.parse(
+localStorage.getItem(key)
+);
+
+}catch(error){
+
+return null;
+
+}
+
+}
+
+
+
+function loadSummary(){
+
+const idea =
+getJSON("earnflowProductIdea");
+
+const customer =
+getJSON("earnflowProductCustomer");
+
+const validation =
+getJSON("earnflowProductValidation");
+
+const plan =
+getJSON("earnflowProductPlan");
+
+const build =
+getJSON("earnflowProductBuild");
+
+const review =
+getJSON("earnflowProductReview");
+
+
+let html = "";
+
+
+if(idea){
+
+html +=
+"<p><strong>Product:</strong> " +
+(idea.product || "Not provided") +
+"</p>";
+
+}
+
+
+if(customer){
+
+html +=
+"<p><strong>Customer:</strong> " +
+(customer.customer || "Not provided") +
+"</p>";
+
+}
+
+
+if(validation){
+
+html +=
+"<p><strong>Validation:</strong> " +
+(validation.score || 0) +
+"/6</p>";
+
+}
+
+
+if(plan){
+
+html +=
+"<p><strong>Format:</strong> " +
+(plan.format || "Not provided") +
+"</p>";
+
+html +=
+"<p><strong>Main outcome:</strong> " +
+(plan.outcome || plan.mainOutcome || "Not provided") +
+"</p>";
+
+}
+
+
+if(build && build.completedTasks){
+
+html +=
+"<p><strong>Build tasks completed:</strong> " +
+build.completedTasks.length +
+"/6</p>";
+
+}
+
+
+if(review){
+
+html +=
+"<p><strong>Review status:</strong> " +
+(review.status || "Not provided") +
+"</p>";
+
+}
+
+
+if(!html){
+
+html =
+"<p>No previous information was found. You can still prepare your product below.</p>";
+
+}
+
+
+document.getElementById("summary").innerHTML =
+html;
+
+}
+
+
+
+function saveProductReady(){
+
+const fileName =
+document.getElementById("fileName").value.trim();
+
+const fileFormat =
+document.getElementById("fileFormat").value;
+
+const instructions =
+document.getElementById("instructions").value.trim();
+
+const packageContents =
+document.getElementById("package").value.trim();
+
+const deliveryNote =
+document.getElementById("deliveryNote").value.trim();
+
+const support =
+document.getElementById("support").value.trim();
+
+const launchNote =
+document.getElementById("launchNote").value.trim();
+
+
+if(!fileName){
+
+alert(
+"Please enter the final product file name."
+);
+
+return;
+
+}
+
+
+if(!fileFormat){
+
+alert(
+"Please choose the main delivery format."
+);
+
+return;
+
+}
+
+
+if(!instructions){
+
+alert(
+"Please provide customer instructions."
+);
+
+return;
+
+}
+
+
+if(!packageContents){
+
+alert(
+"Please list what the customer will receive."
+);
+
+return;
+
+}
+
+
+if(!support){
+
+alert(
+"Please provide a customer support method."
+);
+
+return;
+
+}
+
+
+if(!launchNote){
+
+alert(
+"Please describe the last thing you need to do before launch."
+);
+
+return;
+
+}
+
+
+const requiredChecks = [
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+];
+
+
+const completedChecks = [];
+
+
+for(let i=1;i<=8;i++){
+
+if(
+document.getElementById("check"+i).checked
+){
+
+completedChecks.push(i);
+
+}
+
+}
+
+
+if(completedChecks.length !== requiredChecks.length){
+
+alert(
+"Please complete all 8 preparation and safety checks before continuing."
+);
+
+return;
+
+}
+
+
+const readyData = {
+
+fileName: fileName,
+
+fileFormat: fileFormat,
+
+presentationChecks: [
+
+document.getElementById("check1").checked,
+
+document.getElementById("check2").checked,
+
+document.getElementById("check3").checked,
+
+document.getElementById("check4").checked
+
+],
+
+customerInstructions: instructions,
+
+packageContents: packageContents,
+
+deliveryNote: deliveryNote,
+
+supportMethod: support,
+
+rightsAndSafetyChecks: [
+
+document.getElementById("check5").checked,
+
+document.getElementById("check6").checked,
+
+document.getElementById("check7").checked,
+
+document.getElementById("check8").checked
+
+],
+
+finalLaunchTask: launchNote,
+
+preparedAt: new Date().toISOString()
+
+};
+
+
+localStorage.setItem(
+"earnflowProductReady",
+JSON.stringify(readyData)
+);
+
+
+// Open Step 08 immediately
+window.location.href =
+"digital-product-sales-page.html";
+
+}
+
+
+
+loadSummary();
+
+</script>
+
+
+</body>
+
+  </html>
