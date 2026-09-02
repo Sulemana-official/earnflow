@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>EarnFlow — Review Your Product</title>
+
+<meta
+name="description"
+content="Review your digital product before preparing it for sale."
+>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:38px 18px;
+}
+
+.icon{
+font-size:48px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.card h2{
+margin-top:0;
+}
+
+.summary{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.check{
+display:flex;
+gap:12px;
+align-items:flex-start;
+padding:15px;
+margin-top:12px;
+border:1px solid #e5e7eb;
+border-radius:12px;
+background:#fafafa;
+}
+
+.check input{
+width:20px;
+height:20px;
+margin-top:2px;
+flex-shrink:0;
+}
+
+.check label{
+font-weight:normal;
+margin:0;
+line-height:1.5;
+cursor:pointer;
+}
+
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:110px;
+resize:vertical;
+}
+
+label.title{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+.small{
+color:#667085;
+font-size:14px;
+line-height:1.5;
+}
+
+.primary{
+width:100%;
+margin-top:22px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+
+<header class="hero">
+
+<div class="icon">
+🔍
+</div>
+
+<h1>
+Step 06 — Review Your Product
+</h1>
+
+<p>
+Check your product carefully before preparing it for customers and putting it up for sale.
+</p>
+
+</header>
+
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>📋 Your Product Summary</h2>
+
+<p class="small">
+Review the information you created in the previous steps.
+</p>
+
+<div
+id="summary"
+class="summary"
+>
+Loading your product information...
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>✅ Product Quality Checklist</h2>
+
+<p class="small">
+Check every item that is true for your product. Be honest. The goal is to improve the product before selling it.
+</p>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check1"
+>
+
+<label for="check1">
+The target customer is clearly defined and the product is designed for their needs.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check2"
+>
+
+<label for="check2">
+The main customer problem is clear and the product addresses that problem.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check3"
+>
+
+<label for="check3">
+The product has a clear and useful customer outcome.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check4"
+>
+
+<label for="check4">
+The product structure is logical and easy to follow.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check5"
+>
+
+<label for="check5">
+The information, examples, exercises or resources are useful and practical.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check6"
+>
+
+<label for="check6">
+The product is easy to use on a smartphone.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check7"
+>
+
+<label for="check7">
+Spelling, grammar, links and instructions have been checked.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check8"
+>
+
+<label for="check8">
+Images, templates, examples and other materials are either original, licensed or properly permitted for use.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check9"
+>
+
+<label for="check9">
+The product does not contain unnecessary features that should be saved for a later version.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check10"
+>
+
+<label for="check10">
+The product gives the customer enough practical value to justify testing it with real users.
+</label>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🧪 Product Test</h2>
+
+<p class="small">
+Think like a first-time customer. Identify anything that could make the product confusing or difficult to use.
+</p>
+
+
+<label
+class="title"
+for="strengths"
+>
+What is strongest about your product?
+</label>
+
+<textarea
+id="strengths"
+placeholder="Example: The steps are simple, the worksheets are practical, and the customer can start immediately."
+></textarea>
+
+
+
+<label
+class="title"
+for="problems"
+>
+What still needs improvement?
+</label>
+
+<textarea
+id="problems"
+placeholder="List anything that is confusing, incomplete, difficult to use or not yet polished."
+></textarea>
+
+
+
+<label
+class="title"
+for="test"
+>
+How will you test the product with real users?
+</label>
+
+<textarea
+id="test"
+placeholder="Example: Give the first version to 3–5 people in the target audience and ask them to complete it without assistance."
+></textarea>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🚦 Ready Status</h2>
+
+<label
+class="title"
+for="status"
+>
+How do you currently rate the product?
+</label>
+
+<select id="status">
+
+<option value="">
+Choose a status
+</option>
+
+<option value="Needs major improvements">
+Needs major improvements
+</option>
+
+<option value="Needs a few improvements">
+Needs a few improvements
+</option>
+
+<option value="Ready for testing">
+Ready for testing
+</option>
+
+<option value="Ready for initial customers">
+Ready for initial customers
+</option>
+
+</select>
+
+
+<p class="small">
+This is your current assessment, not a guarantee of sales or success.
+</p>
+
+
+<button
+class="primary"
+onclick="saveProductReview()"
+>
+💾 Save Review & Continue
+</button>
+
+</div>
+
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle</strong>
+
+<p>
+A product does not need to be perfect before testing. It should be useful, understandable and good enough to learn from real users.
+</p>
+
+</div>
+
+
+
+<div class="warning">
+
+<strong>⚠️ Before selling</strong>
+
+<p>
+Make sure your product does not use copyrighted material without permission and avoid making unrealistic income or success claims.
+</p>
+
+</div>
+
+
+</main>
+
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+
+<script>
+
+
+function getJSON(key){
+
+try{
+
+return JSON.parse(
+localStorage.getItem(key)
+);
+
+}catch(error){
+
+return null;
+
+}
+
+}
+
+
+
+function loadSummary(){
+
+const idea =
+getJSON("earnflowProductIdea");
+
+const customer =
+getJSON("earnflowProductCustomer");
+
+const validation =
+getJSON("earnflowProductValidation");
+
+const plan =
+getJSON("earnflowProductPlan");
+
+const build =
+getJSON("earnflowProductBuild");
+
+
+let html = "";
+
+
+if(idea){
+
+html +=
+"<p><strong>Product:</strong> " +
+(idea.product || "Not provided") +
+"</p>";
+
+html +=
+"<p><strong>Problem:</strong> " +
+(idea.problem || "Not provided") +
+"</p>";
+
+}
+
+
+if(customer){
+
+html +=
+"<p><strong>Customer:</strong> " +
+(customer.customer || "Not provided") +
+"</p>";
+
+}
+
+
+if(validation){
+
+html +=
+"<p><strong>Validation:</strong> " +
+(validation.score || 0) +
+"/6 — " +
+(validation.verdict || "Not available") +
+"</p>";
+
+}
+
+
+if(plan){
+
+html +=
+"<p><strong>Format:</strong> " +
+(plan.format || "Not provided") +
+"</p>";
+
+html +=
+"<p><strong>Main outcome:</strong> " +
+(plan.outcome || plan.mainOutcome || "Not provided") +
+"</p>";
+
+if(plan.sections){
+
+html +=
+"<p><strong>Planned sections:</strong> " +
+plan.sections.length +
+"</p>";
+
+}
+
+}
+
+
+if(build){
+
+if(build.completedTasks){
+
+html +=
+"<p><strong>Build tasks completed:</strong> " +
+build.completedTasks.length +
+"/6</p>";
+
+}
+
+}
+
+
+if(!html){
+
+html =
+"<p>No previous product information was found. You can still complete this review.</p>";
+
+}
+
+
+document.getElementById("summary").innerHTML =
+html;
+
+}
+
+
+
+function saveProductReview(){
+
+const checks = [];
+
+for(let i=1;i<=10;i++){
+
+const checkbox =
+document.getElementById("check"+i);
+
+if(checkbox.checked){
+
+checks.push(i);
+
+}
+
+}
+
+
+if(checks.length < 5){
+
+alert(
+"Please complete at least 5 checklist items before continuing."
+);
+
+return;
+
+}
+
+
+const strengths =
+document.getElementById("strengths").value.trim();
+
+const problems =
+document.getElementById("problems").value.trim();
+
+const testPlan =
+document.getElementById("test").value.trim();
+
+const status =
+document.getElementById("status").value;
+
+
+if(!strengths){
+
+alert(
+"Please describe what is strongest about your product."
+);
+
+return;
+
+}
+
+
+if(!problems){
+
+alert(
+"Please describe what still needs improvement."
+);
+
+return;
+
+}
+
+
+if(!testPlan){
+
+alert(
+"Please explain how you will test your product with real users."
+);
+
+return;
+
+}
+
+
+if(!status){
+
+alert(
+"Please choose your current product status."
+);
+
+return;
+
+}
+
+
+const review = {
+
+completedChecks: checks,
+
+totalChecks: 10,
+
+strengths: strengths,
+
+improvementsNeeded: problems,
+
+userTestingPlan: testPlan,
+
+status: status,
+
+reviewedAt: new Date().toISOString()
+
+};
+
+
+localStorage.setItem(
+"earnflowProductReview",
+JSON.stringify(review)
+);
+
+
+// Immediately open Step 07
+window.location.href =
+"digital-product-ready.html";
+
+}
+
+
+
+loadSummary();
+
+</script>
+
+
+</body>
+
+  </html>
