@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>EarnFlow — Create Your Sales Page</title>
+
+<meta
+name="description"
+content="Create a clear and practical sales page for your digital product."
+>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+}
+
+.top{
+background:#111827;
+color:white;
+padding:14px 18px;
+display:flex;
+align-items:center;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+margin-right:auto;
+}
+
+.back{
+border:0;
+background:#374151;
+color:white;
+padding:10px 15px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.hero{
+background:white;
+text-align:center;
+padding:38px 18px;
+}
+
+.icon{
+font-size:48px;
+}
+
+.hero h1{
+font-size:30px;
+margin:10px 0;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#667085;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 18px;
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:17px;
+margin-bottom:18px;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.card h2{
+margin-top:0;
+}
+
+.summary{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:16px 0 7px;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:13px;
+border:1px solid #d1d5db;
+border-radius:9px;
+font:inherit;
+}
+
+textarea{
+min-height:110px;
+resize:vertical;
+}
+
+.small{
+color:#667085;
+font-size:14px;
+line-height:1.5;
+}
+
+.check{
+display:flex;
+gap:12px;
+align-items:flex-start;
+padding:15px;
+margin-top:12px;
+border:1px solid #e5e7eb;
+border-radius:12px;
+background:#fafafa;
+}
+
+.check input{
+width:20px;
+height:20px;
+margin-top:2px;
+flex-shrink:0;
+}
+
+.check label{
+font-weight:normal;
+margin:0;
+line-height:1.5;
+cursor:pointer;
+}
+
+.primary{
+width:100%;
+margin-top:22px;
+padding:15px;
+border:0;
+border-radius:10px;
+background:#111827;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tip{
+background:#eef5ff;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+}
+
+.warning{
+background:#fff7ed;
+padding:18px;
+border-radius:12px;
+line-height:1.6;
+margin-top:18px;
+}
+
+footer{
+text-align:center;
+background:#111827;
+color:#d1d5db;
+padding:30px 18px;
+margin-top:25px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="top">
+
+<div class="logo">
+EarnFlow
+</div>
+
+<button
+class="back"
+onclick="history.back()"
+>
+← Back
+</button>
+
+</nav>
+
+
+
+<header class="hero">
+
+<div class="icon">
+🛒
+</div>
+
+<h1>
+Step 08 — Create Your Sales Page
+</h1>
+
+<p>
+Explain your product clearly so the right customer can understand what it does, what they receive and why it may be useful.
+</p>
+
+</header>
+
+
+
+<main class="container">
+
+
+<div class="card">
+
+<h2>📋 Product Foundation</h2>
+
+<p class="small">
+Information from your previous steps is shown here to help you write a consistent sales page.
+</p>
+
+<div
+id="foundation"
+class="summary"
+>
+Loading product information...
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>📰 Sales Page Headline</h2>
+
+<label for="headline">
+Main headline
+</label>
+
+<input
+id="headline"
+placeholder="Example: A Simple Weekly Study Planning System for Busy Students"
+>
+
+<p class="small">
+Clearly describe what the product helps the customer do. Avoid unrealistic promises.
+</p>
+
+
+<label for="subheadline">
+Supporting statement
+</label>
+
+<textarea
+id="subheadline"
+placeholder="Explain who the product is for and the practical result it helps them work toward."
+></textarea>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>😣 Customer Problem</h2>
+
+<label for="problem">
+What problem is the customer experiencing?
+</label>
+
+<textarea
+id="problem"
+placeholder="Describe the customer's situation, difficulty or frustration in clear language."
+></textarea>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🏆 Customer Outcome</h2>
+
+<label for="outcome">
+What useful outcome does your product help the customer work toward?
+</label>
+
+<textarea
+id="outcome"
+placeholder="Describe the practical result without guaranteeing success."
+></textarea>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>✨ Key Benefits</h2>
+
+<label for="benefits">
+List the most important benefits
+</label>
+
+<textarea
+id="benefits"
+placeholder="Example:
+• Saves planning time
+• Gives a clear step-by-step system
+• Includes practical worksheets
+• Makes progress easier to track"
+></textarea>
+
+<p class="small">
+Focus on benefits the customer can understand and evaluate.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>📦 What's Included</h2>
+
+<label for="included">
+What exactly will the customer receive?
+</label>
+
+<textarea
+id="included"
+placeholder="Example:
+• Main PDF guide
+• 4 worksheets
+• 2 checklists
+• 5 reusable templates"
+></textarea>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>👤 Who It's For</h2>
+
+<label for="audience">
+Who is this product designed for?
+</label>
+
+<textarea
+id="audience"
+placeholder="Describe the ideal customer clearly."
+></textarea>
+
+
+<label for="notFor">
+Who is it NOT designed for?
+</label>
+
+<textarea
+id="notFor"
+placeholder="Describe people who may not benefit from this particular product."
+></textarea>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>💰 Offer & Pricing</h2>
+
+<label for="price">
+Planned price
+</label>
+
+<input
+id="price"
+placeholder="Example: GH₵50"
+>
+
+<p class="small">
+Use the price you are considering for the first version. You can change it after testing the offer.
+</p>
+
+
+<label for="priceReason">
+Why should the customer consider the product worth the price?
+</label>
+
+<textarea
+id="priceReason"
+placeholder="Explain the practical value, resources, convenience or problem solved."
+></textarea>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🔘 Call to Action</h2>
+
+<label for="cta">
+What should the customer do next?
+</label>
+
+<input
+id="cta"
+placeholder="Example: Get the guide"
+>
+
+<p class="small">
+Keep your call to action simple and clear.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🛡️ Trust & Transparency</h2>
+
+<label for="trust">
+What can you honestly tell customers about the product?
+</label>
+
+<textarea
+id="trust"
+placeholder="Example: Created from practical experience, includes step-by-step instructions and can be used from a smartphone."
+></textarea>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check1"
+>
+
+<label for="check1">
+My sales page clearly explains what the customer will receive.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check2"
+>
+
+<label for="check2">
+My claims are realistic and do not guarantee income or success.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check3"
+>
+
+<label for="check3">
+The product's price is clearly visible.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check4"
+>
+
+<label for="check4">
+The call-to-action is clear.
+</label>
+
+</div>
+
+
+<div class="check">
+
+<input
+type="checkbox"
+id="check5"
+>
+
+<label for="check5">
+The sales page is understandable on a smartphone.
+</label>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🚀 Final Sales Page Note</h2>
+
+<label for="finalNote">
+What is the most important message you want the customer to remember?
+</label>
+
+<textarea
+id="finalNote"
+placeholder="Write one clear message that summarizes why this product may be useful."
+></textarea>
+
+
+<button
+class="primary"
+onclick="saveSalesPage()"
+>
+💾 Save Sales Page & Continue
+</button>
+
+</div>
+
+
+
+<div class="tip">
+
+<strong>💡 EarnFlow principle</strong>
+
+<p>
+A good sales page does not need exaggerated claims. Clearly explain the customer's problem, your solution, what they receive and the next step.
+</p>
+
+</div>
+
+
+
+<div class="warning">
+
+<strong>⚠️ Be honest</strong>
+
+<p>
+Never use fake testimonials, fake scarcity, misleading income claims or guarantees that your product cannot support.
+</p>
+
+</div>
+
+
+</main>
+
+
+
+<footer>
+
+<strong>
+EarnFlow
+</strong>
+
+<br>
+
+Build skills. Find opportunities. Grow.
+
+<br><br>
+
+<small>
+© 2026 EarnFlow • No guaranteed income.
+</small>
+
+</footer>
+
+
+
+<script>
+
+
+function getJSON(key){
+
+try{
+
+return JSON.parse(
+localStorage.getItem(key)
+);
+
+}catch(error){
+
+return null;
+
+}
+
+}
+
+
+
+function loadFoundation(){
+
+const idea =
+getJSON("earnflowProductIdea");
+
+const customer =
+getJSON("earnflowProductCustomer");
+
+const validation =
+getJSON("earnflowProductValidation");
+
+const plan =
+getJSON("earnflowProductPlan");
+
+const review =
+getJSON("earnflowProductReview");
+
+const ready =
+getJSON("earnflowProductReady");
+
+
+let html = "";
+
+
+if(idea){
+
+html +=
+"<p><strong>Product:</strong> " +
+(idea.product || "Not provided") +
+"</p>";
+
+html +=
+"<p><strong>Problem:</strong> " +
+(idea.problem || "Not provided") +
+"</p>";
+
+}
+
+
+if(customer){
+
+html +=
+"<p><strong>Customer:</strong> " +
+(customer.customer || "Not provided") +
+"</p>";
+
+}
+
+
+if(validation){
+
+html +=
+"<p><strong>Validation:</strong> " +
+(validation.score || 0) +
+"/6</p>";
+
+}
+
+
+if(plan){
+
+html +=
+"<p><strong>Product format:</strong> " +
+(plan.format || "Not provided") +
+"</p>";
+
+html +=
+"<p><strong>Main outcome:</strong> " +
+(plan.outcome || plan.mainOutcome || "Not provided") +
+"</p>";
+
+}
+
+
+if(review){
+
+html +=
+"<p><strong>Review status:</strong> " +
+(review.status || "Not provided") +
+"</p>";
+
+}
+
+
+if(ready){
+
+html +=
+"<p><strong>Delivery format:</strong> " +
+(ready.fileFormat || "Not provided") +
+"</p>";
+
+}
+
+
+if(!html){
+
+html =
+"<p>No previous information was found. You can still create your sales page below.</p>";
+
+}
+
+
+document.getElementById("foundation").innerHTML =
+html;
+
+}
+
+
+
+function saveSalesPage(){
+
+const headline =
+document.getElementById("headline").value.trim();
+
+const subheadline =
+document.getElementById("subheadline").value.trim();
+
+const problem =
+document.getElementById("problem").value.trim();
+
+const outcome =
+document.getElementById("outcome").value.trim();
+
+const benefits =
+document.getElementById("benefits").value.trim();
+
+const included =
+document.getElementById("included").value.trim();
+
+const audience =
+document.getElementById("audience").value.trim();
+
+const notFor =
+document.getElementById("notFor").value.trim();
+
+const price =
+document.getElementById("price").value.trim();
+
+const priceReason =
+document.getElementById("priceReason").value.trim();
+
+const cta =
+document.getElementById("cta").value.trim();
+
+const trust =
+document.getElementById("trust").value.trim();
+
+const finalNote =
+document.getElementById("finalNote").value.trim();
+
+
+if(!headline){
+
+alert(
+"Please write your main sales page headline."
+);
+
+return;
+
+}
+
+
+if(!subheadline){
+
+alert(
+"Please write a supporting statement."
+);
+
+return;
+
+}
+
+
+if(!problem){
+
+alert(
+"Please describe the customer problem."
+);
+
+return;
+
+}
+
+
+if(!outcome){
+
+alert(
+"Please describe the customer outcome."
+);
+
+return;
+
+}
+
+
+if(!benefits){
+
+alert(
+"Please list the key benefits."
+);
+
+return;
+
+}
+
+
+if(!included){
+
+alert(
+"Please explain what the customer will receive."
+);
+
+return;
+
+}
+
+
+if(!audience){
+
+alert(
+"Please describe who the product is for."
+);
+
+return;
+
+}
+
+
+if(!price){
+
+alert(
+"Please enter your planned price."
+);
+
+return;
+
+}
+
+
+if(!priceReason){
+
+alert(
+"Please explain why the product may be worth the price."
+);
+
+return;
+
+}
+
+
+if(!cta){
+
+alert(
+"Please enter a clear call to action."
+);
+
+return;
+
+}
+
+
+if(!trust){
+
+alert(
+"Please add an honest trust and transparency statement."
+);
+
+return;
+
+}
+
+
+if(!finalNote){
+
+alert(
+"Please write your final sales page message."
+);
+
+return;
+
+}
+
+
+for(let i=1;i<=5;i++){
+
+if(
+!document.getElementById("check"+i).checked
+){
+
+alert(
+"Please complete all 5 sales page checks before continuing."
+);
+
+return;
+
+}
+
+}
+
+
+const salesPage = {
+
+headline: headline,
+
+subheadline: subheadline,
+
+customerProblem: problem,
+
+customerOutcome: outcome,
+
+benefits: benefits,
+
+included: included,
+
+targetAudience: audience,
+
+notFor: notFor,
+
+plannedPrice: price,
+
+priceReason: priceReason,
+
+callToAction: cta,
+
+trustStatement: trust,
+
+completedChecks: 5,
+
+finalMessage: finalNote,
+
+savedAt: new Date().toISOString()
+
+};
+
+
+localStorage.setItem(
+"earnflowProductSalesPage",
+JSON.stringify(salesPage)
+);
+
+
+// Open Step 09 immediately
+window.location.href =
+"digital-product-payment.html";
+
+}
+
+
+
+loadFoundation();
+
+</script>
+
+
+</body>
+
+</html>
