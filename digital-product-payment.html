@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step 09 — Choose a Payment Method | EarnFlow</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .top {
+      margin-bottom: 22px;
+    }
+
+    .step {
+      color: #667085;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .intro {
+      color: #667085;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 16px 0 7px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d0d5dd;
+      border-radius: 10px;
+      font-size: 15px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .summary {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 15px;
+      line-height: 1.6;
+    }
+
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 13px 0;
+      line-height: 1.5;
+      font-weight: normal;
+    }
+
+    .check input {
+      width: auto;
+      margin-top: 4px;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #111827;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.92;
+    }
+
+    .secondary {
+      margin-top: 10px;
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .message {
+      display: none;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .error {
+      background: #fef2f2;
+      color: #991b1b;
+    }
+
+    .success {
+      background: #ecfdf3;
+      color: #166534;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #667085;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="top">
+    <div class="step">STEP 09 OF 12</div>
+    <h1>Choose a Payment Method</h1>
+    <p class="intro">
+      Decide how customers will pay for your digital product.
+      Keep the payment process simple, clear and easy to use on a phone.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Your Product</h2>
+
+    <div class="summary">
+      <strong>Product:</strong>
+      <span id="productName">Loading...</span>
+      <br>
+
+      <strong>Customer:</strong>
+      <span id="customerName">Loading...</span>
+      <br>
+
+      <strong>Planned price:</strong>
+      <span id="plannedPrice">Not set</span>
+    </div>
+  </div>
+
+  <div id="errorMessage" class="message error"></div>
+  <div id="successMessage" class="message success"></div>
+
+  <div class="card">
+
+    <h2>1. Select Your Payment Method</h2>
+
+    <label for="paymentMethod">How will customers pay?</label>
+
+    <select id="paymentMethod">
+      <option value="">Select a payment method</option>
+      <option value="mobile-money">Mobile Money</option>
+      <option value="bank-transfer">Bank Transfer</option>
+      <option value="card">Debit/Credit Card</option>
+      <option value="payment-platform">Online Payment Platform</option>
+      <option value="multiple">Multiple Payment Methods</option>
+    </select>
+
+    <label for="paymentProvider">Payment provider or service</label>
+
+    <input
+      type="text"
+      id="paymentProvider"
+      placeholder="Example: Paystack, Flutterwave, bank, mobile money"
+    >
+
+    <p class="small">
+      Only write a provider you actually plan to use. This page helps you plan
+      your payment setup; it does not automatically connect your product to a payment service.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <h2>2. Payment Setup</h2>
+
+    <label for="accountDetails">Account or payment details</label>
+
+    <textarea
+      id="accountDetails"
+      placeholder="Write the account/payment details you need to set up or connect."
+    ></textarea>
+
+    <label for="currency">Currency</label>
+
+    <select id="currency">
+      <option value="">Select currency</option>
+      <option value="GHS">Ghana Cedi (GHS)</option>
+      <option value="USD">US Dollar (USD)</option>
+      <option value="NGN">Nigerian Naira (NGN)</option>
+      <option value="GBP">British Pound (GBP)</option>
+      <option value="EUR">Euro (EUR)</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="price">Final selling price</label>
+
+    <input
+      type="number"
+      id="price"
+      min="0"
+      step="0.01"
+      placeholder="Example: 50"
+    >
+
+  </div>
+
+  <div class="card">
+
+    <h2>3. Customer Checkout</h2>
+
+    <label for="checkoutLink">Checkout link or payment instructions</label>
+
+    <textarea
+      id="checkoutLink"
+      placeholder="Paste your checkout link or explain exactly how customers will make payment."
+    ></textarea>
+
+    <label for="paymentStatus">Payment setup status</label>
+
+    <select id="paymentStatus">
+      <option value="">Select status</option>
+      <option value="not-started">Not started</option>
+      <option value="setting-up">Setting up</option>
+      <option value="ready-to-test">Ready to test</option>
+      <option value="tested">Tested</option>
+    </select>
+
+  </div>
+
+  <div class="card">
+
+    <h2>4. Customer Policy</h2>
+
+    <label for="refundPolicy">Refund or cancellation policy</label>
+
+    <textarea
+      id="refundPolicy"
+      placeholder="Explain clearly when customers can request a refund or cancellation."
+    ></textarea>
+
+    <label for="paymentNote">Important payment note for customers</label>
+
+    <textarea
+      id="paymentNote"
+      placeholder="Example: Customers should keep their payment confirmation."
+    ></textarea>
+
+  </div>
+
+  <div class="card">
+
+    <h2>5. Test Before Launch</h2>
+
+    <label class="check">
+      <input type="checkbox" id="checkMethod">
+      <span>I have selected a payment method that my target customers can realistically use.</span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="checkPrice">
+      <span>The final price and currency are clear.</span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="checkInstructions">
+      <span>The customer knows exactly how to pay.</span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="checkPolicy">
+      <span>My refund or cancellation policy is clear.</span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="checkTest">
+      <span>I understand that I should test the payment process before launching.</span>
+    </label>
+
+  </div>
+
+  <div class="card">
+
+    <h2>6. Your Payment Plan</h2>
+
+    <label for="paymentGoal">Main payment goal</label>
+
+    <textarea
+      id="paymentGoal"
+      placeholder="Example: Make payment simple for customers using mobile money."
+    ></textarea>
+
+    <label for="deliveryConnection">How will payment connect to delivery?</label>
+
+    <textarea
+      id="deliveryConnection"
+      placeholder="Example: After payment, I will manually send the product, or use an automated delivery system."
+    ></textarea>
+
+    <p class="small">
+      Be honest about what is actually automated and what you will do manually.
+      Do not promise instant delivery unless your system really supports it.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <button onclick="savePaymentPlan()">
+      Save Payment Plan & Continue
+    </button>
+
+    <button class="secondary" onclick="resetPaymentPlan()">
+      Reset This Step
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+  function getData(key) {
+    try {
+      return JSON.parse(localStorage.getItem(key)) || {};
+    } catch (error) {
+      return {};
+    }
+  }
+
+  const idea = getData("earnflowProductIdea");
+  const customer = getData("earnflowProductCustomer");
+  const plan = getData("earnflowProductPlan");
+
+  document.getElementById("productName").textContent =
+    idea.productName ||
+    idea.idea ||
+    idea.productIdea ||
+    "Your digital product";
+
+  document.getElementById("customerName").textContent =
+    customer.customer ||
+    customer.customerType ||
+    customer.customerName ||
+    "Your target customer";
+
+  document.getElementById("plannedPrice").textContent =
+    plan.pricingDirection ||
+    "Not set";
+
+  function showError(message) {
+    const box = document.getElementById("errorMessage");
+    box.textContent = message;
+    box.style.display = "block";
+
+    document.getElementById("successMessage").style.display = "none";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+  function savePaymentPlan() {
+
+    const paymentMethod =
+      document.getElementById("paymentMethod").value.trim();
+
+    const paymentProvider =
+      document.getElementById("paymentProvider").value.trim();
+
+    const accountDetails =
+      document.getElementById("accountDetails").value.trim();
+
+    const currency =
+      document.getElementById("currency").value.trim();
+
+    const price =
+      document.getElementById("price").value.trim();
+
+    const checkoutLink =
+      document.getElementById("checkoutLink").value.trim();
+
+    const paymentStatus =
+      document.getElementById("paymentStatus").value.trim();
+
+    const refundPolicy =
+      document.getElementById("refundPolicy").value.trim();
+
+    const paymentNote =
+      document.getElementById("paymentNote").value.trim();
+
+    const paymentGoal =
+      document.getElementById("paymentGoal").value.trim();
+
+    const deliveryConnection =
+      document.getElementById("deliveryConnection").value.trim();
+
+    const checkMethod =
+      document.getElementById("checkMethod").checked;
+
+    const checkPrice =
+      document.getElementById("checkPrice").checked;
+
+    const checkInstructions =
+      document.getElementById("checkInstructions").checked;
+
+    const checkPolicy =
+      document.getElementById("checkPolicy").checked;
+
+    const checkTest =
+      document.getElementById("checkTest").checked;
+
+    if (!paymentMethod) {
+      showError("Please select a payment method.");
+      return;
+    }
+
+    if (!paymentProvider) {
+      showError("Please enter the payment provider or service.");
+      return;
+    }
+
+    if (!accountDetails) {
+      showError("Please describe the account or payment details you need.");
+      return;
+    }
+
+    if (!currency) {
+      showError("Please select a currency.");
+      return;
+    }
+
+    if (!price || Number(price) <= 0) {
+      showError("Please enter a valid selling price greater than zero.");
+      return;
+    }
+
+    if (!checkoutLink) {
+      showError("Please provide your checkout link or payment instructions.");
+      return;
+    }
+
+    if (!paymentStatus) {
+      showError("Please select your payment setup status.");
+      return;
+    }
+
+    if (!refundPolicy) {
+      showError("Please write your refund or cancellation policy.");
+      return;
+    }
+
+    if (!paymentNote) {
+      showError("Please write an important payment note for customers.");
+      return;
+    }
+
+    if (!paymentGoal) {
+      showError("Please describe your main payment goal.");
+      return;
+    }
+
+    if (!deliveryConnection) {
+      showError("Please explain how payment will connect to product delivery.");
+      return;
+    }
+
+    if (
+      !checkMethod ||
+      !checkPrice ||
+      !checkInstructions ||
+      !checkPolicy ||
+      !checkTest
+    ) {
+      showError("Please complete all five payment readiness checks.");
+      return;
+    }
+
+    const paymentPlan = {
+
+      paymentMethod: paymentMethod,
+
+      paymentProvider: paymentProvider,
+
+      accountDetails: accountDetails,
+
+      currency: currency,
+
+      price: Number(price),
+
+      checkoutLink: checkoutLink,
+
+      paymentStatus: paymentStatus,
+
+      refundPolicy: refundPolicy,
+
+      paymentNote: paymentNote,
+
+      readinessChecks: {
+        method: checkMethod,
+        price: checkPrice,
+        instructions: checkInstructions,
+        policy: checkPolicy,
+        test: checkTest
+      },
+
+      paymentGoal: paymentGoal,
+
+      deliveryConnection: deliveryConnection,
+
+      savedAt: new Date().toISOString()
+
+    };
+
+    localStorage.setItem(
+      "earnflowProductPayment",
+      JSON.stringify(paymentPlan)
+    );
+
+    window.location.href = "digital-product-launch.html";
+  }
+
+  function resetPaymentPlan() {
+
+    document.getElementById("paymentMethod").value = "";
+    document.getElementById("paymentProvider").value = "";
+    document.getElementById("accountDetails").value = "";
+    document.getElementById("currency").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("checkoutLink").value = "";
+    document.getElementById("paymentStatus").value = "";
+    document.getElementById("refundPolicy").value = "";
+    document.getElementById("paymentNote").value = "";
+    document.getElementById("paymentGoal").value = "";
+    document.getElementById("deliveryConnection").value = "";
+
+    document.getElementById("checkMethod").checked = false;
+    document.getElementById("checkPrice").checked = false;
+    document.getElementById("checkInstructions").checked = false;
+    document.getElementById("checkPolicy").checked = false;
+    document.getElementById("checkTest").checked = false;
+
+    localStorage.removeItem("earnflowProductPayment");
+
+    document.getElementById("errorMessage").style.display = "none";
+    document.getElementById("successMessage").style.display = "none";
+  }
+
+</script>
+
+</body>
+</html>
