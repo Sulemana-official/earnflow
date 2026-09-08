@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Step 10 — Launch Your Product | EarnFlow</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .top {
+      margin-bottom: 22px;
+    }
+
+    .step {
+      color: #667085;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .intro {
+      color: #667085;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 16px 0 7px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d0d5dd;
+      border-radius: 10px;
+      font-size: 15px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .summary {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 15px;
+      line-height: 1.7;
+    }
+
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 13px 0;
+      line-height: 1.5;
+      font-weight: normal;
+    }
+
+    .check input {
+      width: auto;
+      margin-top: 4px;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #111827;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.92;
+    }
+
+    .secondary {
+      margin-top: 10px;
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .message {
+      display: none;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .error {
+      background: #fef2f2;
+      color: #991b1b;
+    }
+
+    .success {
+      background: #ecfdf3;
+      color: #166534;
+    }
+
+    .launch-box {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 16px;
+      line-height: 1.6;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #667085;
+      line-height: 1.5;
+    }
+
+    .warning {
+      background: #fff7ed;
+      color: #9a3412;
+      border-radius: 12px;
+      padding: 14px;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="top">
+    <div class="step">STEP 10 OF 12</div>
+
+    <h1>Launch Your Product</h1>
+
+    <p class="intro">
+      Turn your completed preparation into a real launch.
+      Start small, make your offer easy to understand, and give your first
+      customers a clear way to buy and receive the product.
+    </p>
+  </div>
+
+  <div class="card">
+
+    <h2>Your Launch Summary</h2>
+
+    <div class="summary">
+
+      <strong>Product:</strong>
+      <span id="productName">Loading...</span>
+
+      <br>
+
+      <strong>Target customer:</strong>
+      <span id="customerName">Loading...</span>
+
+      <br>
+
+      <strong>Price:</strong>
+      <span id="price">Not set</span>
+
+      <br>
+
+      <strong>Payment method:</strong>
+      <span id="paymentMethod">Not set</span>
+
+      <br>
+
+      <strong>Payment status:</strong>
+      <span id="paymentStatus">Not set</span>
+
+    </div>
+
+  </div>
+
+  <div id="errorMessage" class="message error"></div>
+
+  <div id="successMessage" class="message success"></div>
+
+  <div class="card">
+
+    <h2>1. Choose Your Launch Channel</h2>
+
+    <label for="launchChannel">
+      Where will you first promote your product?
+    </label>
+
+    <select id="launchChannel">
+
+      <option value="">
+        Select a launch channel
+      </option>
+
+      <option value="whatsapp">
+        WhatsApp
+      </option>
+
+      <option value="facebook">
+        Facebook
+      </option>
+
+      <option value="instagram">
+        Instagram
+      </option>
+
+      <option value="tiktok">
+        TikTok
+      </option>
+
+      <option value="youtube">
+        YouTube
+      </option>
+
+      <option value="website">
+        Website
+      </option>
+
+      <option value="email">
+        Email
+      </option>
+
+      <option value="multiple">
+        Multiple channels
+      </option>
+
+    </select>
+
+    <label for="launchAudience">
+      Who will you contact first?
+    </label>
+
+    <textarea
+      id="launchAudience"
+      placeholder="Describe the first group of people you will introduce the product to."
+    ></textarea>
+
+  </div>
+
+  <div class="card">
+
+    <h2>2. Prepare Your Launch Message</h2>
+
+    <label for="launchMessage">
+      Your launch message
+    </label>
+
+    <textarea
+      id="launchMessage"
+      placeholder="Write a short message explaining the problem, your product, who it is for, what they get and how they can buy it."
+    ></textarea>
+
+    <label for="launchCTA">
+      Call to action
+    </label>
+
+    <input
+      type="text"
+      id="launchCTA"
+      placeholder="Example: Get the guide today"
+    >
+
+    <p class="small">
+      Keep the message truthful. Avoid claims such as guaranteed income,
+      guaranteed results or guaranteed success.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <h2>3. Set Your Launch Date</h2>
+
+    <label for="launchDate">
+      Planned launch date
+    </label>
+
+    <input
+      type="date"
+      id="launchDate"
+    >
+
+    <label for="launchTime">
+      Planned launch time
+    </label>
+
+    <input
+      type="time"
+      id="launchTime"
+    >
+
+    <label for="launchGoal">
+      Your first launch goal
+    </label>
+
+    <textarea
+      id="launchGoal"
+      placeholder="Example: Get my first 5 customers and learn what they think about the product."
+    ></textarea>
+
+  </div>
+
+  <div class="card">
+
+    <h2>4. Customer Journey</h2>
+
+    <label for="customerJourney">
+      Describe what happens from promotion to delivery
+    </label>
+
+    <textarea
+      id="customerJourney"
+      placeholder="Example: Customer sees my post → visits checkout → pays → receives the product → contacts me if they need support."
+    ></textarea>
+
+    <label for="supportPlan">
+      How will you support customers?
+    </label>
+
+    <textarea
+      id="supportPlan"
+      placeholder="Explain how customers can contact you when they have questions or problems."
+    ></textarea>
+
+  </div>
+
+  <div class="card">
+
+    <h2>5. Launch Readiness</h2>
+
+    <label class="check">
+      <input type="checkbox" id="checkProduct">
+      <span>
+        My product is complete and ready for customers.
+      </span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="checkSales">
+      <span>
+        My sales page clearly explains the product and price.
+      </span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="checkPayment">
+      <span>
+        My payment method is prepared and I understand how customers will pay.
+      </span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="checkDelivery">
+      <span>
+        I know how customers will receive the product after payment.
+      </span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="checkSupport">
+      <span>
+        Customers have a clear way to contact me for support.
+      </span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="checkMessage">
+      <span>
+        My launch message is clear, honest and easy to understand.
+      </span>
+    </label>
+
+  </div>
+
+  <div class="card">
+
+    <h2>6. Final Launch Plan</h2>
+
+    <div class="launch-box">
+
+      <strong>Launch principle:</strong>
+
+      <p>
+        Your first launch is a learning opportunity.
+        Focus on reaching the right people, collecting feedback and improving
+        the product instead of expecting immediate success.
+      </p>
+
+      <div class="warning">
+        Never promise customers guaranteed income, guaranteed results or
+        guaranteed success. Sell the value of the product, not unrealistic outcomes.
+      </div>
+
+    </div>
+
+    <label for="launchNotes">
+      Final launch notes
+    </label>
+
+    <textarea
+      id="launchNotes"
+      placeholder="Write anything important you want to remember before launching."
+    ></textarea>
+
+  </div>
+
+  <div class="card">
+
+    <button onclick="saveLaunchPlan()">
+      Save Launch Plan & Continue
+    </button>
+
+    <button
+      class="secondary"
+      onclick="resetLaunchPlan()"
+    >
+      Reset This Step
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+  function getData(key) {
+
+    try {
+
+      return JSON.parse(
+        localStorage.getItem(key)
+      ) || {};
+
+    } catch (error) {
+
+      return {};
+
+    }
+
+  }
+
+
+  const idea =
+    getData("earnflowProductIdea");
+
+  const customer =
+    getData("earnflowProductCustomer");
+
+  const payment =
+    getData("earnflowProductPayment");
+
+
+  document.getElementById("productName").textContent =
+
+    idea.productName ||
+    idea.idea ||
+    idea.productIdea ||
+    "Your digital product";
+
+
+  document.getElementById("customerName").textContent =
+
+    customer.customer ||
+    customer.customerType ||
+    customer.customerName ||
+    "Your target customer";
+
+
+  if (payment.price) {
+
+    document.getElementById("price").textContent =
+
+      payment.currency +
+      " " +
+      Number(payment.price).toLocaleString();
+
+  }
+
+
+  if (payment.paymentMethod) {
+
+    document.getElementById("paymentMethod").textContent =
+
+      payment.paymentMethod;
+
+  }
+
+
+  if (payment.paymentStatus) {
+
+    document.getElementById("paymentStatus").textContent =
+
+      payment.paymentStatus;
+
+  }
+
+
+  function showError(message) {
+
+    const box =
+      document.getElementById("errorMessage");
+
+    box.textContent = message;
+
+    box.style.display = "block";
+
+    document.getElementById(
+      "successMessage"
+    ).style.display = "none";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+
+  function saveLaunchPlan() {
+
+    const launchChannel =
+      document.getElementById("launchChannel").value.trim();
+
+    const launchAudience =
+      document.getElementById("launchAudience").value.trim();
+
+    const launchMessage =
+      document.getElementById("launchMessage").value.trim();
+
+    const launchCTA =
+      document.getElementById("launchCTA").value.trim();
+
+    const launchDate =
+      document.getElementById("launchDate").value.trim();
+
+    const launchTime =
+      document.getElementById("launchTime").value.trim();
+
+    const launchGoal =
+      document.getElementById("launchGoal").value.trim();
+
+    const customerJourney =
+      document.getElementById("customerJourney").value.trim();
+
+    const supportPlan =
+      document.getElementById("supportPlan").value.trim();
+
+    const launchNotes =
+      document.getElementById("launchNotes").value.trim();
+
+
+    const checkProduct =
+      document.getElementById("checkProduct").checked;
+
+    const checkSales =
+      document.getElementById("checkSales").checked;
+
+    const checkPayment =
+      document.getElementById("checkPayment").checked;
+
+    const checkDelivery =
+      document.getElementById("checkDelivery").checked;
+
+    const checkSupport =
+      document.getElementById("checkSupport").checked;
+
+    const checkMessage =
+      document.getElementById("checkMessage").checked;
+
+
+    if (!launchChannel) {
+
+      showError(
+        "Please select your first launch channel."
+      );
+
+      return;
+
+    }
+
+
+    if (!launchAudience) {
+
+      showError(
+        "Please describe who you will contact first."
+      );
+
+      return;
+
+    }
+
+
+    if (!launchMessage) {
+
+      showError(
+        "Please write your launch message."
+      );
+
+      return;
+
+    }
+
+
+    if (!launchCTA) {
+
+      showError(
+        "Please enter your call to action."
+      );
+
+      return;
+
+    }
+
+
+    if (!launchDate) {
+
+      showError(
+        "Please select your planned launch date."
+      );
+
+      return;
+
+    }
+
+
+    if (!launchTime) {
+
+      showError(
+        "Please select your planned launch time."
+      );
+
+      return;
+
+    }
+
+
+    if (!launchGoal) {
+
+      showError(
+        "Please describe your first launch goal."
+      );
+
+      return;
+
+    }
+
+
+    if (!customerJourney) {
+
+      showError(
+        "Please describe the customer journey."
+      );
+
+      return;
+
+    }
+
+
+    if (!supportPlan) {
+
+      showError(
+        "Please explain how you will support customers."
+      );
+
+      return;
+
+    }
+
+
+    if (!launchNotes) {
+
+      showError(
+        "Please add your final launch notes."
+      );
+
+      return;
+
+    }
+
+
+    if (
+      !checkProduct ||
+      !checkSales ||
+      !checkPayment ||
+      !checkDelivery ||
+      !checkSupport ||
+      !checkMessage
+    ) {
+
+      showError(
+        "Please complete all six launch readiness checks."
+      );
+
+      return;
+
+    }
+
+
+    const launchPlan = {
+
+      launchChannel:
+        launchChannel,
+
+      launchAudience:
+        launchAudience,
+
+      launchMessage:
+        launchMessage,
+
+      launchCTA:
+        launchCTA,
+
+      launchDate:
+        launchDate,
+
+      launchTime:
+        launchTime,
+
+      launchGoal:
+        launchGoal,
+
+      customerJourney:
+        customerJourney,
+
+      supportPlan:
+        supportPlan,
+
+      readinessChecks: {
+
+        product:
+          checkProduct,
+
+        sales:
+          checkSales,
+
+        payment:
+          checkPayment,
+
+        delivery:
+          checkDelivery,
+
+        support:
+          checkSupport,
+
+        message:
+          checkMessage
+
+      },
+
+      launchNotes:
+        launchNotes,
+
+      savedAt:
+        new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+      "earnflowProductLaunch",
+      JSON.stringify(launchPlan)
+    );
+
+
+    window.location.href =
+      "digital-product-results.html";
+
+  }
+
+
+  function resetLaunchPlan() {
+
+    document.getElementById(
+      "launchChannel"
+    ).value = "";
+
+    document.getElementById(
+      "launchAudience"
+    ).value = "";
+
+    document.getElementById(
+      "launchMessage"
+    ).value = "";
+
+    document.getElementById(
+      "launchCTA"
+    ).value = "";
+
+    document.getElementById(
+      "launchDate"
+    ).value = "";
+
+    document.getElementById(
+      "launchTime"
+    ).value = "";
+
+    document.getElementById(
+      "launchGoal"
+    ).value = "";
+
+    document.getElementById(
+      "customerJourney"
+    ).value = "";
+
+    document.getElementById(
+      "supportPlan"
+    ).value = "";
+
+    document.getElementById(
+      "launchNotes"
+    ).value = "";
+
+
+    document.getElementById(
+      "checkProduct"
+    ).checked = false;
+
+    document.getElementById(
+      "checkSales"
+    ).checked = false;
+
+    document.getElementById(
+      "checkPayment"
+    ).checked = false;
+
+    document.getElementById(
+      "checkDelivery"
+    ).checked = false;
+
+    document.getElementById(
+      "checkSupport"
+    ).checked = false;
+
+    document.getElementById(
+      "checkMessage"
+    ).checked = false;
+
+
+    localStorage.removeItem(
+      "earnflowProductLaunch"
+    );
+
+
+    document.getElementById(
+      "errorMessage"
+    ).style.display = "none";
+
+    document.getElementById(
+      "successMessage"
+    ).style.display = "none";
+
+  }
+
+</script>
+
+</body>
+  </html>
