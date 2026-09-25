@@ -1,36 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
 
-<meta name="viewport"
-content="width=device-width,initial-scale=1">
+<meta name="description" content="EarnFlow helps beginners build practical online skills, explore legitimate opportunities and turn learning into action using a smartphone.">
 
-<meta name="theme-color"
-content="#07111f">
+<meta name="google-site-verification" content="pQth-QZR27d2Y8HizI8UgTAZT7DY0admI82irv0q5qk5">
 
-<meta name="description"
-content="EarnFlow helps beginners build practical online skills, explore legitimate opportunities and turn learning into action using a smartphone.">
+<link rel="canonical" href="https://sulemana-official.github.io/earnflow/">
 
-<meta name="google-site-verification"
-content="pQth-QZR27d2Y8HizI8UgTAZT7DY0admI82irv0qk5qk5">
-
-<link rel="canonical"
-href="https://sulemana-official.github.io/earnflow/">
-
-<title>
-EarnFlow — Build Skills. Find Opportunities. Grow.
-</title>
+<title>EarnFlow — Build Skills. Find Opportunities. Grow.</title>
 
 <style>
 
 *{
 box-sizing:border-box
-}
-
-html{
-scroll-behavior:smooth
 }
 
 body{
@@ -49,11 +35,10 @@ cursor:pointer
 }
 
 .wrap{
-max-width:1100px;
+max-width:1120px;
 margin:auto;
 padding:0 18px
 }
-
 
 /* HEADER */
 
@@ -85,7 +70,7 @@ color:#48d597
 
 .links{
 display:flex;
-gap:5px
+gap:4px
 }
 
 .links button,
@@ -93,7 +78,7 @@ gap:5px
 background:transparent;
 color:#fff;
 border:0;
-padding:9px 11px;
+padding:9px 10px;
 border-radius:9px
 }
 
@@ -106,6 +91,15 @@ background:#102238
 display:none
 }
 
+#mobile{
+background:#07111f;
+padding:10px
+}
+
+.mobilegrid{
+display:grid;
+gap:6px
+}
 
 /* HERO */
 
@@ -115,15 +109,24 @@ color:#fff;
 padding:65px 0 55px
 }
 
-.eyebrow{
+.eyebrow,
+.tag{
 display:inline-block;
-color:#9ff0c9;
-border:1px solid #48d59755;
-background:#48d59712;
 border-radius:999px;
 padding:6px 10px;
-font-size:12px;
+font-size:11px;
 font-weight:800
+}
+
+.eyebrow{
+color:#9ff0c9;
+border:1px solid #48d59755;
+background:#48d59712
+}
+
+.tag{
+background:#eaf8f1;
+color:#11724a
 }
 
 .hero h1{
@@ -151,6 +154,8 @@ flex-wrap:wrap;
 margin-top:24px
 }
 
+/* BUTTONS */
+
 .btn{
 border:0;
 border-radius:11px;
@@ -174,10 +179,22 @@ background:#f6c85f;
 color:#261d04
 }
 
-.stats{
+.danger{
+background:#fee2e2;
+color:#991b1b
+}
+
+/* STATS */
+
+.stats,
+.grid,
+.features{
 display:grid;
+gap:15px
+}
+
+.stats{
 grid-template-columns:repeat(3,1fr);
-gap:10px;
 margin-top:30px
 }
 
@@ -197,18 +214,24 @@ font-size:21px
 color:#a9b7c8
 }
 
-
-/* IMPORTANT FIX:
-   main has no padding.
-   This removes the large white space
-   underneath the homepage.
-*/
-
-main{
-padding:0;
-margin:0
+.features{
+grid-template-columns:repeat(4,1fr);
+margin:20px 0 35px
 }
 
+.feature,
+.card{
+background:#fff;
+border:1px solid #e4e9ef;
+border-radius:17px;
+padding:18px;
+box-shadow:0 8px 25px #0f172a0a
+}
+
+.feature b{
+display:block;
+margin-bottom:4px
+}
 
 /* SCREENS */
 
@@ -221,7 +244,7 @@ display:block
 }
 
 .section{
-padding:35px 0 55px
+padding:30px 0 65px
 }
 
 .section h2{
@@ -229,99 +252,29 @@ font-size:31px;
 margin:0 0 8px
 }
 
-.muted{
-color:#667085
-}
-
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-margin-top:20px
-}
-
-
-/* CARDS */
-
-.card{
-background:#fff;
-border:1px solid #e4e9ef;
-border-radius:17px;
-padding:19px;
-box-shadow:0 8px 25px #0f172a0a
-}
-
-.card h3{
-margin:6px 0
-}
-
+.muted,
 .card p{
 color:#667085;
 line-height:1.55
 }
 
+.grid{
+grid-template-columns:repeat(3,1fr);
+margin-top:20px
+}
+
 .icon{
-font-size:26px
+font-size:28px
+}
+
+.card h3{
+margin:7px 0
 }
 
 .card .btn{
 width:100%;
-margin-top:9px
+margin-top:10px
 }
-
-
-/* TAG */
-
-.tag{
-display:inline-block;
-background:#eaf8f1;
-color:#11724a;
-border-radius:999px;
-padding:4px 8px;
-font-size:11px;
-font-weight:800
-}
-
-
-/* FORM */
-
-label{
-display:block;
-font-weight:800;
-margin:13px 0 6px
-}
-
-input,
-textarea,
-select{
-width:100%;
-border:1px solid #d3dae4;
-border-radius:10px;
-padding:12px;
-background:#fff;
-color:#172033
-}
-
-textarea{
-min-height:100px;
-resize:vertical
-}
-
-.result{
-display:none;
-background:#eefaf4;
-border:1px solid #c9eddb;
-border-radius:11px;
-padding:13px;
-margin-top:12px;
-line-height:1.5
-}
-
-
-/* BACK */
 
 .back button{
 border:0;
@@ -329,9 +282,8 @@ background:none;
 color:#14714d;
 font-weight:800;
 padding:0;
-margin-bottom:14px
+margin-bottom:15px
 }
-
 
 /* PRO */
 
@@ -360,6 +312,101 @@ font-weight:900;
 color:#f6c85f
 }
 
+/* PROGRESS */
+
+.progressbox{
+background:#07111f;
+color:#fff;
+border-radius:18px;
+padding:20px;
+margin-top:20px
+}
+
+.progressline{
+height:10px;
+background:#26384b;
+border-radius:99px;
+overflow:hidden
+}
+
+.progressline i{
+display:block;
+height:100%;
+background:#48d597;
+width:0
+}
+
+/* LESSONS */
+
+.lesson{
+background:#fff;
+border:1px solid #e4e9ef;
+border-radius:14px;
+padding:15px;
+margin-top:12px
+}
+
+.lesson.done{
+border-color:#48d597;
+background:#f0fbf6
+}
+
+.lessonhead{
+display:flex;
+gap:10px
+}
+
+.lessonhead input{
+width:auto;
+margin-top:5px
+}
+
+.lesson h3{
+margin:6px 0
+}
+
+.task{
+background:#fff7df;
+border:1px solid #f1d58b;
+border-radius:10px;
+padding:11px;
+margin-top:10px;
+line-height:1.5
+}
+
+/* FORMS */
+
+label{
+display:block;
+font-weight:800;
+margin:12px 0 6px
+}
+
+input,
+textarea,
+select{
+width:100%;
+border:1px solid #d3dae4;
+border-radius:10px;
+padding:12px;
+background:#fff;
+color:#172033
+}
+
+textarea{
+min-height:100px;
+resize:vertical
+}
+
+.result{
+display:none;
+background:#eefaf4;
+border:1px solid #c9eddb;
+border-radius:11px;
+padding:13px;
+margin-top:12px;
+line-height:1.55
+}
 
 /* DIGITAL PRODUCT BUILDER */
 
@@ -368,11 +415,9 @@ max-width:820px;
 margin:auto
 }
 
-.wizardHead{
+.wizardhead{
 display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px
+justify-content:space-between
 }
 
 .bar{
@@ -387,8 +432,7 @@ overflow:hidden
 display:block;
 height:100%;
 background:#48d597;
-width:8.33%;
-transition:width .25s ease
+width:8%
 }
 
 .wizardbox{
@@ -408,7 +452,6 @@ margin-top:15px
 flex:1
 }
 
-
 /* FOOTER */
 
 footer{
@@ -423,7 +466,6 @@ justify-content:space-between;
 gap:15px;
 flex-wrap:wrap
 }
-
 
 /* MOBILE */
 
@@ -441,33 +483,21 @@ display:block
 grid-template-columns:1fr 1fr
 }
 
+.features{
+grid-template-columns:1fr 1fr
+}
+
 .progrid{
 grid-template-columns:1fr
 }
 
 }
 
-
 @media(max-width:560px){
 
-.hero{
-padding:52px 0 45px
-}
-
-.hero h1{
-font-size:42px;
-letter-spacing:-2px
-}
-
-.hero p{
-font-size:16px
-}
-
-.grid{
-grid-template-columns:1fr
-}
-
-.stats{
+.grid,
+.stats,
+.features{
 grid-template-columns:1fr
 }
 
@@ -475,25 +505,20 @@ grid-template-columns:1fr
 width:100%
 }
 
-.wizardnav{
-flex-direction:column
+.hero h1{
+letter-spacing:-2px
 }
 
-.section{
-padding:28px 0 45px
+.wizardnav{
+flex-direction:column
 }
 
 }
 
 </style>
-
 </head>
 
-
 <body>
-
-
-<!-- HEADER -->
 
 <header>
 
@@ -504,7 +529,6 @@ padding:28px 0 45px
 <div class="brand">
 Earn<span>Flow</span>
 </div>
-
 
 <div class="links">
 
@@ -520,8 +544,12 @@ Explore
 Free Tools
 </button>
 
-<button onclick="show('learn')">
-Learn
+<button onclick="show('academy')">
+Academy
+</button>
+
+<button onclick="show('dashboard')">
+Progress
 </button>
 
 <button onclick="show('pro')">
@@ -530,13 +558,8 @@ Pro
 
 </div>
 
-
-<button
-class="menu"
-onclick="toggle()">
-
+<button class="menu" onclick="toggleMobile()">
 ☰
-
 </button>
 
 </nav>
@@ -546,58 +569,32 @@ onclick="toggle()">
 </header>
 
 
-<!-- MOBILE MENU -->
+<div id="mobile" style="display:none">
 
-<div
-id="mobile"
-style="display:none;background:#07111f;padding:10px">
+<div class="wrap mobilegrid">
 
-<div
-class="wrap"
-style="display:grid;gap:6px">
-
-<button
-class="dark btn"
-onclick="show('home');toggle()">
-
+<button class="dark btn" onclick="go('home')">
 Home
-
 </button>
 
-
-<button
-class="dark btn"
-onclick="show('explore');toggle()">
-
+<button class="dark btn" onclick="go('explore')">
 Explore
-
 </button>
 
-
-<button
-class="dark btn"
-onclick="show('tools');toggle()">
-
+<button class="dark btn" onclick="go('tools')">
 Free Tools
-
 </button>
 
-
-<button
-class="dark btn"
-onclick="show('learn');toggle()">
-
-Learn
-
+<button class="dark btn" onclick="go('academy')">
+Academy
 </button>
 
+<button class="dark btn" onclick="go('dashboard')">
+Progress
+</button>
 
-<button
-class="gold btn"
-onclick="show('pro');toggle()">
-
+<button class="gold btn" onclick="go('pro')">
 Pro
-
 </button>
 
 </div>
@@ -607,116 +604,88 @@ Pro
 
 <!-- HOME -->
 
-<section
-id="home"
-class="screen active">
+<section id="home" class="screen active">
 
 <div class="hero">
 
 <div class="wrap">
 
 <span class="eyebrow">
-
 SMARTPHONE-FIRST • BEGINNER FRIENDLY
-
 </span>
 
-
 <h1>
-
 Build skills.<br>
-
-<span>
-Find opportunities.
-</span><br>
-
+<span>Find opportunities.</span><br>
 Grow.
-
 </h1>
 
-
 <p>
-
 EarnFlow is a practical platform for beginners who want to learn useful online skills, discover legitimate opportunities and build toward real work using a smartphone.
-
 </p>
-
 
 <div class="actions">
 
-
-<button
-class="btn primary"
-onclick="show('explore')">
-
+<button class="btn primary" onclick="show('explore')">
 🚀 Start Exploring
-
 </button>
 
-
-<button
-class="btn dark"
-onclick="show('tools')">
-
+<button class="btn dark" onclick="show('tools')">
 🛠️ Free Tools
-
 </button>
 
-
-<button
-class="btn gold"
-onclick="show('pro')">
-
+<button class="btn gold" onclick="show('pro')">
 ⭐ EarnFlow Pro
-
 </button>
-
 
 </div>
-
 
 <div class="stats">
 
+<div class="stat">
+<b>6+</b>
+<small>income paths</small>
+</div>
 
 <div class="stat">
+<b>30 days</b>
+<small>focused action system</small>
+</div>
 
-<b>
-6+
-</b>
+<div class="stat">
+<b>GH₵250</b>
+<small>one-time Pro toolkit</small>
+</div>
 
-<small>
-income paths
-</small>
+</div>
+
+</div>
 
 </div>
 
 
-<div class="stat">
+<div class="wrap">
 
-<b>
-30 days
-</b>
+<div class="features">
 
-<small>
-focused action system
-</small>
-
+<div class="feature">
+<b>🎓 Academy</b>
+Learn step by step
 </div>
 
-
-<div class="stat">
-
-<b>
-GH₵250
-</b>
-
-<small>
-one-time Pro toolkit
-</small>
-
+<div class="feature">
+<b>🛠️ Tools</b>
+Practise for free
 </div>
 
+<div class="feature">
+<b>📊 Progress</b>
+Save your learning
+</div>
 
+<div class="feature">
+<b>📱 Mobile-first</b>
+Built for your phone
 </div>
 
 </div>
@@ -724,7 +693,6 @@ one-time Pro toolkit
 </div>
 
 </section>
-
 
 
 <main>
@@ -732,208 +700,117 @@ one-time Pro toolkit
 
 <!-- EXPLORE -->
 
-<section
-id="explore"
-class="screen">
+<section id="explore" class="screen">
 
 <div class="wrap section">
-
 
 <div class="back">
 
 <button onclick="show('home')">
-
 ← Back
-
 </button>
 
 </div>
-
 
 <h2>
 Explore Income Paths
 </h2>
 
+<p class="muted">
+Choose one path. Learn, practise, build proof and validate demand before spending money.
+</p>
+
+<div class="grid" id="pathCards"></div>
+
+</div>
+
+</section>
+
+
+<!-- ACADEMY -->
+
+<section id="academy" class="screen">
+
+<div class="wrap section">
+
+<div class="back">
+
+<button onclick="show('explore')">
+← Back
+</button>
+
+</div>
+
+<div class="pro" style="margin-bottom:20px">
+
+<span class="tag">
+EARNFLOW ACADEMY
+</span>
+
+<h2 id="academyTitle" style="color:#fff">
+Choose a learning path
+</h2>
+
+<p id="academyIntro">
+Select a path to open its lessons, tasks and progress tracker.
+</p>
+
+</div>
+
+<div id="academyBody"></div>
+
+</div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+
+<section id="dashboard" class="screen">
+
+<div class="wrap section">
+
+<div class="back">
+
+<button onclick="show('home')">
+← Back
+</button>
+
+</div>
+
+<h2>
+📊 My Progress
+</h2>
 
 <p class="muted">
-
-Choose one useful path, learn, practise, build proof and validate demand.
-
+Your Academy progress is saved on this device.
 </p>
 
-
-<div class="grid">
-
-
-<div class="card">
-
-<div class="icon">
-💼
-</div>
+<div class="progressbox">
 
 <h3>
-Freelancing
+Overall Academy Progress
 </h3>
 
-<p>
-Turn a useful skill into a clear service.
-</p>
+<div class="progressline">
+<i id="overallBar"></i>
+</div>
 
-<button
-class="btn dark"
-onclick="path(
-'Freelancing',
-'Learn one skill → create 3 samples → define an offer → reach relevant prospects.'
-)">
+<p id="overallText" style="color:#c7d3df"></p>
 
-Open Path
+</div>
 
+<div class="grid" id="dashboardPaths"></div>
+
+<div class="actions">
+
+<button class="btn primary" onclick="continueLearning()">
+▶ Continue Learning
 </button>
 
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-🎬
-</div>
-
-<h3>
-Content Creation
-</h3>
-
-<p>
-Create useful content and learn creator income models.
-</p>
-
-<button
-class="btn dark"
-onclick="path(
-'Content Creation',
-'Choose a niche → define an audience → publish useful content → study feedback → improve.'
-)">
-
-Open Path
-
+<button class="btn danger" onclick="resetProgress()">
+Reset Progress
 </button>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-📦
-</div>
-
-<h3>
-Digital Products
-</h3>
-
-<p>
-Build a guide, template, workbook or useful resource.
-</p>
-
-<button
-class="btn dark"
-onclick="startDigital()">
-
-Open Builder
-
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-🤖
-</div>
-
-<h3>
-AI-Assisted Work
-</h3>
-
-<p>
-Use AI responsibly for research, planning and productivity.
-</p>
-
-<button
-class="btn dark"
-onclick="path(
-'AI-Assisted Work',
-'Learn a task → build prompts → verify outputs → create proof → offer useful work.'
-)">
-
-Open Path
-
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-📚
-</div>
-
-<h3>
-Online Tutoring
-</h3>
-
-<p>
-Turn knowledge and teaching ability into a useful service.
-</p>
-
-<button
-class="btn dark"
-onclick="path(
-'Online Tutoring',
-'Choose a subject → define the learner → create a lesson sample → find learners → teach.'
-)">
-
-Open Path
-
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-📢
-</div>
-
-<h3>
-Affiliate Marketing
-</h3>
-
-<p>
-Understand affiliate promotion and disclosure.
-</p>
-
-<button
-class="btn dark"
-onclick="path(
-'Affiliate Marketing',
-'Choose a relevant topic → research products → disclose relationships → create useful content → track results.'
-)">
-
-Open Path
-
-</button>
-
-</div>
-
 
 </div>
 
@@ -942,43 +819,32 @@ Open Path
 </section>
 
 
+<!-- TOOLS -->
 
-<!-- FREE TOOLS -->
-
-<section
-id="tools"
-class="screen">
+<section id="tools" class="screen">
 
 <div class="wrap section">
-
 
 <div class="back">
 
 <button onclick="show('home')">
-
 ← Back
-
 </button>
 
 </div>
 
-
 <h2>
-Free EarnFlow Tools
+🛠️ Free EarnFlow Tools
 </h2>
 
-
 <p class="muted">
-
 Useful tools you can try before spending anything.
-
 </p>
-
 
 <div class="grid">
 
 
-<!-- CALCULATOR -->
+<!-- INCOME TARGET -->
 
 <div class="card">
 
@@ -990,7 +856,6 @@ Useful tools you can try before spending anything.
 Income Target
 </h3>
 
-
 <label>
 Target revenue
 </label>
@@ -998,8 +863,8 @@ Target revenue
 <input
 id="rev"
 type="number"
-placeholder="1000">
-
+placeholder="1000"
+>
 
 <label>
 Price per sale
@@ -1008,25 +873,16 @@ Price per sale
 <input
 id="price"
 type="number"
-placeholder="100">
+placeholder="100"
+>
 
-
-<button
-class="btn primary"
-onclick="calc()">
-
+<button class="btn primary" onclick="calc()">
 Calculate
-
 </button>
 
-
-<div
-id="calcResult"
-class="result">
-</div>
+<div id="calcResult" class="result"></div>
 
 </div>
-
 
 
 <!-- SCAM CHECKER -->
@@ -1040,7 +896,6 @@ class="result">
 <h3>
 Scam Checker
 </h3>
-
 
 <label>
 Guaranteed unusually high returns?
@@ -1062,7 +917,6 @@ No
 
 </select>
 
-
 <label>
 Pay money before a supposed job?
 </label>
@@ -1082,7 +936,6 @@ No
 </option>
 
 </select>
-
 
 <label>
 Requests PIN, OTP or password?
@@ -1104,23 +957,13 @@ No
 
 </select>
 
-
-<button
-class="btn primary"
-onclick="scam()">
-
+<button class="btn primary" onclick="scam()">
 Check
-
 </button>
 
-
-<div
-id="scamResult"
-class="result">
-</div>
+<div id="scamResult" class="result"></div>
 
 </div>
-
 
 
 <!-- OFFER BUILDER -->
@@ -1135,15 +978,14 @@ class="result">
 Offer Builder
 </h3>
 
-
 <label>
 Skill
 </label>
 
 <input
 id="os"
-placeholder="Video editing">
-
+placeholder="Video editing"
+>
 
 <label>
 Customer
@@ -1151,8 +993,8 @@ Customer
 
 <input
 id="oc"
-placeholder="Small businesses">
-
+placeholder="Small businesses"
+>
 
 <label>
 Problem
@@ -1160,25 +1002,16 @@ Problem
 
 <input
 id="op"
-placeholder="Need short videos">
+placeholder="Need short videos"
+>
 
-
-<button
-class="btn primary"
-onclick="offer()">
-
+<button class="btn primary" onclick="offer()">
 Build
-
 </button>
 
-
-<div
-id="offerResult"
-class="result">
-</div>
+<div id="offerResult" class="result"></div>
 
 </div>
-
 
 
 <!-- AI PROMPT -->
@@ -1197,23 +1030,54 @@ AI Prompt Starter
 Get a safe prompt for learning.
 </p>
 
-
-<button
-class="btn primary"
-onclick="makePrompt()">
-
+<button class="btn primary" onclick="makePrompt()">
 Generate
-
 </button>
 
-
-<div
-id="promptResult"
-class="result">
-</div>
+<div id="promptResult" class="result"></div>
 
 </div>
 
+
+<!-- PRICING -->
+
+<div class="card">
+
+<div class="icon">
+💰
+</div>
+
+<h3>
+Pricing Planner
+</h3>
+
+<label>
+Monthly target
+</label>
+
+<input
+id="targetIncome"
+type="number"
+placeholder="2000"
+>
+
+<label>
+Jobs or customers per month
+</label>
+
+<input
+id="jobsMonth"
+type="number"
+placeholder="10"
+>
+
+<button class="btn primary" onclick="pricing()">
+Calculate
+</button>
+
+<div id="pricingResult" class="result"></div>
+
+</div>
 
 
 <!-- CV -->
@@ -1232,17 +1096,11 @@ CV Builder
 Create a simple professional CV structure.
 </p>
 
-
-<button
-class="btn dark"
-onclick="show('cv')">
-
+<button class="btn dark" onclick="show('cv')">
 Open Builder
-
 </button>
 
 </div>
-
 
 </div>
 
@@ -1251,181 +1109,86 @@ Open Builder
 </section>
 
 
+<!-- CV BUILDER -->
 
-<!-- LEARN -->
-
-<section
-id="learn"
-class="screen">
+<section id="cv" class="screen">
 
 <div class="wrap section">
 
-
 <div class="back">
 
-<button onclick="show('home')">
-
+<button onclick="show('tools')">
 ← Back
-
 </button>
 
 </div>
 
+<div class="card">
 
 <h2>
-Learning Center
+CV Builder
 </h2>
 
+<label>
+Name
+</label>
 
-<p class="muted">
+<input id="cvn">
 
-Learn first. Practise. Build proof. Then test the market.
+<label>
+Target role
+</label>
 
-</p>
+<input id="cvr">
 
+<label>
+Skills
+</label>
 
-<div class="grid">
+<textarea id="cvs"></textarea>
 
+<label>
+Projects / proof
+</label>
 
-<div class="card">
+<textarea id="cvp"></textarea>
 
-<div class="icon">
-🌱
-</div>
+<label>
+Contact
+</label>
 
-<h3>
-Start Here
-</h3>
+<input id="cvc">
 
-<p>
-Understand skills, problems, proof and safe opportunity research.
-</p>
+<button class="btn primary" onclick="buildCV()">
+Build CV Summary
+</button>
 
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-🖼️
-</div>
-
-<h3>
-Build Your Portfolio
-</h3>
-
-<p>
-Create realistic samples without inventing clients or results.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-👤
-</div>
-
-<h3>
-Find Your First Customer
-</h3>
-
-<p>
-Use practical and ethical outreach.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-💵
-</div>
-
-<h3>
-Learn Pricing
-</h3>
-
-<p>
-Think about scope, value, costs and capacity.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-💬
-</div>
-
-<h3>
-Customer Communication
-</h3>
-
-<p>
-Write clear proposals, messages and follow-ups.
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">
-📅
-</div>
-
-<h3>
-30-Day Challenge
-</h3>
-
-<p>
-Learn → practise → prove → reach out → deliver → improve.
-</p>
-
-</div>
-
+<div id="cvResult" class="result"></div>
 
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- PRO -->
 
-<section
-id="pro"
-class="screen">
+<section id="pro" class="screen">
 
 <div class="wrap section">
-
 
 <div class="back">
 
 <button onclick="show('home')">
-
 ← Back
-
 </button>
 
 </div>
 
-
 <div class="pro">
 
 <div class="progrid">
-
 
 <div>
 
@@ -1433,20 +1196,13 @@ class="screen">
 EARNFLOW PRO
 </span>
 
-
 <h2 style="color:#fff">
-
 Smartphone Income Pro
-
 </h2>
 
-
 <p>
-
 A practical action workbook for beginners who want a structured system for building legitimate online income skills.
-
 </p>
-
 
 <ul>
 
@@ -1483,39 +1239,29 @@ Income trackers and first-customer system
 </div>
 
 
-
 <div>
 
 <div class="price">
-
 GH₵250
-
 </div>
-
 
 <p>
 One-time payment.
 </p>
 
-
 <button
 class="btn gold"
 style="width:100%"
-onclick="buy()">
-
+onclick="buy()"
+>
 Get EarnFlow Pro →
-
 </button>
 
-
 <p style="font-size:12px">
-
 No guaranteed income. Educational material only.
-
 </p>
 
 </div>
-
 
 </div>
 
@@ -1526,178 +1272,60 @@ No guaranteed income. Educational material only.
 </section>
 
 
+<!-- PATH DATA SCREEN -->
 
-<!-- PATH -->
-
-<section
-id="path"
-class="screen">
+<section id="path" class="screen">
 
 <div class="wrap section">
-
 
 <div class="back">
 
 <button onclick="show('explore')">
-
 ← Back
-
 </button>
 
 </div>
 
-
 <div class="card">
-
 
 <span class="tag">
 STARTER PATH
 </span>
 
+<h2 id="pathTitle"></h2>
 
-<h2 id="pathTitle">
-</h2>
+<p id="pathPlan"></p>
 
-
-<p id="pathPlan">
-</p>
-
-
-<button
-class="btn primary"
-onclick="savePath()">
-
+<button class="btn primary" onclick="savePath()">
 Save My Path
-
 </button>
 
-
-<div
-id="pathSaved"
-class="result">
-</div>
-
+<div id="pathSaved" class="result"></div>
 
 </div>
 
 </div>
 
 </section>
-
-
-
-<!-- CV BUILDER -->
-
-<section
-id="cv"
-class="screen">
-
-<div class="wrap section">
-
-
-<div class="back">
-
-<button onclick="show('tools')">
-
-← Back
-
-</button>
-
-</div>
-
-
-<div class="card">
-
-
-<h2>
-CV Builder
-</h2>
-
-
-<label>
-Name
-</label>
-
-<input id="cvn">
-
-
-<label>
-Target role
-</label>
-
-<input id="cvr">
-
-
-<label>
-Skills
-</label>
-
-<textarea id="cvs">
-</textarea>
-
-
-<label>
-Projects / proof
-</label>
-
-<textarea id="cvp">
-</textarea>
-
-
-<label>
-Contact
-</label>
-
-<input id="cvc">
-
-
-<button
-class="btn primary"
-onclick="cv()">
-
-Build CV Summary
-
-</button>
-
-
-<div
-id="cvResult"
-class="result">
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
 
 
 <!-- DIGITAL PRODUCT BUILDER -->
 
-<section
-id="digital"
-class="screen">
+<section id="digital" class="screen">
 
 <div class="wrap section">
-
 
 <div class="back">
 
 <button onclick="show('explore')">
-
 ← Back
-
 </button>
 
 </div>
 
-
 <div class="wizard">
 
-
-<div class="wizardHead">
+<div class="wizardhead">
 
 <div>
 
@@ -1705,33 +1333,21 @@ class="screen">
 DIGITAL PRODUCT BUILDER
 </span>
 
-
 <h2>
 12-Step Product Journey
 </h2>
 
 </div>
 
-
-<b id="count">
-</b>
+<b id="count"></b>
 
 </div>
-
 
 <div class="bar">
-
-<i id="bar">
-</i>
-
+<i id="bar"></i>
 </div>
 
-
-<div
-class="wizardbox"
-id="wizard">
-</div>
-
+<div class="wizardbox" id="wizard"></div>
 
 </div>
 
@@ -1743,13 +1359,9 @@ id="wizard">
 </main>
 
 
-
-<!-- FOOTER -->
-
 <footer>
 
 <div class="wrap foot">
-
 
 <div>
 
@@ -1763,74 +1375,753 @@ Build skills. Find opportunities. Grow.
 
 </div>
 
-
 <div>
 No guaranteed income • No betting
 </div>
 
-
 <div>
 © 2026 EarnFlow
 </div>
-
 
 </div>
 
 </footer>
 
 
-
 <script>
-
 
 /* BASIC HELPERS */
 
-const $ = id =>
-document.getElementById(id);
-
+const $ = id => document.getElementById(id);
 
 
 /* SCREEN NAVIGATION */
 
 function show(id){
 
-document
-.querySelectorAll(".screen")
-.forEach(function(x){
+document.querySelectorAll(".screen")
+.forEach(x => x.classList.remove("active"));
 
-x.classList.remove("active");
+const target = $(id);
+
+if(target){
+target.classList.add("active");
+}
+
+window.scrollTo(0,0);
+
+if(id === "dashboard"){
+renderDashboard();
+}
+
+if(id === "academy"){
+renderAcademy();
+}
+
+}
+
+
+function go(id){
+
+show(id);
+
+$("mobile").style.display = "none";
+
+}
+
+
+function toggleMobile(){
+
+let x = $("mobile");
+
+x.style.display =
+x.style.display === "none"
+? "block"
+: "none";
+
+}
+
+
+/* ACADEMY DATA */
+
+const paths = {
+
+"Freelancing":{
+
+icon:"💼",
+
+desc:"Turn a useful skill into a clear service.",
+
+intro:"Learn how to turn a practical skill into a service, create proof and approach potential customers professionally.",
+
+lessons:[
+
+[
+"Choose one useful skill",
+"Start with one skill instead of trying to learn everything at once.",
+"Write down one skill you want to develop and why it could solve a real problem."
+],
+
+[
+"Learn the fundamentals",
+"Build enough understanding to perform a simple task reliably.",
+"List five things you need to learn before offering the skill."
+],
+
+[
+"Create practice samples",
+"Samples can demonstrate ability even when you have no clients yet.",
+"Create three realistic practice samples."
+],
+
+[
+"Define your service",
+"Make the service clear: what you deliver, for whom and in what format.",
+"Write a one-sentence service offer."
+],
+
+[
+"Find potential customers",
+"Research people or businesses that genuinely need the problem solved.",
+"Create a list of five relevant potential customers."
+],
+
+[
+"Write ethical outreach",
+"Your message should be relevant, honest and respectful.",
+"Write a short outreach message without making false claims."
+]
+
+]
+
+},
+
+
+"Content Creation":{
+
+icon:"🎬",
+
+desc:"Create useful content and learn creator income models.",
+
+intro:"Learn how to choose an audience, create useful content, publish consistently and study feedback.",
+
+lessons:[
+
+[
+"Choose a topic",
+"A focused topic makes it easier to understand who your content is for.",
+"Choose one topic and explain why people may care about it."
+],
+
+[
+"Define your audience",
+"Good content starts with understanding the person you want to help.",
+"Describe your ideal viewer in three sentences."
+],
+
+[
+"Generate content ideas",
+"Build ideas around questions, problems, lessons and useful information.",
+"Create ten content ideas."
+],
+
+[
+"Create a simple script",
+"A clear structure makes content easier to produce.",
+"Write a 30–60 second script."
+],
+
+[
+"Publish consistently",
+"Consistency gives you opportunities to learn what your audience responds to.",
+"Create a seven-day publishing plan."
+],
+
+[
+"Study feedback",
+"Look at useful signals such as retention, comments and audience questions.",
+"Choose three metrics or feedback signals you will monitor."
+]
+
+]
+
+},
+
+
+"Digital Products":{
+
+icon:"📦",
+
+desc:"Build a guide, template, workbook or useful resource.",
+
+intro:"Learn how to identify a problem, build a useful digital product and prepare it for customers.",
+
+lessons:[
+
+[
+"Find a real problem",
+"A digital product should solve a specific problem for a specific group.",
+"Write one problem you believe people may pay to solve."
+],
+
+[
+"Choose the product format",
+"Examples include guides, checklists, templates and workbooks.",
+"Choose one format and explain why it fits the problem."
+],
+
+[
+"Identify your customer",
+"Understanding the customer helps you design useful content.",
+"Describe your target customer and situation."
+],
+
+[
+"Plan the product",
+"A clear outline makes building easier.",
+"Create the main sections of your product."
+],
+
+[
+"Build the first version",
+"Focus on usefulness before decoration.",
+"Create the first usable version."
+],
+
+[
+"Test and improve",
+"Ask suitable users to review it and use their feedback.",
+"List three things you would test before selling."
+]
+
+]
+
+},
+
+
+"AI-Assisted Work":{
+
+icon:"🤖",
+
+desc:"Use AI responsibly for research, planning and productivity.",
+
+intro:"Learn how to use AI as an assistant while checking important information yourself.",
+
+lessons:[
+
+[
+"Understand AI limitations",
+"AI can produce incorrect or incomplete information.",
+"List three types of information you would always verify."
+],
+
+[
+"Write useful prompts",
+"Good prompts explain the task, context and desired output.",
+"Write a prompt for learning a skill."
+],
+
+[
+"Verify outputs",
+"Important claims should be checked against reliable sources.",
+"Take one AI answer and identify what should be verified."
+],
+
+[
+"Create a workflow",
+"Use AI to support research, drafting, planning or repetitive tasks.",
+"Design one simple AI-assisted workflow."
+],
+
+[
+"Build proof",
+"Show what you can actually do rather than relying only on AI output.",
+"Create one sample demonstrating your skill."
+],
+
+[
+"Offer useful work",
+"Focus on the customer's problem and the result you can genuinely deliver.",
+"Write a simple service offer."
+]
+
+]
+
+},
+
+
+"Online Tutoring":{
+
+icon:"📚",
+
+desc:"Turn knowledge and teaching ability into a useful service.",
+
+intro:"Build a tutoring offer around a subject, learner level and clear learning outcome.",
+
+lessons:[
+
+[
+"Choose a subject and learner",
+"Be specific about subject, level and learner.",
+"Write your subject, learner level and target outcome."
+],
+
+[
+"Create a sample lesson",
+"A sample demonstrates your teaching ability.",
+"Create a 10–15 minute lesson outline."
+],
+
+[
+"Explain difficult ideas",
+"Break concepts into steps and examples.",
+"Explain one difficult concept in three steps."
+],
+
+[
+"Create an offer",
+"Define session length, format, materials and price.",
+"Write a clear tutoring offer."
+],
+
+[
+"Find learners ethically",
+"Consider referrals, educational networks and appropriate community contacts.",
+"List five appropriate places to reach potential learners."
+],
+
+[
+"Measure learning",
+"Check whether the learner understands and can apply the concept.",
+"Create a five-question check for your sample lesson."
+]
+
+]
+
+},
+
+
+"Affiliate Marketing":{
+
+icon:"📢",
+
+desc:"Understand affiliate promotion, useful content and disclosure.",
+
+intro:"Learn to promote relevant products transparently without misleading people.",
+
+lessons:[
+
+[
+"Understand the model",
+"An affiliate may earn a commission when a referred customer completes a qualifying action; terms vary.",
+"Explain the model in your own words."
+],
+
+[
+"Choose a topic",
+"Build around a topic you understand and an audience with a genuine need.",
+"Choose one topic and describe the audience."
+],
+
+[
+"Research products",
+"Check features, limitations, price, terms and reputation.",
+"Compare two relevant products using a checklist."
+],
+
+[
+"Create useful content",
+"Tutorials and comparisons can be more useful than empty promotion.",
+"Outline one helpful comparison or tutorial."
+],
+
+[
+"Disclose relationships",
+"Tell audiences when a link may earn you a commission.",
+"Write a short disclosure statement."
+],
+
+[
+"Track and improve",
+"Use available click, conversion and content data without misleading claims.",
+"Choose three metrics to review monthly."
+]
+
+]
+
+}
+
+};
+
+
+/* ACADEMY PROGRESS */
+
+let academyPath =
+localStorage.getItem("earnflowAcademyPath") || "";
+
+
+function lessonKey(name,index){
+
+return "earnflowLesson_" + name + "_" + index;
+
+}
+
+
+function done(name,index){
+
+return localStorage.getItem(
+lessonKey(name,index)
+) === "1";
+
+}
+
+
+function progress(name){
+
+let total =
+paths[name].lessons.length;
+
+let completed = 0;
+
+for(let i=0;i<total;i++){
+
+if(done(name,i)){
+completed++;
+}
+
+}
+
+return{
+
+done:completed,
+
+total:total,
+
+pct:Math.round(
+completed / total * 100
+)
+
+};
+
+}
+
+
+function openAcademy(name){
+
+academyPath = name;
+
+localStorage.setItem(
+"earnflowAcademyPath",
+name
+);
+
+show("academy");
+
+}
+
+
+function toggleLesson(index){
+
+let key =
+lessonKey(academyPath,index);
+
+if(done(academyPath,index)){
+
+localStorage.removeItem(key);
+
+}else{
+
+localStorage.setItem(key,"1");
+
+}
+
+renderAcademy();
+
+}
+
+
+function renderPathCards(){
+
+$("pathCards").innerHTML =
+
+Object.entries(paths)
+.map(([name,path]) => `
+
+<div class="card">
+
+<div class="icon">
+${path.icon}
+</div>
+
+<h3>
+${name}
+</h3>
+
+<p>
+${path.desc}
+</p>
+
+<button
+class="btn dark"
+onclick="openAcademy('${name}')"
+>
+Open Academy
+</button>
+
+</div>
+
+`)
+.join("");
+
+}
+
+
+function renderAcademy(){
+
+if(
+!academyPath ||
+!paths[academyPath]
+){
+
+$("academyTitle").textContent =
+"Choose a learning path";
+
+$("academyIntro").textContent =
+"Select a path to open its lessons, tasks and progress tracker.";
+
+$("academyBody").innerHTML = `
+
+<button
+class="btn primary"
+onclick="show('explore')"
+>
+Choose a Path →
+</button>
+
+`;
+
+return;
+
+}
+
+let pathData =
+paths[academyPath];
+
+let p =
+progress(academyPath);
+
+
+$("academyTitle").textContent =
+pathData.icon + " " + academyPath;
+
+$("academyIntro").textContent =
+pathData.intro;
+
+
+$("academyBody").innerHTML = `
+
+<div class="progressbox">
+
+<h3>
+${p.done} of ${p.total} lessons completed
+</h3>
+
+<div class="progressline">
+
+<i style="width:${p.pct}%"></i>
+
+</div>
+
+<p style="color:#c7d3df">
+${p.pct}% complete. Saved on this device.
+</p>
+
+</div>
+
+${pathData.lessons.map((lesson,index)=>`
+
+<div class="lesson ${done(academyPath,index) ? "done" : ""}">
+
+<div class="lessonhead">
+
+<input
+type="checkbox"
+${done(academyPath,index) ? "checked" : ""}
+onchange="toggleLesson(${index})"
+>
+
+<div>
+
+<span class="tag">
+LESSON ${index+1}
+</span>
+
+<h3>
+${lesson[0]}
+</h3>
+
+<p>
+${lesson[1]}
+</p>
+
+<div class="task">
+
+<b>
+Practical task:
+</b>
+
+${lesson[2]}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`).join("")}
+
+<div class="actions">
+
+<button
+class="btn dark"
+onclick="show('explore')"
+>
+← All Paths
+</button>
+
+<button
+class="btn primary"
+onclick="show('dashboard')"
+>
+View Progress →
+</button>
+
+</div>
+
+`;
+
+}
+
+
+function renderDashboard(){
+
+let total = 0;
+
+let completed = 0;
+
+
+Object.keys(paths)
+.forEach(name=>{
+
+let p =
+progress(name);
+
+total += p.total;
+
+completed += p.done;
 
 });
 
 
-const target=$(id);
+let pct =
+total
+? Math.round(completed / total * 100)
+: 0;
 
-if(target){
 
-target.classList.add("active");
+$("overallBar").style.width =
+pct + "%";
+
+
+$("overallText").textContent =
+`${completed} of ${total} lessons completed • ${pct}% overall progress`;
+
+
+$("dashboardPaths").innerHTML =
+
+Object.keys(paths)
+.map(name=>{
+
+let p =
+progress(name);
+
+return `
+
+<div class="card">
+
+<div class="icon">
+${paths[name].icon}
+</div>
+
+<h3>
+${name}
+</h3>
+
+<p>
+${p.done}/${p.total} lessons • ${p.pct}%
+</p>
+
+<div class="progressline">
+
+<i style="width:${p.pct}%"></i>
+
+</div>
+
+<button
+class="btn dark"
+onclick="openAcademy('${name}')"
+>
+Continue
+</button>
+
+</div>
+
+`;
+
+})
+.join("");
 
 }
 
 
-window.scrollTo(0,0);
+function continueLearning(){
+
+let name =
+academyPath ||
+Object.keys(paths)[0];
+
+openAcademy(name);
 
 }
 
 
-/* MOBILE MENU */
+function resetProgress(){
 
-function toggle(){
+if(
+confirm(
+"Reset all Academy progress on this device?"
+)
+){
 
-const x=$("mobile");
+Object.keys(paths)
+.forEach(name=>{
 
-if(!x){
-return;
+paths[name].lessons
+.forEach((_,index)=>{
+
+localStorage.removeItem(
+lessonKey(name,index)
+);
+
+});
+
+});
+
+renderDashboard();
+
 }
-
-x.style.display=
-x.style.display==="none"
-?"block"
-:"none";
 
 }
 
@@ -1839,30 +2130,30 @@ x.style.display==="none"
 
 function calc(){
 
-const a=+$("rev").value;
+let revenue =
++$("rev").value;
 
-const b=+$("price").value;
+let price =
++$("price").value;
 
-const r=$("calcResult");
+let result =
+$("calcResult");
 
 
-if(!a || !b || a<0 || b<=0){
+if(!revenue || !price){
 
-r.textContent=
-"Enter a valid target revenue and price per sale.";
+result.textContent =
+"Enter both numbers.";
 
-r.style.display="block";
+}else{
 
-return;
+result.textContent =
+`You need about ${Math.ceil(revenue/price)} sales at GH₵${price} each to reach GH₵${revenue} in revenue.`;
 
 }
 
-
-r.textContent=
-`You need about ${Math.ceil(a/b)} sales at GH₵${b} each to reach GH₵${a} in revenue.`;
-
-
-r.style.display="block";
+result.style.display =
+"block";
 
 }
 
@@ -1871,9 +2162,10 @@ r.style.display="block";
 
 function scam(){
 
-const r=$("scamResult");
+let result =
+$("scamResult");
 
-const values=[
+let values = [
 
 $("sc1").value,
 
@@ -1886,30 +2178,23 @@ $("sc3").value
 
 if(values.includes("")){
 
-r.textContent=
+result.textContent =
 "Answer all three questions first.";
 
-r.style.display="block";
+}else if(values.includes("Yes")){
 
-return;
-
-}
-
-
-if(values.includes("Yes")){
-
-r.textContent=
-"Pause and verify independently. Never share PINs, OTPs, passwords or other sensitive account information.";
+result.textContent =
+"Pause and verify independently. Never share PINs, OTPs or passwords.";
 
 }else{
 
-r.textContent=
-"No warning signs were selected, but still verify the opportunity, company, payment terms and identity of the person offering it.";
+result.textContent =
+"No warning signs selected, but still verify the opportunity and its terms.";
 
 }
 
-
-r.style.display="block";
+result.style.display =
+"block";
 
 }
 
@@ -1918,32 +2203,33 @@ r.style.display="block";
 
 function offer(){
 
-const r=$("offerResult");
+let result =
+$("offerResult");
 
-const skill=$("os").value.trim();
+let skill =
+$("os").value.trim();
 
-const customer=$("oc").value.trim();
+let customer =
+$("oc").value.trim();
 
-const problem=$("op").value.trim();
+let problem =
+$("op").value.trim();
 
 
 if(!skill || !customer || !problem){
 
-r.textContent=
+result.textContent =
 "Complete all fields.";
 
-r.style.display="block";
+}else{
 
-return;
+result.textContent =
+`I help ${customer} solve ${problem} by providing ${skill}. Define a clear deliverable, turnaround and price after confirming the customer's needs.`;
 
 }
 
-
-r.textContent=
-`I help ${customer} solve ${problem} by providing ${skill}. Define a clear deliverable, turnaround time and price after confirming the customer's needs.`;
-
-
-r.style.display="block";
+result.style.display =
+"block";
 
 }
 
@@ -1952,95 +2238,90 @@ r.style.display="block";
 
 function makePrompt(){
 
-const r=$("promptResult");
+let result =
+$("promptResult");
 
+result.textContent =
 
-r.textContent=
-"Teach me [SKILL] from beginner level. Create a 14-day practice plan with exercises and self-tests. Do not invent facts, credentials, testimonials or market data. Clearly label assumptions and tell me what I should verify.";
+"Teach me [SKILL] from beginner level. Create a 14-day practice plan with exercises and self-tests. Do not invent facts, credentials, testimonials or market data; label assumptions and tell me what to verify.";
 
-
-r.style.display="block";
-
-}
-
-
-/* PATH */
-
-let currentPath="";
-
-
-function path(title,plan){
-
-currentPath=title;
-
-$("pathTitle").textContent=title;
-
-$("pathPlan").textContent=plan;
-
-$("pathSaved").style.display="none";
-
-show("path");
+result.style.display =
+"block";
 
 }
 
 
-function savePath(){
+/* PRICING PLANNER */
 
-localStorage.setItem(
+function pricing(){
 
-"earnflowPath",
+let target =
++$("targetIncome").value;
 
-JSON.stringify({
+let jobs =
++$("jobsMonth").value;
 
-path:currentPath,
-
-savedAt:new Date().toISOString()
-
-})
-
-);
+let result =
+$("pricingResult");
 
 
-$("pathSaved").textContent=
-"Saved on this device. Start with the plan, create proof and validate demand before paying for tools.";
+if(!target || !jobs){
 
+result.textContent =
+"Enter both numbers.";
 
-$("pathSaved").style.display="block";
+}else{
+
+result.textContent =
+`A simple planning figure is about GH₵${Math.ceil(target/jobs)} per job to reach GH₵${target} across ${jobs} jobs. This is not a guarantee.`;
+
+}
+
+result.style.display =
+"block";
 
 }
 
 
-/* CV */
+/* CV BUILDER */
 
-function cv(){
+function buildCV(){
 
-const r=$("cvResult");
+let result =
+$("cvResult");
 
-const n=$("cvn").value.trim();
+let name =
+$("cvn").value.trim();
 
-const role=$("cvr").value.trim();
+let role =
+$("cvr").value.trim();
 
-const skills=$("cvs").value.trim();
+let skills =
+$("cvs").value.trim();
 
-const projects=$("cvp").value.trim();
+let projects =
+$("cvp").value.trim();
 
-const contact=$("cvc").value.trim();
+let contact =
+$("cvc").value.trim();
 
 
-if(!n || !role || !skills || !projects || !contact){
+if(
+!name ||
+!role ||
+!skills ||
+!projects ||
+!contact
+){
 
-r.textContent=
+result.textContent =
 "Complete all fields.";
 
-r.style.display="block";
+}else{
 
-return;
+result.textContent =
 
-}
-
-
-r.textContent=
-`${n}
+`${name}
 
 ${role}
 
@@ -2053,19 +2334,22 @@ ${projects}
 CONTACT
 ${contact}`;
 
+}
 
-r.style.whiteSpace="pre-line";
+result.style.whiteSpace =
+"pre-line";
 
-r.style.display="block";
+result.style.display =
+"block";
 
 }
 
 
-/* PAYSTACK */
+/* PRO */
 
 function buy(){
 
-window.location.href=
+location.href =
 "https://paystack.shop/pay/earnflow-pro-250";
 
 }
@@ -2073,7 +2357,7 @@ window.location.href=
 
 /* DIGITAL PRODUCT BUILDER */
 
-const steps=[
+const steps = [
 
 [
 "Choose a Product Idea",
@@ -2150,18 +2434,11 @@ const steps=[
 ];
 
 
-let step=
-Number(localStorage.getItem("earnflowDigitalStep")) || 0;
+let step =
++localStorage.getItem(
+"earnflowDigitalStep"
+) || 0;
 
-
-if(step<0 || step>=steps.length){
-
-step=0;
-
-}
-
-
-/* ESCAPE USER DATA */
 
 function esc(value){
 
@@ -2169,58 +2446,41 @@ return String(value || "")
 .replace(/&/g,"&amp;")
 .replace(/</g,"&lt;")
 .replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
+.replace(/"/g,"&quot;");
 
 }
 
-
-/* LOAD DIGITAL DATA */
-
-function getDigitalData(){
-
-try{
-
-return JSON.parse(
-localStorage.getItem("earnflowDigitalData") || "{}"
-);
-
-}catch(e){
-
-return {};
-
-}
-
-}
-
-
-/* RENDER DIGITAL BUILDER */
 
 function renderWizard(){
 
-const s=steps[step];
+let s =
+steps[step];
 
-const data=getDigitalData();
+let data =
+JSON.parse(
+localStorage.getItem(
+"earnflowDigitalData"
+) || "{}"
+);
 
-const current=
-data["step"+(step+1)] || {};
+let saved =
+data["step" + (step+1)] || {};
 
-$("count").textContent=
+
+$("count").textContent =
 `${step+1} / ${steps.length}`;
 
-$("bar").style.width=
-`${((step+1)/steps.length)*100}%`;
+
+$("bar").style.width =
+((step+1) / steps.length * 100)
++ "%";
 
 
-$("wizard").innerHTML=`
+$("wizard").innerHTML = `
 
 <h2>
 ${s[0]}
 </h2>
-
-<p class="muted">
-Step ${step+1} of ${steps.length}
-</p>
 
 <label>
 ${s[1]}
@@ -2228,36 +2488,34 @@ ${s[1]}
 
 <input
 id="w1"
-value="${esc(current.first)}"
-autocomplete="off">
-
+value="${esc(saved.first)}"
+>
 
 <label>
 ${s[2]}
 </label>
 
 <textarea
-id="w2">${esc(current.second)}</textarea>
-
+id="w2"
+>${esc(saved.second)}</textarea>
 
 <div class="wizardnav">
-
 
 ${
 step
 ?
 '<button class="btn dark" onclick="prev()">← Previous</button>'
 :
-''
+""
 }
-
 
 <button
 class="btn primary"
-onclick="next()">
+onclick="next()"
+>
 
 ${
-step===steps.length-1
+step === steps.length - 1
 ?
 "Finish"
 :
@@ -2266,7 +2524,6 @@ step===steps.length-1
 
 </button>
 
-
 </div>
 
 `;
@@ -2274,19 +2531,19 @@ step===steps.length-1
 }
 
 
-/* NEXT DIGITAL STEP */
-
 function next(){
 
-const a=$("w1").value.trim();
+let first =
+$("w1").value.trim();
 
-const b=$("w2").value.trim();
+let second =
+$("w2").value.trim();
 
 
-if(!a || !b){
+if(!first || !second){
 
 alert(
-"Please complete both fields before continuing."
+"Please complete both fields."
 );
 
 return;
@@ -2294,95 +2551,89 @@ return;
 }
 
 
-const data=getDigitalData();
+let data =
+JSON.parse(
+localStorage.getItem(
+"earnflowDigitalData"
+) || "{}"
+);
 
 
-data["step"+(step+1)]={
+data["step" + (step+1)] = {
 
-first:a,
+first:first,
 
-second:b
+second:second
 
 };
 
 
-data.updatedAt=
+data.updatedAt =
 new Date().toISOString();
 
 
 localStorage.setItem(
-
 "earnflowDigitalData",
-
 JSON.stringify(data)
-
 );
 
 
-if(step < steps.length-1){
+if(
+step < steps.length - 1
+){
 
 step++;
 
 localStorage.setItem(
 "earnflowDigitalStep",
-String(step)
+step
 );
 
 renderWizard();
 
-return;
+}else{
 
-}
-
-
-/* FINISHED */
-
-$("wizard").innerHTML=`
+$("wizard").innerHTML = `
 
 <h2>
 🎉 Product plan completed
 </h2>
 
 <p>
-Your complete 12-step product plan has been saved on this device.
-</p>
-
-<p class="muted">
-You can return to the Digital Product Builder later and continue improving your plan.
+Your 12-step plan is saved on this device.
+You can return to improve it later.
 </p>
 
 <button
 class="btn primary"
-onclick="show('explore')">
-
+onclick="show('explore')"
+>
 Back to Explore
-
 </button>
 
 `;
 
-
-step=0;
+step = 0;
 
 localStorage.setItem(
 "earnflowDigitalStep",
-"0"
+0
 );
 
 }
 
+}
 
-/* PREVIOUS DIGITAL STEP */
 
 function prev(){
 
-if(step>0){
+if(step){
 
 step--;
 
 localStorage.setItem(
 "earnflowDigitalStep",
-String(step)
+step
 );
 
 renderWizard();
@@ -2392,22 +2643,12 @@ renderWizard();
 }
 
 
-/* START DIGITAL BUILDER */
-
 function startDigital(){
 
-step=
-Number(
-localStorage.getItem("earnflowDigitalStep")
+step =
++localStorage.getItem(
+"earnflowDigitalStep"
 ) || 0;
-
-
-if(step<0 || step>=steps.length){
-
-step=0;
-
-}
-
 
 renderWizard();
 
@@ -2415,8 +2656,14 @@ show("digital");
 
 }
 
+
+/* INITIALIZE */
+
+renderPathCards();
+
+renderDashboard();
+
 </script>
 
-
 </body>
-</html>
+   </html>
